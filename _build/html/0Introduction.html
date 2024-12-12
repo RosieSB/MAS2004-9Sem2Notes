@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -66,7 +66,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '0Introduction';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -118,6 +117,8 @@
       
       
       
+        
+      
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
@@ -166,12 +167,13 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    0. Introduction
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">0. Introduction</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1Revision.html">1. Revision of MAS107</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2Limits_of_functions.html">2. Limits of functions</a></li>
 </ul>
 
     </div>
@@ -463,7 +465,7 @@
 </tbody>
 </table>
 </div>
-<p>Written homework submission is via \href{<a class="reference external" href="https://students.sheffield.ac.uk/digital-learning/assessments/crowdmark">https://students.sheffield.ac.uk/digital-learning/assessments/crowdmark</a>}{Crowdmark}. A link for this will be provided with the release of each homework on Blackboard.</p>
+<p>Written homework submission is via \href{https://students.sheffield.ac.uk/digital-learning/assessments/crowdmark}{Crowdmark}. A link for this will be provided with the release of each homework on Blackboard.</p>
 </section>
 </section>
 <section id="recommended-books">
@@ -485,26 +487,6 @@
 <p>This module will build directly on the work you have done in MAS107. In particular, it is important that you can recall definitions and results about sequences of real numbers, as we will be using them in many of the proofs and problems to come. When reviewing lecture notes before and after classes, it may help to have a copy of your MAS107 notes to hand, so that you can refresh any details that you need.</p>
 <section id="sequences-and-convergence">
 <h3>0.2.1. Sequences and convergence<a class="headerlink" href="#sequences-and-convergence" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="err">````</span><span class="p">{</span><span class="n">prf</span><span class="p">:</span><span class="n">theorem</span><span class="p">}</span> <span class="n">Whatever</span> <span class="n">can</span> <span class="n">go</span> <span class="n">wrong</span> <span class="n">will</span> <span class="n">go</span> <span class="n">wrong</span>
-<span class="p">:</span><span class="n">label</span><span class="p">:</span> <span class="n">my</span><span class="o">-</span><span class="n">theorem</span>
-
-<span class="n">There</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">zero</span> <span class="n">probability</span> <span class="n">that</span> <span class="n">I</span> <span class="n">have</span> <span class="n">made</span> <span class="n">a</span> <span class="n">typo</span> <span class="n">somewhere</span> <span class="ow">in</span> <span class="n">ths</span> <span class="n">theorem</span><span class="o">.</span>
-
-<span class="err">````</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="err">````</span><span class="p">{</span><span class="n">prf</span><span class="p">:</span><span class="n">theorem</span><span class="p">}</span> <span class="n">Whatever</span> <span class="n">can</span> <span class="n">go</span> <span class="n">wrong</span> <span class="n">will</span> <span class="n">go</span> <span class="n">wrong</span>
-    <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
 <p><strong>Definition 0.2.1.</strong>
 Recall that a sequence <span class="math notranslate nohighlight">\((x_n)\)</span> is said to <em>converge</em> to limit <span class="math notranslate nohighlight">\(l\in\mathbb{R}\)</span> if for all <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span> there exists a number <span class="math notranslate nohighlight">\(N\in\mathbb{N}\)</span> such that
 [|x_n-l| &lt; \varepsilon \hspace{2em} \text{ for all } n\geq N.]
@@ -584,6 +566,14 @@ For all real numbers <span class="math notranslate nohighlight">\(a\)</span> and
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;figs/tri_ineq.png&quot;</span><span class="p">,</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;A triangle with vertices P, Q and R, and edges composed of vectors a from P to Q), b from Q to R and a plus b from P to R. Next to it is the triangle inequality formula $|a+b|\leq |a|+|b|$.&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="o">&gt;</span>
+    <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
 </div>
 <p>The following corollary of the triangle inequality will also be frequently useful.</p>
 <p><strong>Corollary 0.2.6.</strong>
@@ -611,16 +601,16 @@ and so we are done.</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: ".venv"
         },
         kernelOptions: {
-            name: "python3",
+            name: ".venv",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = '.venv'</script>
 
                 </article>
               
@@ -632,15 +622,6 @@ and so we are done.</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to your Jupyter Book</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
