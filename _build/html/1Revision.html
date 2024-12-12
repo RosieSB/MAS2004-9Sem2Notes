@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=4c010e0d" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -423,15 +423,18 @@
 <li><p>Existential quantifier: <span class="math notranslate nohighlight">\(\exists\)</span> “there exists”</p></li>
 </ul>
 <p>Understanding mathematical statements involving quantifiers takes continual practice. A key advantage of studying analysis is there will be plenty of opportunity for this.</p>
-<p><strong>Example 0.2.3.</strong>
-Definition 0.2.1  can be expressed more succincly using quantifiers:
+<div class="proof example admonition" id="quant1">
+<p class="admonition-title"><span class="caption-number">Example 1.1 </span></p>
+<section class="example-content" id="proof-content">
+<p><a class="reference internal" href="#seqconv">Definition 1.1</a> can be expressed more succincly using quantifiers:
 $<span class="math notranslate nohighlight">\(
 x_n\rightarrow l \; \text{ iff } \;\forall\varepsilon&gt;0\; \exists N\in\mathbb{N} \;\text{ s.t. }\forall n\geq N\; |x_n-l|&lt;\varepsilon.
 \)</span>$</p>
 <p>In words:</p>
 <p>“<span class="math notranslate nohighlight">\(x_n\)</span> converges to <span class="math notranslate nohighlight">\(l\)</span> if and only if for all <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, there exists <span class="math notranslate nohighlight">\(N\in\mathbb{N}\)</span> such that for all <span class="math notranslate nohighlight">\(n\geq N\)</span> we have <span class="math notranslate nohighlight">\(|x_n-l|&lt;\varepsilon\)</span>”.</p>
-<p><strong>Exercise 0.2.4.</strong>
-Express Definition 0.2.2 in terms of quantifiers.</p>
+</section>
+</div><p><strong>Exercise:</strong>
+Express <a class="reference internal" href="#Cauchy">Definition 1.2</a> in terms of quantifiers.</p>
 <section id="negation">
 <h3><span class="section-number">1.2.1. </span>Negation<a class="headerlink" href="#negation" title="Link to this heading">#</a></h3>
 <p>The <em>negation</em> of a mathematical statement is its logical opposite. When negating statements involving quantifiers, the roles of <span class="math notranslate nohighlight">\(\forall\)</span> and <span class="math notranslate nohighlight">\(\exists\)</span> trade places, while all other parts of the statement are replaced with their logical opposites.</p>
