@@ -41,3 +41,12 @@ html:
 sphinx:
   extra_extensions:
     - sphinx_proof
+  config:
+    proof_minimal_theme: true
+
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - amsmath
+    - dollarmath

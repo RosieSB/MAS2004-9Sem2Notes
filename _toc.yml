@@ -2,6 +2,9 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: intro.md
+options:
+  numbered: true
 chapters:
-  - file: 0Introduction.ipynb
+  - file: 1Revision
+  - file: 2Limits_of_functions

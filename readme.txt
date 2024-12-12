@@ -1,3 +1,29 @@
+1. Create virtual environment (do once)
+
+python3 -m venv .venv
+
+2. Activate it (do every time)
+
+source .venv/bin/activate
+
+3. Install any packages needed for this project. e.g.
+
+pip3 install jupyter-book
+
+or
+
+python3 -m pip install jupyter-book
+
+4. To make changes to notes:
+- Make changes to local files in ~/my_project_dir/MAS2004-9Sem2Notes
+- Rebuild jupyter book with 
+cd ~/MAS2004,9/MAS2004\ Jupyter\ notes
+jupyter-book build MAS2004-9Sem2Notes/
+
+
+-----------------------------------
+FOR LATER IF USING GITHUB PAGES
+
 The following is paraphrased from
 https://jupyterbook.org/en/stable/start/publish.html
 
