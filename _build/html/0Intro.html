@@ -63,9 +63,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '0Introduction';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0Intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Revision of MAS107" href="1Revision.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -138,7 +139,7 @@
     
   
 
-<a class="navbar-brand logo" href="intro.html">
+<a class="navbar-brand logo" href="#">
   
   
   
@@ -165,8 +166,8 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
                     0. Introduction
                 </a>
             </li>
@@ -245,7 +246,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F0Introduction.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F0Intro.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -275,7 +276,7 @@
       
       
       
-      <li><a href="_sources/0Introduction.ipynb" target="_blank"
+      <li><a href="_sources/0Intro.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -285,7 +286,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -361,28 +362,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-structure-and-overview">0.1. Module structure and overview</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-overview">0.1.1. Module overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment">0.1.2. Assessment</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exam-90">Exam (90%)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-10">Homework (10%)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-overview">0.1 Module overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment">0.2 Assessment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exam-90">Exam (90%)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-10">Homework (10%)</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-books">0.1.3. Recommended books</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-of-mas107">0.2. Revision of MAS107</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences-and-convergence">0.2.1. Sequences and convergence</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logic-and-quantifiers">2.2. Logic and quantifiers</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#negation">Negation</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inequalities">2.3. Inequalities</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-triangle-inequality">2.3.1. The triangle inequality</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-books">0.3. Recommended books</a></li>
 </ul>
             </nav>
         </div>
@@ -396,21 +382,14 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction">
 <h1>0. Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
-<section id="module-structure-and-overview">
-<h2>0.1. Module structure and overview<a class="headerlink" href="#module-structure-and-overview" title="Link to this heading">#</a></h2>
-<p>These notes, and the accompanying lectures, cover material relating to SoMaS modules</p>
-<ul class="simple">
-<li><p><strong>MAS2004 Analysis and Algebra.</strong> 20 credit module; year-long.</p></li>
-</ul>
-<p>These notes cover the Semester 1 part of the module, which is the analysis part. In Semester 2, you will be focussing on algebra topics with a different lecturer.</p>
-<ul class="simple">
-<li><p><strong>MAS2009 Analysis.</strong> 10 credit module; Semester 1 only. It is precisely the first semester of MAS2004.</p></li>
-</ul>
-<p>Both modules have 22 lectures and 5 tutorials in Semester 1. There are two lectures each week, with the exception of reading week (Week 7). Tutorials are in Weeks 2, 4, 6, 9 and 11, and the particular time and location will depend on your tutorial group allocation. I will also hold office hours twice per week, which you can use as drop-in sessions for help with anything you are finding difficult.</p>
+<p>These are the official lectures notes for <a class="reference external" href="https://sites.google.com/sheffield.ac.uk/somasstudentintranet/programme-study-information/module-choice/somas-module-directory/somas-module-directory-202425/mas2004-analysis-and-algebra">MAS2004 Analysis and Algebra</a> Semester 2 and <a class="reference external" href="https://sites.google.com/sheffield.ac.uk/somasstudentintranet/programme-study-information/module-choice/somas-module-directory/somas-module-directory-202425/mas2009-analysis">MAS2009 Analysis</a>.</p>
+<p>The notes are produced with Jupyter Book, a package that uses Python and LaTeX to produce searchable maths notes that are <a class="reference external" href="https://abestshef.github.io/jupyter/Intro.html">more accessible</a> than PDFs.</p>
+<p>If you have any issues using these notes, spot any errors, or would otherwise like help making best use of them, please get in touch by <a class="reference external" href="mailto:r&#46;j&#46;shewellbrockway&#37;&#52;&#48;sheffield&#46;ac&#46;uk">emailing Rosie</a>.</p>
 <section id="module-overview">
-<h3>0.1.1. Module overview<a class="headerlink" href="#module-overview" title="Link to this heading">#</a></h3>
+<h2>0.1 Module overview<a class="headerlink" href="#module-overview" title="Link to this heading">#</a></h2>
 <p>This semester, we will pick up where you left off in MAS107 last year, and look at some classical analysis topics. The main themes will be:</p>
 <ul class="simple">
+<li><p><em>Functional Limits.</em> <br> How do we definite rigorously the notion of convergence to a limit for functions? This will underpin our work on continuity and differentiability.</p></li>
 <li><p><em>Continuity.</em> <br> What does it mean to say that a function is continuous? What is the “right” definition, that will give us the theorems we want and and enable us to prove them rigorously?</p></li>
 <li><p><em>Differentiability.</em> <br> What is the “right” definition of differentiability, and how is it related to that of continuity? We’ll prove some beautiful theorems that connect the formal definition for the derivative to geometric properties of curves. %We’ll also see how differentiability can be used to approximate functions by polynomials, using Taylor’s theorem.</p></li>
 <li><p><em>Sequences and series of functions.</em> <br> In MAS107, you studied sequences and series of real numbers. In Chapter 4, we focus on sequences and series in which each term is a function, rather than a number. This allows us to rigorously define important functions such as the exponential function, in terms of a uniformly convergent power series.</p></li>
@@ -418,17 +397,17 @@
 </ul>
 </section>
 <section id="assessment">
-<h3>0.1.2. Assessment<a class="headerlink" href="#assessment" title="Link to this heading">#</a></h3>
+<h2>0.2 Assessment<a class="headerlink" href="#assessment" title="Link to this heading">#</a></h2>
 <p>90% of your grade will come from sitting an exam at the end of the module; the other 10% will come from completing homework.</p>
 <section id="exam-90">
-<h4>Exam (90%)<a class="headerlink" href="#exam-90" title="Link to this heading">#</a></h4>
+<h3>Exam (90%)<a class="headerlink" href="#exam-90" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>MAS2009 Analysis: 1.5 hour written exam in January</p></li>
 <li><p>MAS2004 Analysis and Algebra: 2.5 hour written exam in May/June, on both Semester 1 and Semester 2 material</p></li>
 </ul>
 </section>
 <section id="homework-10">
-<h4>Homework (10%)<a class="headerlink" href="#homework-10" title="Link to this heading">#</a></h4>
+<h3>Homework (10%)<a class="headerlink" href="#homework-10" title="Link to this heading">#</a></h3>
 <p>Each homework is “out of 1”, in the sense that any reasonable attempt will receive 1 mark. So handing in a blank piece of paper might receive 0 marks, but anything that shows genuine effort will receive full credit.</p>
 <p>Each piece of work will also receive constructive feedback that you can use to improve your understanding and your written mathematics.</p>
 <p>(Note: MAS2004 has 10 homeworks over two semesters, so each homework counts for 1% of the final grade. MAS2009 is only one semester long, so each homework is worth 2%.)</p>
@@ -469,7 +448,7 @@
 </section>
 </section>
 <section id="recommended-books">
-<h3>0.1.3. Recommended books<a class="headerlink" href="#recommended-books" title="Link to this heading">#</a></h3>
+<h2>0.3. Recommended books<a class="headerlink" href="#recommended-books" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>How to Think About Analysis, by Lara Alcock.</strong></p></li>
 </ul>
@@ -481,115 +460,8 @@
 <p>This is a more traditional analysis textbook, as it is sometimes useful to see ideas presented in more than one way.</p>
 <p>Links: <a class="reference external" href="https://find.shef.ac.uk/permalink/f/1lephdb/44SFD_ALMA_DS51360822510001441">Library</a>; <a class="reference internal" href="#-https://www.abebooks.co.uk/9781493950263/Understanding-Analysis-Stephen-Abbott-1493950266/plp"><span class="xref myst">abebooks</span></a>; <a class="reference external" href="https://www.goodreads.com/book/show/26457662-understanding-analysis">goodreads</a>.</p>
 </section>
-</section>
-<section id="revision-of-mas107">
-<h2>0.2. Revision of MAS107<a class="headerlink" href="#revision-of-mas107" title="Link to this heading">#</a></h2>
-<p>This module will build directly on the work you have done in MAS107. In particular, it is important that you can recall definitions and results about sequences of real numbers, as we will be using them in many of the proofs and problems to come. When reviewing lecture notes before and after classes, it may help to have a copy of your MAS107 notes to hand, so that you can refresh any details that you need.</p>
-<section id="sequences-and-convergence">
-<h3>0.2.1. Sequences and convergence<a class="headerlink" href="#sequences-and-convergence" title="Link to this heading">#</a></h3>
-<p><strong>Definition 0.2.1.</strong>
-Recall that a sequence <span class="math notranslate nohighlight">\((x_n)\)</span> is said to <em>converge</em> to limit <span class="math notranslate nohighlight">\(l\in\mathbb{R}\)</span> if for all <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span> there exists a number <span class="math notranslate nohighlight">\(N\in\mathbb{N}\)</span> such that
-[|x_n-l| &lt; \varepsilon \hspace{2em} \text{ for all } n\geq N.]
-In other words, for any given tolerance <span class="math notranslate nohighlight">\(\varepsilon\)</span>, the numbers <span class="math notranslate nohighlight">\(x_n\)</span> will eventually lie within <span class="math notranslate nohighlight">\(\varepsilon\)</span> of <span class="math notranslate nohighlight">\(l\)</span>. We write <span class="math notranslate nohighlight">\(x_n\rightarrow l\)</span> as <span class="math notranslate nohighlight">\(n\rightarrow\infty\)</span>.
-\end{mydef}
-$$</p>
-<p><strong>Definition 0.2.2.</strong>
-A sequence <span class="math notranslate nohighlight">\((x_n)\)</span> is <em>Cauchy</em> if for all <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span> there is an <span class="math notranslate nohighlight">\(N\in\mathbb{N}\)</span> such that</p>
-<p>A sequence being convergent means its terms are getting “closer and closer” to its limit <span class="math notranslate nohighlight">\(l\)</span>. Being Cauchy says that the terms are getting “closer and closer” to one another. In fact, being convergent is strictly stronger than being Cauchy: if <span class="math notranslate nohighlight">\(A\subseteq\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\((x_n)\)</span> is a sequence in <span class="math notranslate nohighlight">\(A\)</span>, then</p>
-<div class="math notranslate nohighlight">
-\[
-(x_n) \text{ converges to a limit $l\in A$ } \hspace{1em} \mathbb{R}ightarrow \hspace{1em} (x_n) \text{ is a Cauchy sequence}.
-\]</div>
-<p>The converse statement doesn’t hold: <span class="math notranslate nohighlight">\((x_n)\)</span> being Cauchy does not imply that it converges to a limit in <span class="math notranslate nohighlight">\(A\)</span>. For example, let <span class="math notranslate nohighlight">\(A:=(0,1)\)</span> and <span class="math notranslate nohighlight">\(x_n=\frac{1}{n}\)</span>, for <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>. Then, <em>viewed as a sequence in</em> <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\((x_n)\)</span> does not converge. However, if we instead view it as a sequence in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, we know that <span class="math notranslate nohighlight">\(x_n\rightarrow 0\)</span> as <span class="math notranslate nohighlight">\(n\rightarrow\infty\)</span>. Since <span class="math notranslate nohighlight">\((x_n)\)</span> converges as a sequence in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, it must be a Cauchy sequence.</p>
-<p>A set <span class="math notranslate nohighlight">\(A\subseteq\mathbb{R}\)</span> is called <em>complete</em> if every Cauchy sequence in <span class="math notranslate nohighlight">\(A\)</span> converges to a limit in <span class="math notranslate nohighlight">\(A\)</span>. Therefore, for complete sets, being Cauchy is equivalent to convergence. The set <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> of all rational numbers is not complete, but the set <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> of all reals is.</p>
-<p>In MAS107, you saw how <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> is constructed from <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> by including the limits of all rational Cauchy sequences.</p>
-</section>
-<section id="logic-and-quantifiers">
-<h3>2.2. Logic and quantifiers<a class="headerlink" href="#logic-and-quantifiers" title="Link to this heading">#</a></h3>
-<p>Analysis, like all areas of pure mathematics, is interested in proving things carefully and rigorously. This requires technical arguments, and in order to communicate unambiguously, we will need to use formal language such as quantifiers.</p>
-<p>There are two important quantifiers used by mathematicians:</p>
-<ul class="simple">
-<li><p>Universal quantifier: <span class="math notranslate nohighlight">\(\forall\)</span>, “for all”</p></li>
-<li><p>Existential quantifier: <span class="math notranslate nohighlight">\(\exists\)</span> “there exists”</p></li>
-</ul>
-<p>Understanding mathematical statements involving quantifiers takes continual practice. A key advantage of studying analysis is there will be plenty of opportunity for this.</p>
-<p><strong>Example 0.2.3.</strong>
-Definition 0.2.1  can be expressed more succincly using quantifiers:
-$<span class="math notranslate nohighlight">\(
-x_n\rightarrow l \; \text{ iff } \;\forall\varepsilon&gt;0\; \exists N\in\mathbb{N} \;\text{ s.t. }\forall n\geq N\; |x_n-l|&lt;\varepsilon.
-\)</span>$</p>
-<p>In words:</p>
-<p>“<span class="math notranslate nohighlight">\(x_n\)</span> converges to <span class="math notranslate nohighlight">\(l\)</span> if and only if for all <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, there exists <span class="math notranslate nohighlight">\(N\in\mathbb{N}\)</span> such that for all <span class="math notranslate nohighlight">\(n\geq N\)</span> we have <span class="math notranslate nohighlight">\(|x_n-l|&lt;\varepsilon\)</span>”.
-\end{eg}</p>
-<p><strong>Exercise 0.2.4.</strong>
-Express Definition 0.2.2 in terms of quantifiers.</p>
-<section id="negation">
-<h4>Negation<a class="headerlink" href="#negation" title="Link to this heading">#</a></h4>
-<p>The <em>negation</em> of a mathematical statement is its logical opposite. When negating statements involving quantifiers, the roles of <span class="math notranslate nohighlight">\(\forall\)</span> and <span class="math notranslate nohighlight">\(\exists\)</span> trade places, while all other parts of the statement are replaced with their logical opposites.</p>
-<p>For example, consider the definition of disjoint sets.</p>
-<div class="math notranslate nohighlight">
-\[
-A, B\subseteq\mathbb{R}	 \; \text{ are disjoint \; iff }\;\; \forall x\in A, \; x\notin B.
-\]</div>
-<p>The negation is</p>
-<div class="math notranslate nohighlight">
-\[
-A, B\subseteq\mathbb{R}	 \; \text{ are \textbf{not} disjoint\; iff }\;\; \exists x\in A, \text{ s.t } x\in B.
-\]</div>
-<p>For an example involving longer statements, consider again the definition of convergence:</p>
-<div class="math notranslate nohighlight">
-\[
-x_n\rightarrow l \; \text{ iff } \;\forall\varepsilon&gt;0\; \exists N\in\mathbb{N} \;\text{ s.t. }\forall n\geq N\; |x_n-l|&lt;\varepsilon.
-\]</div>
-<p>The negation of this is</p>
-<div class="math notranslate nohighlight">
-\[
-x_n\not\rightarrow l \; \text{ iff } \;\exists\varepsilon&gt;0\; \;\text{ s.t. }\forall N\in\mathbb{N} \;\exists n\geq N\;\;\text{ s.t. } |x_n-l|\geq\varepsilon.
-\]</div>
-<p>That is, <span class="math notranslate nohighlight">\(x_n\not\rightarrow l\)</span> if and only if there is some <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span> for which, no matter how large we choose <span class="math notranslate nohighlight">\(N\)</span>, there is an even larger <span class="math notranslate nohighlight">\(n\)</span> for which <span class="math notranslate nohighlight">\(|x_n-l|\geq\varepsilon\)</span>. You can think of this as “<span class="math notranslate nohighlight">\(|x_n-l|\geq\varepsilon\)</span> infinitely often”.</p>
-</section>
-</section>
-<section id="inequalities">
-<h3>2.3. Inequalities<a class="headerlink" href="#inequalities" title="Link to this heading">#</a></h3>
-<p>You may have noticed by now that analysis often involves proving that things are less than epsilon. For this reason, inequalities often feature.</p>
-<p>Here is a reminder of two of the most important ones.</p>
-<section id="the-triangle-inequality">
-<h4>2.3.1. The triangle inequality<a class="headerlink" href="#the-triangle-inequality" title="Link to this heading">#</a></h4>
-<p><strong>Theorem 0.2.5.</strong>
-For all real numbers <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>,
-[|a+b| \leq |a|+|b|.]</p>
-<p>Note that the triangle inequality holds in higher dimensions, too. If <span class="math notranslate nohighlight">\(\textbf{a}\)</span> and <span class="math notranslate nohighlight">\(\textbf{b}\)</span> are vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, then the vectors <span class="math notranslate nohighlight">\(\mathbf{a}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{a}+\mathbf{b}\)</span> form sides of a triangle.</p>
-<p>If the vertices of this triangle are <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(Q\)</span> and <span class="math notranslate nohighlight">\(R\)</span>, then the triangle inequality is just saying that it is a shorter distance to walk from <span class="math notranslate nohighlight">\(P\)</span> to <span class="math notranslate nohighlight">\(R\)</span> directly than it would be to walk there via the point <span class="math notranslate nohighlight">\(Q\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;figs/tri_ineq.png&quot;</span><span class="p">,</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;A triangle with vertices P, Q and R, and edges composed of vectors a from P to Q), b from Q to R and a plus b from P to R. Next to it is the triangle inequality formula $|a+b|\leq |a|+|b|$.&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="o">&gt;</span>
-</pre></div>
+<div class="toctree-wrapper compound">
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;figs/tri_ineq.png&quot;</span><span class="p">,</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;A triangle with vertices P, Q and R, and edges composed of vectors a from P to Q), b from Q to R and a plus b from P to R. Next to it is the triangle inequality formula $|a+b|\leq |a|+|b|$.&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="o">&gt;</span>
-    <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
-<p>The following corollary of the triangle inequality will also be frequently useful.</p>
-<p><strong>Corollary 0.2.6.</strong>
-For all <span class="math notranslate nohighlight">\(a,b\in\mathbb{R}\)</span>,
-[\Big||a|-|b|\Big| \leq |a-b|.]</p>
-<p><em>Proof.</em>
-Since the statement is symmetric in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, we can assume without loss of generality that <span class="math notranslate nohighlight">\(|a|&gt;|b|\)</span>. By the triangle inequality,
-[|a| = |(a-b) +b| \leq |a-b| +|b|,]
-and so
-[|a|-|b|\leq |a-b|.]
-Since we’re assuming <span class="math notranslate nohighlight">\(|a|&gt;|b|\)</span>,
-[\Big||a|-|b|\Big| \leq |a|-|b|,]
-and so we are done.</p>
-</section>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -601,16 +473,16 @@ and so we are done.</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: ".venv"
+            mode: "python"
         },
         kernelOptions: {
-            name: ".venv",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = '.venv'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -622,6 +494,15 @@ and so we are done.</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="right-next"
+       href="1Revision.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Revision of MAS107</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -639,28 +520,13 @@ and so we are done.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-structure-and-overview">0.1. Module structure and overview</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-overview">0.1.1. Module overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment">0.1.2. Assessment</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exam-90">Exam (90%)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-10">Homework (10%)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-overview">0.1 Module overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment">0.2 Assessment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exam-90">Exam (90%)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-10">Homework (10%)</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-books">0.1.3. Recommended books</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-of-mas107">0.2. Revision of MAS107</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences-and-convergence">0.2.1. Sequences and convergence</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logic-and-quantifiers">2.2. Logic and quantifiers</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#negation">Negation</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inequalities">2.3. Inequalities</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-triangle-inequality">2.3.1. The triangle inequality</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-books">0.3. Recommended books</a></li>
 </ul>
   </nav></div>
 
