@@ -66,7 +66,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '1Rev';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. Limits of functions" href="2Limits_of_functions.html" />
+    <link rel="next" title="2. Limits of functions" href="2LoF.html" />
     <link rel="prev" title="0. Introduction" href="0Intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -173,7 +173,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Revision of MAS107</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2Limits_of_functions.html">2. Limits of functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2LoF.html">2. Limits of functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3Cty.html">3. Continuity</a></li>
 </ul>
 
     </div>
@@ -404,7 +405,8 @@
 \[
 |x_n-x_m|&lt;\varepsilon \hspace{2em} \text{ for all } m,n\geq N.
 \]</div>
-<p>A sequence being convergent means its terms are getting “closer and closer” to its limit <span class="math notranslate nohighlight">\(l\)</span>. Being Cauchy says that the terms are getting “closer and closer” to one another. In fact, being convergent is strictly stronger than being Cauchy: if <span class="math notranslate nohighlight">\(A\subseteq\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\((x_n)\)</span> is a sequence in <span class="math notranslate nohighlight">\(A\)</span>, then</p>
+</section>
+</div><p>A sequence being convergent means its terms are getting “closer and closer” to its limit <span class="math notranslate nohighlight">\(l\)</span>. Being Cauchy says that the terms are getting “closer and closer” to one another. In fact, being convergent is strictly stronger than being Cauchy: if <span class="math notranslate nohighlight">\(A\subseteq\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\((x_n)\)</span> is a sequence in <span class="math notranslate nohighlight">\(A\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[
 (x_n) \text{ converges to a limit $l\in A$ } \hspace{1em} \mathbb{R}ightarrow \hspace{1em} (x_n) \text{ is a Cauchy sequence}.
@@ -412,9 +414,6 @@
 <p>The converse statement doesn’t hold: <span class="math notranslate nohighlight">\((x_n)\)</span> being Cauchy does not imply that it converges to a limit in <span class="math notranslate nohighlight">\(A\)</span>. For example, let <span class="math notranslate nohighlight">\(A:=(0,1)\)</span> and <span class="math notranslate nohighlight">\(x_n=\frac{1}{n}\)</span>, for <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>. Then, <em>viewed as a sequence in</em> <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\((x_n)\)</span> does not converge. However, if we instead view it as a sequence in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, we know that <span class="math notranslate nohighlight">\(x_n\rightarrow 0\)</span> as <span class="math notranslate nohighlight">\(n\rightarrow\infty\)</span>. Since <span class="math notranslate nohighlight">\((x_n)\)</span> converges as a sequence in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, it must be a Cauchy sequence.</p>
 <p>A set <span class="math notranslate nohighlight">\(A\subseteq\mathbb{R}\)</span> is called <em>complete</em> if every Cauchy sequence in <span class="math notranslate nohighlight">\(A\)</span> converges to a limit in <span class="math notranslate nohighlight">\(A\)</span>. Therefore, for complete sets, being Cauchy is equivalent to convergence. The set <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> of all rational numbers is not complete, but the set <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> of all reals is.</p>
 <p>In MAS107, you saw how <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> is constructed from <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> by including the limits of all rational Cauchy sequences.</p>
-</section>
-</div><p><strong>Exercise:</strong>
-Express <a class="reference internal" href="#Cauchy">Definition 1.2</a> in terms of quantifiers.</p>
 </section>
 <section id="logic-and-quantifiers">
 <h2><span class="section-number">1.2. </span>Logic and quantifiers<a class="headerlink" href="#logic-and-quantifiers" title="Link to this heading">#</a></h2>
@@ -435,7 +434,9 @@ x_n\rightarrow l \; \text{ iff } \;\forall\varepsilon&gt;0\; \exists N\in\mathbb
 <p>In words:</p>
 <p>“<span class="math notranslate nohighlight">\(x_n\)</span> converges to <span class="math notranslate nohighlight">\(l\)</span> if and only if for all <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, there exists <span class="math notranslate nohighlight">\(N\in\mathbb{N}\)</span> such that for all <span class="math notranslate nohighlight">\(n\geq N\)</span> we have <span class="math notranslate nohighlight">\(|x_n-l|&lt;\varepsilon\)</span>”.</p>
 </section>
-</div><section id="negation">
+</div><p><strong>Exercise:</strong>
+Express <a class="reference internal" href="#Cauchy">Definition 1.2</a> in terms of quantifiers.</p>
+<section id="negation">
 <h3><span class="section-number">1.2.1. </span>Negation<a class="headerlink" href="#negation" title="Link to this heading">#</a></h3>
 <p>The <em>negation</em> of a mathematical statement is its logical opposite. When negating statements involving quantifiers, the roles of <span class="math notranslate nohighlight">\(\forall\)</span> and <span class="math notranslate nohighlight">\(\exists\)</span> trade places, while all other parts of the statement are replaced with their logical opposites.</p>
 <p>For example, consider the definition of disjoint sets.</p>
@@ -466,7 +467,7 @@ x_n\not\rightarrow l \; \text{ iff } \;\exists\varepsilon&gt;0\; \;\text{ s.t. }
 <p>Inequalities are the primary tool of analysts. Here is a reminder of two important ones.</p>
 <section id="the-triangle-inequality">
 <h3><span class="section-number">1.3.1. </span>The triangle inequality<a class="headerlink" href="#the-triangle-inequality" title="Link to this heading">#</a></h3>
-<div class="proof theorem note admonition" id="tri">
+<div class="proof theorem admonition" id="tri">
 <p class="admonition-title"><span class="caption-number">Theorem 1.1 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>For all real numbers <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>,</p>
@@ -546,7 +547,7 @@ Since the statement is symmetric in <span class="math notranslate nohighlight">\
       </div>
     </a>
     <a class="right-next"
-       href="2Limits_of_functions.html"
+       href="2LoF.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>

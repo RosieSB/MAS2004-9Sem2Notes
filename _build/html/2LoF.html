@@ -63,9 +63,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '2Limits_of_functions';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2LoF';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Continuity" href="3Cty.html" />
     <link rel="prev" title="1. Revision of MAS107" href="1Rev.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -173,6 +174,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1Rev.html">1. Revision of MAS107</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Limits of functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3Cty.html">3. Continuity</a></li>
 </ul>
 
     </div>
@@ -244,7 +246,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F2Limits_of_functions.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F2LoF.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -274,7 +276,7 @@
       
       
       
-      <li><a href="_sources/2Limits_of_functions.ipynb" target="_blank"
+      <li><a href="_sources/2LoF.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -284,7 +286,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -506,7 +508,7 @@ Figure 1: Graph of <span class="math notranslate nohighlight">\(f(x) = \displays
 \[
 \lim_{x\rightarrow a} f(x) = f(a).
 \]</div>
-<p>This tells us that the function <span class="math notranslate nohighlight">\(f\)</span> is <em>continuous</em> at these points. We will discuss the concept of continuity in more detail in Chapter <a class="reference internal" href="#chap:cty"><span class="xref myst">chap:cty</span></a>.</p>
+<p>This tells us that the function <span class="math notranslate nohighlight">\(f\)</span> is <em>continuous</em> at these points. We will discuss the concept of continuity in more detail in Chapter <a class="reference internal" href="3Cty.html#chap-cty"><span class="std std-ref">Continuity</span></a>.</p>
 <p>The more interesting problem is to find out what happens at points that are not in <span class="math notranslate nohighlight">\(X\)</span>. Observe that</p>
 <div class="math notranslate nohighlight">
 \[
@@ -534,7 +536,7 @@ This is left as  an exercise. Again, <span class="math notranslate nohighlight">
 </ul>
 <p>We note here that the function <span class="math notranslate nohighlight">\(f\)</span> is not continuous at the points <span class="math notranslate nohighlight">\(a = -5, 3\)</span> or <span class="math notranslate nohighlight">\(5\)</span>; indeed <span class="math notranslate nohighlight">\(f(a)\)</span> is not defined when <span class="math notranslate nohighlight">\(a\)</span> takes these values. We can <em>extend</em> <span class="math notranslate nohighlight">\(f\)</span> to be a continuous function at <span class="math notranslate nohighlight">\(a=5\)</span> by setting
 <span class="math notranslate nohighlight">\(f(5)=\frac{1}{20}\)</span>. On the other hand, at <span class="math notranslate nohighlight">\(a=-5\)</span> and at <span class="math notranslate nohighlight">\(a=3\)</span>, there is no value we could assign for <span class="math notranslate nohighlight">\(f(a)\)</span>
-that would extend <span class="math notranslate nohighlight">\(f\)</span> to a continuous function there.  We will return to all these issues of continuity in Chapter <a class="reference internal" href="#chap:cty"><span class="xref myst">chap:cty</span></a>.
+that would extend <span class="math notranslate nohighlight">\(f\)</span> to a continuous function there.  We will return to all these issues of continuity in Chapter <a class="reference internal" href="3Cty.html#chap-cty"><span class="std std-ref">chap:cty</span></a>.
 \end{sol}</p>
 <p>\begin{thm}  [Algebra of limits]
 Suppose that <span class="math notranslate nohighlight">\(f:A \rightarrow \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(g :B \rightarrow \mathbb{R}\)</span>, and <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span> is such that <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} f(x) = l\)</span> and <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} g(x) = m\)</span>, then</p>
@@ -675,16 +677,16 @@ Figure 2: Graph of \)</span>f(x) = \displaystyle\frac{1}{x}$</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "venv"
+            mode: "python"
         },
         kernelOptions: {
-            name: "venv",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'venv'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -704,6 +706,15 @@ Figure 2: Graph of \)</span>f(x) = \displaystyle\frac{1}{x}$</p>
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title"><span class="section-number">1. </span>Revision of MAS107</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="3Cty.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Continuity</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

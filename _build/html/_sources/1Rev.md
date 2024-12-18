@@ -36,7 +36,7 @@ A sequence $(x_n)$ is *Cauchy* if for all $\varepsilon>0$ there is an $N\in\math
 $$
 |x_n-x_m|<\varepsilon \hspace{2em} \text{ for all } m,n\geq N.
 $$
-
+````
 
 A sequence being convergent means its terms are getting "closer and closer" to its limit $l$. Being Cauchy says that the terms are getting "closer and closer" to one another. In fact, being convergent is strictly stronger than being Cauchy: if $A\subseteq\mathbb{R}$ and $(x_n)$ is a sequence in $A$, then
 
@@ -62,7 +62,7 @@ There are two important quantifiers used by mathematicians:
 Understanding mathematical statements involving quantifiers takes continual practice. A key advantage of studying analysis is there will be plenty of opportunity for this.
 
 ````{prf:example}
-:label: quant1 
+:label: quant1
 {prf:ref}`seqconv` can be expressed more succincly using quantifiers:
 $$
 x_n\rightarrow l \; \text{ iff } \;\forall\varepsilon>0\; \exists N\in\mathbb{N} \;\text{ s.t. }\forall n\geq N\; |x_n-l|<\varepsilon.
@@ -114,7 +114,6 @@ Inequalities are the primary tool of analysts. Here is a reminder of two importa
 ### The triangle inequality
 
 ```{prf:theorem}
-:class: note
 :label: tri
 For all real numbers $a$ and $b$,
 

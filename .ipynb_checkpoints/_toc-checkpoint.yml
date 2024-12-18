@@ -7,4 +7,5 @@ options:
   numbered: true
 chapters:
   - file: 1Rev
-  - file: 2Limits_of_functions
+  - file: 2LoF
+  - file: 3Cty
