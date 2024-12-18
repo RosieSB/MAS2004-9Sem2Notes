@@ -362,11 +362,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-on-the-real-line">2.1. Functions on the real line</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-function-examples">2.1.1. Standard function examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pointwise-operations-with-functions">2.1.2. Pointwise operations with functions</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-on-the-real-line">2.1. Functions on the real line</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-limit-of-a-function">2.2. The limit of a function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence">2.3. Divergence</a></li>
 </ul>
@@ -399,15 +395,15 @@
 X \setminus Y = X \cap Y^{c} = \{x \in X : x \notin Y\}.
 \]</div>
 <p>If we have some formula in <span class="math notranslate nohighlight">\(x\)</span> that we would like to use for the value <span class="math notranslate nohighlight">\(f(x)\)</span> of a function, it is often useful to think about the largest domain <span class="math notranslate nohighlight">\(f\)</span> could have, that is, the set of all  <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> for which <span class="math notranslate nohighlight">\(f(x)\)</span> makes sense as a real number. This will not include any <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> for which we might be tempted to write “<span class="math notranslate nohighlight">\(f(x) = 0/0\)</span>” or “<span class="math notranslate nohighlight">\(f(x) = \pm \infty\)</span>”.</p>
-<section id="standard-function-examples">
-<h3><span class="section-number">2.1.1. </span>Standard function examples<a class="headerlink" href="#standard-function-examples" title="Link to this heading">#</a></h3>
-<p>The following function examples will be returned to at various points throughout the module.</p>
 <div class="proof example admonition" id="poly">
 <p class="admonition-title"><span class="caption-number">Example 2.1 </span> (Polynomial functions)</p>
 <section class="example-content" id="proof-content">
-<p>A <em>polynomial</em> is a function <span class="math notranslate nohighlight">\(f:X\to\mathbb{R}\)</span>  of the form
-[f(x) = a_{0} + a_{1}x + \cdots + a_{n-1}x^{n-1} + a_{n}x^{n},]
-where the <em>coefficients</em> <span class="math notranslate nohighlight">\(a_{0}, a_{1}, \ldots, a_{n-1}, a_{n}\)</span> are in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, and the <em>degree</em> <span class="math notranslate nohighlight">\(n\)</span> is a natural number. Here, <span class="math notranslate nohighlight">\(X\)</span> can be any subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
+<p>A <em>polynomial</em> is a function <span class="math notranslate nohighlight">\(f:X\to\mathbb{R}\)</span>  of the form</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = a_{0} + a_{1}x + \cdots + a_{n-1}x^{n-1} + a_{n}x^{n},
+\]</div>
+<p>where the <em>coefficients</em> <span class="math notranslate nohighlight">\(a_{0}, a_{1}, \ldots, a_{n}\)</span> are in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, and the <em>degree</em> <span class="math notranslate nohighlight">\(n\)</span> is a natural number. Here, <span class="math notranslate nohighlight">\(X\)</span> can be any subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
 </section>
 </div><div class="proof example admonition" id="rational">
 <p class="admonition-title"><span class="caption-number">Example 2.2 </span> (Rational functions)</p>
@@ -415,8 +411,7 @@ where the <em>coefficients</em> <span class="math notranslate nohighlight">\(a_{
 <p>A <em>rational function</em> is a function <span class="math notranslate nohighlight">\(f:X\to\mathbb{R}\)</span>  of the form <span class="math notranslate nohighlight">\(f(x) = \frac{p(x)}{q(x)}\)</span>, where <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> are polynomials.  The largest subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> we can take as its domain <span class="math notranslate nohighlight">\(X\)</span> is <span class="math notranslate nohighlight">\(\{x \in \mathbb{R} : q(x) \neq 0\}\)</span>.</p>
 <p>For example, if  <span class="math notranslate nohighlight">\(f(x) = \displaystyle\frac{x^{2} + 5}{(x+1)(x-3)}\)</span>, the largest possible domain of <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\mathbb{R} \setminus \{-1, 3\}\)</span>.</p>
 </section>
-</div><p>Other important functions are the functions <span class="math notranslate nohighlight">\(f:\mathbb{R}\to\mathbb{R}\)</span>, given by <span class="math notranslate nohighlight">\(f(x) = e^{kx}, f(x) = \sin(kx)\)</span> and <span class="math notranslate nohighlight">\(f(x) = \cos(kx)\)</span>, where <span class="math notranslate nohighlight">\(k \in \mathbb{R}\)</span>.  In analysis, they are best defined as convergent power series — see later.</p>
-<div class="proof example admonition" id="sgn">
+</div><div class="proof example admonition" id="sgn">
 <p class="admonition-title"><span class="caption-number">Example 2.3 </span> (The sign function)</p>
 <section class="example-content" id="proof-content">
 <p>The <em>sign function</em> <span class="math notranslate nohighlight">\(\text{sgn}:\mathbb{R}\to \mathbb{R}\)</span> is defined by</p>
@@ -428,75 +423,112 @@ where the <em>coefficients</em> <span class="math notranslate nohighlight">\(a_{
 \end{split}\]</div>
 <p>The range of this function is <span class="math notranslate nohighlight">\(\{-1, 0, 1\}\)</span>.</p>
 </section>
-</div><div class="proof example admonition" id="indicator">
+</div><div class="proof example admonition" id="indicatorfn">
 <p class="admonition-title"><span class="caption-number">Example 2.4 </span> (Indicator functions)</p>
 <section class="example-content" id="proof-content">
-<p>The <em>indicator function</em> of the closed interval <span class="math notranslate nohighlight">\([a, b]\)</span> is the function <span class="math notranslate nohighlight">\({\bf 1}_{[a,b]}:\mathbb{R}\to\mathbb{R}\)</span> given by
-$<span class="math notranslate nohighlight">\(
+<p>The <em>indicator function</em> of the closed interval <span class="math notranslate nohighlight">\([a, b]\)</span> is the function <span class="math notranslate nohighlight">\({\bf 1}_{[a,b]}:\mathbb{R}\to\mathbb{R}\)</span> given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 {\bf 1}_{[a,b]}(x) = \left\{\begin{array}{c c} 1 &amp; ~\mbox{if}~x \in [a, b],\\ 0&amp; ~\mbox{if}~x \notin [a, b]. \end{array} \right.
-\)</span>$</p>
+\end{split}\]</div>
 <p>Similarly, we can define an indicator function of  an open interval, or an arbitrary subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. The indicator function of <span class="math notranslate nohighlight">\([0, \infty)\)</span> is called the <em>Heaviside function</em> by engineers.</p>
 </section>
-</div></section>
-<section id="pointwise-operations-with-functions">
-<h3><span class="section-number">2.1.2. </span>Pointwise operations with functions<a class="headerlink" href="#pointwise-operations-with-functions" title="Link to this heading">#</a></h3>
-<p>We can add functions, multiply them by scalars, multiply them together and divide them, but we need to be careful with domains. So for example, given two functions <span class="math notranslate nohighlight">\(f:X\to\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(g:Y\to\mathbb{R}\)</span>, the function <span class="math notranslate nohighlight">\(f+g\)</span> is defined by</p>
+</div><p>Other important functions are the functions <span class="math notranslate nohighlight">\(f:\mathbb{R}\to\mathbb{R}\)</span>, given by <span class="math notranslate nohighlight">\(f(x) = e^{kx}, f(x) = \sin(kx)\)</span> and <span class="math notranslate nohighlight">\(f(x) = \cos(kx)\)</span>, where <span class="math notranslate nohighlight">\(k \in \mathbb{R}\)</span>.  In analysis, they are best defined as convergent power series — see later.</p>
+<p><strong>Pointwise operations.</strong><br>
+Let <span class="math notranslate nohighlight">\(X,Y\subseteq\mathbb{R}\)</span>, and let <span class="math notranslate nohighlight">\(f:X\to\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(g:Y\to\mathbb{R}\)</span> be functions. Let <span class="math notranslate nohighlight">\(\alpha\in\mathbb{R}\)</span>. We define new functions, <span class="math notranslate nohighlight">\(f+g\)</span>, <span class="math notranslate nohighlight">\(\alpha f\)</span>, <span class="math notranslate nohighlight">\(fg\)</span> and <span class="math notranslate nohighlight">\(\frac{f}{g}\)</span> pointwise, but we need to be careful with domains.</p>
+<ul class="simple">
+<li><p><em>Pointwise sum.</em></p></li>
+</ul>
 <div class="math notranslate nohighlight">
 \[
-(f+g)(x) = f(x) + g(x) \hspace{2em} \text{ for all } x\in X\cap Y.
+f+g:X\cap Y\to \mathbb{R}; \; (f+g)(x) := f(x) + g(x),
 \]</div>
-<p>Note that the intersection <span class="math notranslate nohighlight">\(X\cap Y\)</span> is the largest subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> for which this definition makes sense, so is a natural choice for the domain of <span class="math notranslate nohighlight">\(f+g\)</span>.</p>
-<p>Similarly, for  <span class="math notranslate nohighlight">\(\alpha \in \mathbb{R}\)</span>, we have <span class="math notranslate nohighlight">\(\alpha f:X\to \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(fg: X\cap Y\to\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(\frac{f}{g}:(X\cap Y)\setminus \{x\in \mathbb{R} : g(x)=0\} \to\mathbb{R}\)</span>, where
-$$</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*} 
-	(\alpha f)(x) &amp;:= \alpha f(x),\\
-	(fg)(x) &amp;:= f(x)g(x),\\
-	\left(\frac{f}{g}\right)(x) &amp;:= \frac{f(x)}{g(x)}.
-	\end{align*}\]</div>
+<ul class="simple">
+<li><p><em>Pointwise scalar multiplication.</em></p></li>
+</ul>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}*Remark.*
-Let ${\cal F}(\mathbb{R})$ denote the set of all functions from $\mathbb{R}$ to $\mathbb{R}$. Then we can add and scalar multiply and it turns out that ${\cal F}(\mathbb{R})$ is a vector space over $\mathbb{R}$ (but it is not finite-dimensional). We can also multiply and all this structure gives what is called an *algebra* over $\mathbb{R}$. These structural properties are important in higher analysis.\\
-The *composition* $g \circ f$ of two functions $f$ and $g$ is defined only when the codomain of $f$ is the same as the domain of $g$. Note that we are using the usual convention that $g\circ f$ means &quot;$f$ first&quot;.\\So, if $f:X\to Y$ and $g:Y\to Z$, then we have the composition $g\circ f: X\to Z$, given by\end{aligned}\end{align} \]</div>
-<p>(g \circ f)(x) = g(f(x)).
-$$</p>
+\[
+\alpha f:X\to \mathbb{R}; \; (\alpha f)(x):=\alpha f(x),
+\]</div>
+<ul class="simple">
+<li><p><em>Pointwise multiplication.</em></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+fg: X\cap Y\to\mathbb{R}; \; (fg)(x):=f(x)g(x),
+\]</div>
+<ul class="simple">
+<li><p><em>Pointwise division.</em> Here, more care must be taken with domains:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\frac{f}{g}:\left\{x\in X\cap Y:g(x)\neq 0\right\} \to\mathbb{R}; \; \left(\frac{f}{g}\right)(x) := \frac{f(x)}{g(x)}.
+\]</div>
+<p><em>Remarks.</em></p>
+<ol class="arabic simple">
+<li><p>In each case, the domain is taken to be the largest subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> for which the pointwise operation is defined.</p></li>
+<li><p>Recall from Semester 1 the set <span class="math notranslate nohighlight">\({\cal F}(\mathbb{R})\)</span> of all functions from <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. The pointwise operations of addition and scalar multiplication turn <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> into a vector space over <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> (but it is not finite-dimensional). Pointwise multiplication gives <span class="math notranslate nohighlight">\(\mathcal{F}(\mathbb{R})\)</span> the additional structure of an <em>algebra</em> over <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. These structural properties are important in higher analysis (e.g. functional analysis).</p></li>
+</ol>
+<p><strong>Composition of functions.</strong> <br>
+The <em>composition</em> <span class="math notranslate nohighlight">\(g \circ f\)</span> of two functions <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> is defined only when the codomain of <span class="math notranslate nohighlight">\(f\)</span> is the same as the domain of <span class="math notranslate nohighlight">\(g\)</span>. Note that we are using the usual convention that <span class="math notranslate nohighlight">\(g\circ f\)</span> means “<span class="math notranslate nohighlight">\(f\)</span> first”.</p>
+<p>So, if <span class="math notranslate nohighlight">\(f:X\to Y\)</span> and <span class="math notranslate nohighlight">\(g:Y\to Z\)</span>, then we have the composition <span class="math notranslate nohighlight">\(g\circ f: X\to Z\)</span>, given by</p>
+<div class="math notranslate nohighlight">
+\[
+(g \circ f)(x) = g(f(x)).
+\]</div>
 <p>Of course, the order of composition matters: we typically do not have <span class="math notranslate nohighlight">\(f \circ g = g \circ f\)</span>, even at points where both are defined. For example, if <span class="math notranslate nohighlight">\(f:\mathbb{R}\to\mathbb{R}\)</span> is given by <span class="math notranslate nohighlight">\(f(x)=x+2\)</span> and <span class="math notranslate nohighlight">\(g:\mathbb{R}\to\mathbb{R}\)</span> is given by $ g(x)=3x$ then <span class="math notranslate nohighlight">\(g\circ f:\mathbb{R}\to\mathbb{R}\)</span> given by <span class="math notranslate nohighlight">\((g\circ f)(x)=3x+6\)</span>, whereas  <span class="math notranslate nohighlight">\(f\circ g:\mathbb{R}\to\mathbb{R}\)</span> given by <span class="math notranslate nohighlight">\((f\circ g)(x)=3x+2\)</span>.</p>
-</section>
 </section>
 <section id="the-limit-of-a-function">
 <h2><span class="section-number">2.2. </span>The limit of a function<a class="headerlink" href="#the-limit-of-a-function" title="Link to this heading">#</a></h2>
-<p>We want to make sense of the notion of <span class="math notranslate nohighlight">\(\lim_{x \rightarrow a}f(x)\)</span> for a function <span class="math notranslate nohighlight">\(f:X \rightarrow \mathbb{R}\)</span>, where <span class="math notranslate nohighlight">\(X\)</span> is a subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(a\)</span> is some real number (which may be an element of the domain <span class="math notranslate nohighlight">\(X\)</span>, but doesn’t have to be). You have already studied this in MAS106 and you should have good intuition for this situation. Here we will make the idea precise, using sequences.</p>
+<p>We want to make rigorous the notion of <span class="math notranslate nohighlight">\(\lim_{x \rightarrow a}f(x)\)</span>, for a function <span class="math notranslate nohighlight">\(f:X \rightarrow \mathbb{R}\)</span>, and a point <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span>. Note that <span class="math notranslate nohighlight">\(a\)</span> may not be an element of the domain <span class="math notranslate nohighlight">\(X\)</span>, here (though it can be). You have already studied this in MAS106 and you should have good intuition for this situation. Here we will make the idea precise, using sequences.</p>
 <p>First note that it only makes sense to consider the behaviour of <span class="math notranslate nohighlight">\(f(x)\)</span> as <span class="math notranslate nohighlight">\(x\rightarrow a\)</span> if there are points in the domain of <span class="math notranslate nohighlight">\(f\)</span> that get arbitrarily close to <span class="math notranslate nohighlight">\(a\)</span>.</p>
-<p><strong>Definition 1.2.1</strong>
-Let <span class="math notranslate nohighlight">\(X\subseteq\mathbb{R}\)</span>. A real number <span class="math notranslate nohighlight">\(a\)</span> is called a <em>limit point</em> of <span class="math notranslate nohighlight">\(X\)</span> if there is a sequence <span class="math notranslate nohighlight">\((x_n)\)</span> in <span class="math notranslate nohighlight">\(X\)</span> that converges to <span class="math notranslate nohighlight">\(a\)</span> and satisfies <span class="math notranslate nohighlight">\(x_n\neq a\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>.</p>
+<div class="proof definition admonition" id="limitpt">
+<p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Limit point)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(X\subseteq\mathbb{R}\)</span>. A real number <span class="math notranslate nohighlight">\(a\)</span> is called a <em>limit point</em> of <span class="math notranslate nohighlight">\(X\)</span> if there is a sequence <span class="math notranslate nohighlight">\((x_n)\)</span> in <span class="math notranslate nohighlight">\(X\)</span> that converges to <span class="math notranslate nohighlight">\(a\)</span> and satisfies <span class="math notranslate nohighlight">\(x_n\neq a\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>.</p>
 <p>Equivalently, <span class="math notranslate nohighlight">\(a\)</span> is a limit point of <span class="math notranslate nohighlight">\(X\)</span> if any open interval containing <span class="math notranslate nohighlight">\(a\)</span> has non-empty intersection with <span class="math notranslate nohighlight">\(X\)</span>.</p>
-<p><strong>Examples 1.2.2</strong>
-(i) Let <span class="math notranslate nohighlight">\(X=(0,2)\cup\{3\}\)</span>. Then <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(2\)</span> are limit points of <span class="math notranslate nohighlight">\(X\)</span>, but <span class="math notranslate nohighlight">\(3\)</span> is not.</p>
+</section>
+</div><div class="proof example admonition" id="example-5">
+<p class="admonition-title"><span class="caption-number">Example 2.5 </span></p>
+<section class="example-content" id="proof-content">
+<p>(i) Let <span class="math notranslate nohighlight">\(X=(0,2)\cup\{3\}\)</span>. Then <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(2\)</span> are limit points of <span class="math notranslate nohighlight">\(X\)</span>, but <span class="math notranslate nohighlight">\(3\)</span> is not.</p>
 <p>(ii) A real number <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span> is a limit point of <span class="math notranslate nohighlight">\([0,1]\)</span> if and only if <span class="math notranslate nohighlight">\(a\in[0,1]\)</span>.</p>
 <p>(iii) More generally, given <span class="math notranslate nohighlight">\(a&lt;b\)</span>, then <span class="math notranslate nohighlight">\([a,b]\)</span> is the set of all limit points for any of the intervals <span class="math notranslate nohighlight">\((a,b)\)</span>, <span class="math notranslate nohighlight">\((a,b]\)</span>, <span class="math notranslate nohighlight">\([a,b)\)</span> and <span class="math notranslate nohighlight">\([a,b]\)</span>.</p>
-<p><strong>Definition 1.2.3</strong>
-Let <span class="math notranslate nohighlight">\(f:X\to\mathbb{R}\)</span> be a function, let <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span> be a limit point of <span class="math notranslate nohighlight">\(X\)</span>, and let <span class="math notranslate nohighlight">\(l\in\mathbb{R}\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="functionlimit">
+<p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (Functional limit)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f:X\to\mathbb{R}\)</span> be a function, let <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span> be a limit point of <span class="math notranslate nohighlight">\(X\)</span>, and let <span class="math notranslate nohighlight">\(l\in\mathbb{R}\)</span>.</p>
 <p>We say that <span class="math notranslate nohighlight">\(f\)</span> <em>converges</em> to <span class="math notranslate nohighlight">\(l\)</span> as <span class="math notranslate nohighlight">\(x\rightarrow a\)</span>, and write</p>
 <div class="math notranslate nohighlight">
 \[
 \lim_{x \rightarrow a}f(x) =l,
 \]</div>
 <p>if, for every sequence <span class="math notranslate nohighlight">\((x_n)\)</span> in <span class="math notranslate nohighlight">\(X\setminus\{a\}\)</span> that converges to <span class="math notranslate nohighlight">\(a\)</span>, we have <span class="math notranslate nohighlight">\(\displaystyle\lim_{n\rightarrow\infty}f(x_n)=l\)</span>.</p>
-<p><strong>Notes.</strong></p>
+</section>
+</div><p><strong>Notes.</strong></p>
 <ol class="arabic simple">
 <li><p>We require that <span class="math notranslate nohighlight">\(a\)</span> be a limit point of <span class="math notranslate nohighlight">\(X\)</span> so that it to make sense to consider what happens to the values of the function as we approach <span class="math notranslate nohighlight">\(a\)</span>.</p></li>
 <li><p>We must have convergence of <span class="math notranslate nohighlight">\((f(x_n))\)</span> to <span class="math notranslate nohighlight">\(l\)</span> for <em>every</em> such sequence <span class="math notranslate nohighlight">\((x_{n})\)</span>.</p></li>
 <li><p>The real number <span class="math notranslate nohighlight">\(a\)</span> may or may not be in the domain <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
 </ol>
-<p><strong>Example 1.2.4</strong>
-Consider <span class="math notranslate nohighlight">\(f:\mathbb{R} \setminus \{-5, 3, 5\}\to \mathbb{R}\)</span>, given by
-[f(x) = \frac{x - 5}{(x^{2} - 25)(x - 3)}.]
-Investigate <span class="math notranslate nohighlight">\(\lim_{x \rightarrow a}f(x)\)</span> for each <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span>. (You will need to think about points in the domain and each of the three special points <span class="math notranslate nohighlight">\(-5, 3, 5\)</span> separately.)</p>
+<div class="proof example admonition" id="example-7">
+<p class="admonition-title"><span class="caption-number">Example 2.6 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider <span class="math notranslate nohighlight">\(f:\mathbb{R} \setminus \{-5, 3, 5\}\to \mathbb{R}\)</span>, given by</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \frac{x - 5}{(x^{2} - 25)(x - 3)}.
+\]</div>
+<p>Investigate <span class="math notranslate nohighlight">\(\lim_{x \rightarrow a}f(x)\)</span> for each <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span>. (You will need to think about points in the domain and each of the three special points <span class="math notranslate nohighlight">\(-5, 3, 5\)</span> separately.)</p>
 <p><em>Solution.</em>
 It’s helpful (but not necessary as part of the formal solution) to draw the graph of the function.</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="../figs/(x-5),((x2-25)(x-3)).png"><img alt="Graph of $f(x) = \frac{x - 5}{(x^{2} - 25)(x - 3)}$." class="bg-primary mb-1 align-center" src="../figs/(x-5),((x2-25)(x-3)).png" style="width: 200px;" /></a>
-<p><img alt="" src="_images/%28x-5%29%2C%28%28x2-25%29%28x-3%29%29.png" />
-Figure 1: Graph of <span class="math notranslate nohighlight">\(f(x) = \displaystyle\frac{x - 5}{(x^{2} - 25)(x - 3)}\)</span></p>
+<figure class="align-default" id="x-5-x2-25-x-3">
+<a class="reference internal image-reference" href="_images/(x-5),((x2-25)(x-3)).png"><img alt="_images/%28x-5%29%2C%28%28x2-25%29%28x-3%29%29.png" src="_images/%28x-5%29%2C%28%28x2-25%29%28x-3%29%29.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Graph of <span class="math notranslate nohighlight">\(f(x) = \displaystyle\frac{x - 5}{(x^{2} - 25)(x - 3)}\)</span>.</span><a class="headerlink" href="#x-5-x2-25-x-3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Let’s write <span class="math notranslate nohighlight">\(X=\mathbb{R}\setminus\{-5, 3, 5\}\)</span>, the domain of <span class="math notranslate nohighlight">\(f\)</span>. Note that every real number is a limit point of <span class="math notranslate nohighlight">\(X\)</span>. However, the most interesting limit points to consider are those that lie outside of <span class="math notranslate nohighlight">\(X\)</span>. This is because it is fairly easy to calculate limits at points in <span class="math notranslate nohighlight">\(X\)</span>. For example,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -508,44 +540,46 @@ Figure 1: Graph of <span class="math notranslate nohighlight">\(f(x) = \displays
 \[
 \lim_{x\rightarrow a} f(x) = f(a).
 \]</div>
-<p>This tells us that the function <span class="math notranslate nohighlight">\(f\)</span> is <em>continuous</em> at these points. We will discuss the concept of continuity in more detail in Chapter <a class="reference internal" href="3Cty.html#chap-cty"><span class="std std-ref">Continuity</span></a>.</p>
-<p>The more interesting problem is to find out what happens at points that are not in <span class="math notranslate nohighlight">\(X\)</span>. Observe that</p>
+<p>This tells us that the function <span class="math notranslate nohighlight">\(f\)</span> is <em>continuous</em> at these points. We will discuss the concept of continuity in more detail in <a class="reference internal" href="3Cty.html#chap-cty"><span class="std std-ref">Chapter 3</span></a>.</p>
+<p>The more interesting problem is to find out what happens at points that are <em>not</em> in <span class="math notranslate nohighlight">\(X\)</span>. Observe that</p>
 <div class="math notranslate nohighlight">
 \[
 f(x) = \frac{1}{(x+5)(x-3)}, \qquad \text{for all $x \in X$.}
 \]</div>
-<ul class="simple">
-<li><p>To investigate the point <span class="math notranslate nohighlight">\(x = 5\)</span>:<br>
-Choose an arbitrary sequence <span class="math notranslate nohighlight">\((x_{n})\)</span> with <span class="math notranslate nohighlight">\(x_{n} \in X\)</span> satisfying <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}x_{n} = 5\)</span>. Note that such sequences certainly exist, for example
-$<span class="math notranslate nohighlight">\(
+<p><strong>To investigate the point <span class="math notranslate nohighlight">\(x = 5\)</span>:</strong><br>
+Choose an arbitrary sequence <span class="math notranslate nohighlight">\((x_{n})\)</span> with <span class="math notranslate nohighlight">\(x_{n} \in X\)</span> satisfying <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}x_{n} = 5\)</span>. Note that such sequences certainly exist, for example</p>
+<div class="math notranslate nohighlight">
+\[
 (x_{n} = 5 + \frac{1}{n}), (x_n=5 + 7/n^{2}), (x_n=5 - 108/n^{4})...).
-\)</span><span class="math notranslate nohighlight">\(
-Then \)</span>f(x_{n}) = \displaystyle\frac{1}{(x_{n}+5)(x_{n}-3)}<span class="math notranslate nohighlight">\( and \)</span>\displaystyle\lim_{n \rightarrow \infty}f(x_{n}) = \displaystyle\frac{1}{10.2} = \displaystyle\frac{1}{20}<span class="math notranslate nohighlight">\(, by the algebra of limits. So we conclude that
-\)</span><span class="math notranslate nohighlight">\(
-\lim_{x \rightarrow 5}f(x) = \frac{1}{20}.
-\)</span><span class="math notranslate nohighlight">\(
-Thus the limit exists at the point \)</span>x = 5<span class="math notranslate nohighlight">\(, even though \)</span>5<span class="math notranslate nohighlight">\( is not in the domain of \)</span>f$.</p></li>
-<li><p>To investigate the point <span class="math notranslate nohighlight">\(x = -5\)</span>:<br>
-In this case, numerical experiments or considering the graph of the function may lead you to doubt that a limit exists. So consider the sequence <span class="math notranslate nohighlight">\((y_{n})\)</span>, where <span class="math notranslate nohighlight">\(y_{n} = -5 + \frac{1}{n}\)</span>, for each <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>. Then <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}y_{n} = -5\)</span>, and we find that
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>Then <span class="math notranslate nohighlight">\(f(x_{n}) = \displaystyle\frac{1}{(x_{n}+5)(x_{n}-3)}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle\lim_{n \rightarrow \infty}f(x_{n}) = \displaystyle\frac{1}{10.2} = \displaystyle\frac{1}{20}\)</span>, by the algebra of limits. So we conclude that</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{x \rightarrow 5}f(x) = \frac{1}{20}.\]</div>
+<p>Thus the limit exists at the point <span class="math notranslate nohighlight">\(x = 5\)</span>, even though <span class="math notranslate nohighlight">\(5\)</span> is not in the domain of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p><strong>To investigate the point <span class="math notranslate nohighlight">\(x = -5\)</span>:</strong><br>
+In this case, numerical experiments or considering the graph of the function may lead you to doubt that a limit exists. So consider the sequence <span class="math notranslate nohighlight">\((y_{n})\)</span>, where <span class="math notranslate nohighlight">\(y_{n} = -5 + \frac{1}{n}\)</span>, for each <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>. Then <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}y_{n} = -5\)</span>, and we find that</p>
+<div class="math notranslate nohighlight">
+\[
 f(y_{n}) = \frac{1}{\frac{1}{n}\left(\frac{1}{n} - 8\right)} = \frac{n}{\frac{1}{n} - 8},
-\)</span><span class="math notranslate nohighlight">\(
-and so \)</span>(f(y_{n}))<span class="math notranslate nohighlight">\( diverges to \)</span>-\infty<span class="math notranslate nohighlight">\(. So we've found a sequence \)</span>(y_{n})<span class="math notranslate nohighlight">\( such that (i) and (ii) of the definition are satisfied, but \)</span>(f(y_{n}))<span class="math notranslate nohighlight">\( diverges. Hence we conclude that \)</span>f<span class="math notranslate nohighlight">\( has no limit at \)</span>x = -5$.</p></li>
-<li><p>To investigate the point <span class="math notranslate nohighlight">\(x = 3\)</span>: <br>
-This is left as  an exercise. Again, <span class="math notranslate nohighlight">\(f\)</span> has no limit at <span class="math notranslate nohighlight">\(x = 3\)</span>.</p></li>
-</ul>
+\]</div>
+<p>and so <span class="math notranslate nohighlight">\((f(y_{n}))\)</span> diverges to <span class="math notranslate nohighlight">\(-\infty\)</span>. So we’ve found a sequence <span class="math notranslate nohighlight">\((y_{n})\)</span> such that (i) and (ii) of the definition are satisfied, but <span class="math notranslate nohighlight">\((f(y_{n}))\)</span> diverges. Hence we conclude that <span class="math notranslate nohighlight">\(f\)</span> has no limit at <span class="math notranslate nohighlight">\(x = -5\)</span>.</p>
+<p><strong>To investigate the point <span class="math notranslate nohighlight">\(x = 3\)</span>:</strong> <br>
+This is left as  an exercise. Again, <span class="math notranslate nohighlight">\(f\)</span> has no limit at <span class="math notranslate nohighlight">\(x = 3\)</span>.</p>
 <p>We note here that the function <span class="math notranslate nohighlight">\(f\)</span> is not continuous at the points <span class="math notranslate nohighlight">\(a = -5, 3\)</span> or <span class="math notranslate nohighlight">\(5\)</span>; indeed <span class="math notranslate nohighlight">\(f(a)\)</span> is not defined when <span class="math notranslate nohighlight">\(a\)</span> takes these values. We can <em>extend</em> <span class="math notranslate nohighlight">\(f\)</span> to be a continuous function at <span class="math notranslate nohighlight">\(a=5\)</span> by setting
 <span class="math notranslate nohighlight">\(f(5)=\frac{1}{20}\)</span>. On the other hand, at <span class="math notranslate nohighlight">\(a=-5\)</span> and at <span class="math notranslate nohighlight">\(a=3\)</span>, there is no value we could assign for <span class="math notranslate nohighlight">\(f(a)\)</span>
-that would extend <span class="math notranslate nohighlight">\(f\)</span> to a continuous function there.  We will return to all these issues of continuity in Chapter <a class="reference internal" href="3Cty.html#chap-cty"><span class="std std-ref">chap:cty</span></a>.
-\end{sol}</p>
-<p>\begin{thm}  [Algebra of limits]
-Suppose that <span class="math notranslate nohighlight">\(f:A \rightarrow \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(g :B \rightarrow \mathbb{R}\)</span>, and <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span> is such that <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} f(x) = l\)</span> and <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} g(x) = m\)</span>, then</p>
-<p>[(i)]1. <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\rightarrow a} (f + g)(x) = l + m\)</span>,
-2. <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\rightarrow a} (fg)(x) = lm\)</span>,
-3. <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\rightarrow a} (\alpha f)(x) = \alpha l\)</span>, for all <span class="math notranslate nohighlight">\(\alpha \in \mathbb{R}\)</span>,
-4. <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\rightarrow a} \left(\displaystyle\frac{f}{g}\right)(x) = \displaystyle\frac{l}{m}\)</span>, if <span class="math notranslate nohighlight">\(m \neq 0\)</span>.</p>
-<p>\end{thm}</p>
-<p><em>Proof.</em> These all follow from the algebra of limits for sequences. For example, for (i), if <span class="math notranslate nohighlight">\((x_{n})\)</span> is an arbitrary sequence in <span class="math notranslate nohighlight">\(A\cap B\)</span> with <span class="math notranslate nohighlight">\(x_n\neq a\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span> such that <span class="math notranslate nohighlight">\((x_n)\)</span> that converges to <span class="math notranslate nohighlight">\(a\)</span>, then</p>
+that would extend <span class="math notranslate nohighlight">\(f\)</span> to a continuous function there.  We will return to all these issues of continuity in <a class="reference internal" href="3Cty.html#chap-cty"><span class="std std-ref">Chapter 3</span></a>.</p>
+</section>
+</div><div class="proof theorem admonition" id="theorem-8">
+<p class="admonition-title"><span class="caption-number">Theorem 2.1 </span> (Algebra of limits)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(f:A \rightarrow \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(g :B \rightarrow \mathbb{R}\)</span>, and <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span> is such that <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} f(x) = l\)</span> and <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} g(x) = m\)</span>, then</p>
+<p>(i) <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\rightarrow a} (f + g)(x) = l + m\)</span>,</p>
+<p>(ii) <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\rightarrow a} (fg)(x) = lm\)</span>,</p>
+<p>(iii) <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\rightarrow a} (\alpha f)(x) = \alpha l\)</span>, for all <span class="math notranslate nohighlight">\(\alpha \in \mathbb{R}\)</span>,</p>
+<p>(iv) <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\rightarrow a} \left(\displaystyle\frac{f}{g}\right)(x) = \displaystyle\frac{l}{m}\)</span>, if <span class="math notranslate nohighlight">\(m \neq 0\)</span>.</p>
+</section>
+</div><p><em>Proof.</em> These all follow from the algebra of limits for sequences. For example, for (i), if <span class="math notranslate nohighlight">\((x_{n})\)</span> is an arbitrary sequence in <span class="math notranslate nohighlight">\(A\cap B\)</span> with <span class="math notranslate nohighlight">\(x_n\neq a\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span> such that <span class="math notranslate nohighlight">\((x_n)\)</span> that converges to <span class="math notranslate nohighlight">\(a\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*} 
@@ -557,62 +591,61 @@ Suppose that <span class="math notranslate nohighlight">\(f:A \rightarrow \mathb
 <p>as required.
 Here the first line uses the definition of a sum of functions and the second line uses algebra of limits (for real sequences). <span class="math notranslate nohighlight">\(\square\)</span></p>
 <p>From a geometric perspective, the idea of a limit is that as <span class="math notranslate nohighlight">\(x\)</span> gets closer and closer to <span class="math notranslate nohighlight">\(a\)</span>, so <span class="math notranslate nohighlight">\(f(x)\)</span> should get closer and closer to <span class="math notranslate nohighlight">\(l\)</span>. More insight to this is given by the following theorem, which establishes the important <span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion for existence of limits.</p>
-<p>\begin{thm} Let  <span class="math notranslate nohighlight">\(f:X \rightarrow \mathbb{R}\)</span>, let <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span> be a limit point of <span class="math notranslate nohighlight">\(X\)</span>, and let <span class="math notranslate nohighlight">\(l\in\mathbb{R}\)</span>. The following are equivalent:</p>
-<p>[(i)]1. <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} f(x) = l\)</span>.
-2. the  <span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion:
-$<span class="math notranslate nohighlight">\(
-\begin{quote}
-Given any \)</span>\varepsilon&gt;0<span class="math notranslate nohighlight">\( there exists \)</span>\delta &gt; 0<span class="math notranslate nohighlight">\( such that whenever \)</span>x \in X<span class="math notranslate nohighlight">\( with \)</span>0 &lt; |x - a| &lt; \delta<span class="math notranslate nohighlight">\(, then \)</span>|f(x) - l| &lt; \varepsilon<span class="math notranslate nohighlight">\(.
-\end{quote}
-\)</span>$</p>
-<p>\end{thm}</p>
-<p>\begin{rmk}
-The <span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion is also frequently expressed in terms of quantifiers:</p>
-<p><span class="math notranslate nohighlight">\(\forall\varepsilon&gt;0\)</span>, <span class="math notranslate nohighlight">\(\exists\delta&gt;0\)</span> s.t.~<span class="math notranslate nohighlight">\(\forall x\in X\)</span>, <span class="math notranslate nohighlight">\(0&lt;|x-a|&lt;\delta \; \mathbb{R}ightarrow \;|f(x)-l|&lt;\varepsilon\)</span>.</p>
-<p>Take some time to compare these two statements and check they are saying the same thing.
-\end{rmk}</p>
-<p><em>Proof.</em> [Proof of Theorem <a class="reference internal" href="#ed"><span class="xref myst">2</span></a>]
-First assume that the <span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion holds and suppose <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span>. So there exists <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> such that for all <span class="math notranslate nohighlight">\(x \in X\)</span>,</p>
+<div class="proof theorem admonition" id="ed">
+<p class="admonition-title"><span class="caption-number">Theorem 2.2 </span> (<span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion)</p>
+<section class="theorem-content" id="proof-content">
+<p>Let  <span class="math notranslate nohighlight">\(f:X \rightarrow \mathbb{R}\)</span>, let <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span> be a limit point of <span class="math notranslate nohighlight">\(X\)</span>, and let <span class="math notranslate nohighlight">\(l\in\mathbb{R}\)</span>. The following are equivalent:</p>
+<p>(i) <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} f(x) = l\)</span>.</p>
+<p>(ii) Given any <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span> there exists <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> such that whenever <span class="math notranslate nohighlight">\(x \in X\)</span> with <span class="math notranslate nohighlight">\(0 &lt; |x - a| &lt; \delta\)</span>, then <span class="math notranslate nohighlight">\(|f(x) - l| &lt; \varepsilon\)</span>.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-10">
+<p class="admonition-title"><span class="caption-number">Remark 2.1 </span></p>
+<section class="remark-content" id="proof-content">
+<p>The <span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion is also frequently expressed in terms of quantifiers:</p>
+<p><span class="math notranslate nohighlight">\(\forall\varepsilon&gt;0\)</span>, <span class="math notranslate nohighlight">\(\exists\delta&gt;0\)</span> s.t.~<span class="math notranslate nohighlight">\(\forall x\in X\)</span>, <span class="math notranslate nohighlight">\(0&lt;|x-a|&lt;\delta \; \Rightarrow \;|f(x)-l|&lt;\varepsilon\)</span>.</p>
+<p>Take some time to compare these two statements and check they are saying the same thing.</p>
+</section>
+</div><p><strong>Proof of <a class="reference internal" href="#ed">Theorem 2.2</a>.</strong> First assume that the <span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion holds and suppose <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span>. So there exists <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> such that for all <span class="math notranslate nohighlight">\(x \in X\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
-0&lt;|x - a| &lt; \delta, \text{ implies } |f(x) - l| &lt; \varepsilon.
+0&lt;|x - a| &lt; \delta \Rightarrow |f(x) - l| &lt; \varepsilon.
 \]</div>
-<p>Let <span class="math notranslate nohighlight">\((x_{n})\)</span> be an arbitrary sequence in <span class="math notranslate nohighlight">\(X\setminus\{a\}\)</span> with limit <span class="math notranslate nohighlight">\(a\)</span>. Then since <span class="math notranslate nohighlight">\(x_n\rightarrow a\)</span>, there exists <span class="math notranslate nohighlight">\(N\in\mathbb{N}\)</span>, such that  <span class="math notranslate nohighlight">\(0&lt;|x_{n} - a| &lt; \delta\)</span> for all <span class="math notranslate nohighlight">\(n\geq N\)</span>. But then, for all <span class="math notranslate nohighlight">\(n \geq N\)</span>, we have <span class="math notranslate nohighlight">\(|f(x_{n}) - l| &lt; \varepsilon\)</span>, and so <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} f(x) = l\)</span>, as was required. We have established that <span class="math notranslate nohighlight">\((i)\mathbb{R}ightarrow(ii)\)</span>.</p>
-<p>Now we must establish the converse, namely if <span class="math notranslate nohighlight">\(f\)</span> has limit <span class="math notranslate nohighlight">\(l\)</span> at <span class="math notranslate nohighlight">\(a\)</span>, then the <span class="math notranslate nohighlight">\(\varepsilon-\delta\)</span> criterion follows. In fact, we seek a proof by contrapositive^[That is,  we use the fact that if <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> are propositions, then <span class="math notranslate nohighlight">\(P \mathbb{R}ightarrow Q\)</span> if and only if <span class="math notranslate nohighlight">\(\neg Q \mathbb{R}ightarrow \neg P\)</span>.], so we will assume that the <span class="math notranslate nohighlight">\(\varepsilon-\delta\)</span> criterion fails, and then show that <span class="math notranslate nohighlight">\(f\)</span> cannot have  limit <span class="math notranslate nohighlight">\(l\)</span> at <span class="math notranslate nohighlight">\(a\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\((x_{n})\)</span> be an arbitrary sequence in <span class="math notranslate nohighlight">\(X\setminus\{a\}\)</span> with limit <span class="math notranslate nohighlight">\(a\)</span>. Then since <span class="math notranslate nohighlight">\(x_n\rightarrow a\)</span>, there exists <span class="math notranslate nohighlight">\(N\in\mathbb{N}\)</span>, such that  <span class="math notranslate nohighlight">\(0&lt;|x_{n} - a| &lt; \delta\)</span> for all <span class="math notranslate nohighlight">\(n\geq N\)</span>. But then, for all <span class="math notranslate nohighlight">\(n \geq N\)</span>, we have <span class="math notranslate nohighlight">\(|f(x_{n}) - l| &lt; \varepsilon\)</span>, and so <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} f(x) = l\)</span>, as was required. We have established that <span class="math notranslate nohighlight">\((i)\Rightarrow(ii)\)</span>.</p>
+<p>Now we must establish the converse, namely if <span class="math notranslate nohighlight">\(f\)</span> has limit <span class="math notranslate nohighlight">\(l\)</span> at <span class="math notranslate nohighlight">\(a\)</span>, then the <span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion follows. In fact, we seek a proof by contrapositive<a class="footnote-reference brackets" href="#contrapositive" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> , so we will assume that the <span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion fails, and then show that <span class="math notranslate nohighlight">\(f\)</span> cannot have  limit <span class="math notranslate nohighlight">\(l\)</span> at <span class="math notranslate nohighlight">\(a\)</span>.</p>
 <p>If the <span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion fails, then there exists <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span> such that for all <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span>, there exists <span class="math notranslate nohighlight">\(x \in X\)</span> with <span class="math notranslate nohighlight">\(0 &lt; |x - a| &lt; \delta\)</span>, but <span class="math notranslate nohighlight">\(|f(x) - l| \geq \varepsilon\)</span>.</p>
 <p>Now for this <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, choose successively <span class="math notranslate nohighlight">\(\delta = 1, \frac{1}{2}, \frac{1}{3}, \ldots\)</span> and construct a sequence <span class="math notranslate nohighlight">\((x_{n})\)</span> as follows:</p>
-<p><span class="math notranslate nohighlight">\(x_{1} \in X\)</span> satisfies <span class="math notranslate nohighlight">\(0&lt;|x_{1} - a| &lt; 1\)</span> and <span class="math notranslate nohighlight">\(|f(x_{1}) - l| \geq \varepsilon\)</span>.
-<span class="math notranslate nohighlight">\(x_{2} \in X\)</span> satisfies <span class="math notranslate nohighlight">\(0&lt;|x_{2} - a| &lt; \frac{1}{2}\)</span> and <span class="math notranslate nohighlight">\(|f(x_{2}) - l| \geq \varepsilon\)</span>.
-<span class="math notranslate nohighlight">\(\vdots\)</span>
-<span class="math notranslate nohighlight">\(x_{n} \in X\)</span> satisfies <span class="math notranslate nohighlight">\(0&lt;|x_{n} - a| &lt; \frac{1}{n}\)</span> and <span class="math notranslate nohighlight">\(|f(x_{n}) - l| \geq \varepsilon\)</span>.</p>
-<p>Then <span class="math notranslate nohighlight">\((x_n)\)</span> is a sequence in <span class="math notranslate nohighlight">\(X\setminus\{a\}\)</span> and by the sandwich rule, we have <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty} x_{n} = a\)</span>. Also, by the above construction the sequence <span class="math notranslate nohighlight">\((f(x_{n}))\)</span> does not converge to <span class="math notranslate nohighlight">\(l\)</span>.</p>
-<p>So we have shown that if the <span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion fails, then the function <span class="math notranslate nohighlight">\(f\)</span> does not have limit <span class="math notranslate nohighlight">\(l\)</span> at <span class="math notranslate nohighlight">\(a\)</span>. It follows that <span class="math notranslate nohighlight">\((ii)\mathbb{R}ightarrow(i)\)</span>. <span class="math notranslate nohighlight">\(\square\)</span></p>
 <div class="math notranslate nohighlight">
-\[
-\begin{thm} [Sandwich rule for functions]
-Suppose that $f:A\to\mathbb{R}$,  $g:B\to\mathbb{R}$ and $h :C\to \mathbb{R}$ and suppose that there exists an interval $(a, b) \subseteq A\cap B\cap C$ such that for all $x \in (a, b)$
-	\begin{equation}\label{eq:sw1}
-	f(x) \leq g(x) \leq h(x).
-	\end{equation}
-If for some $c \in (a, b)$ and $l\in\mathbb{R}$ we have
-	\begin{equation}\label{eq:sw2}
-	\lim_{x \rightarrow c}f(x) = \lim_{x \rightarrow c}h(x) = l,
-	\end{equation}
-then $\displaystyle\lim_{x \rightarrow c}g(x)$ exists and is equal to $l$.
-\end{thm}
-\]</div>
-<p><em>Proof.</em> Let <span class="math notranslate nohighlight">\((x_{n})\)</span> be an arbitrary sequence that converges to <span class="math notranslate nohighlight">\(c\)</span>.
+\[\begin{split}
+x_{1} \in X \text{ satisfies } 0&lt;|x_{1} - a| &lt; 1 \text{ and }|f(x_{1}) - l| \geq \varepsilon. \\
+x_{2} \in X\text{ satisfies } 0&lt;|x_{2} - a| &lt; \frac{1}{2}\text{ and }|f(x_{2}) - l| \geq \varepsilon.
+\vdots
+x_{n} \in X\text{ satisfies }0&lt;|x_{n} - a| &lt; \frac{1}{n}\text{ and }|f(x_{n}) - l| \geq \varepsilon.
+\end{split}\]</div>
+<p>Then <span class="math notranslate nohighlight">\((x_n)\)</span> is a sequence in <span class="math notranslate nohighlight">\(X\setminus\{a\}\)</span> and by the sandwich rule, we have <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty} x_{n} = a\)</span>. Also, by the above construction the sequence <span class="math notranslate nohighlight">\((f(x_{n}))\)</span> does not converge to <span class="math notranslate nohighlight">\(l\)</span>.</p>
+<p>So we have shown that if the <span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion fails, then the function <span class="math notranslate nohighlight">\(f\)</span> does not have limit <span class="math notranslate nohighlight">\(l\)</span> at <span class="math notranslate nohighlight">\(a\)</span>. It follows that <span class="math notranslate nohighlight">\((ii)\Rightarrow(i)\)</span>. <span class="math notranslate nohighlight">\(\square\)</span></p>
+<div class="proof theorem admonition" id="theorem-11">
+<p class="admonition-title"><span class="caption-number">Theorem 2.3 </span> (Sandwich rule for functions)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(f:X\to\mathbb{R}\)</span>,  <span class="math notranslate nohighlight">\(g:Y\to\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(h :Z\to \mathbb{R}\)</span> and suppose that there exists an interval <span class="math notranslate nohighlight">\((a, b) \subseteq X\cap Y\cap Z\)</span> such that for all <span class="math notranslate nohighlight">\(x \in (a, b)\)</span></p>
+<div class="math notranslate nohighlight" id="equation-sw1">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-sw1" title="Link to this equation">#</a></span>\[f(x) \leq g(x) \leq h(x).\]</div>
+<p>If for some <span class="math notranslate nohighlight">\(c \in (a, b)\)</span> and <span class="math notranslate nohighlight">\(l\in\mathbb{R}\)</span> we have</p>
+<div class="math notranslate nohighlight" id="equation-sw2">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-sw2" title="Link to this equation">#</a></span>\[	\lim_{x \rightarrow c}f(x) = \lim_{x \rightarrow c}h(x) = l,\]</div>
+<p>then <span class="math notranslate nohighlight">\(\displaystyle\lim_{x \rightarrow c}g(x)\)</span> exists and is equal to <span class="math notranslate nohighlight">\(l\)</span>.</p>
+</section>
+</div><p><em>Proof.</em> Let <span class="math notranslate nohighlight">\((x_{n})\)</span> be an arbitrary sequence that converges to <span class="math notranslate nohighlight">\(c\)</span>.
 Note that by taking <span class="math notranslate nohighlight">\(N \in \mathbb{N}\)</span> sufficiently large, we can ensure that <span class="math notranslate nohighlight">\(x_{n} \in (a, b)\)</span> for all <span class="math notranslate nohighlight">\(n\geq N\)</span>. Define sequences <span class="math notranslate nohighlight">\((a_n)\)</span>, <span class="math notranslate nohighlight">\((b_n)\)</span> and <span class="math notranslate nohighlight">\((c_n)\)</span> by</p>
 <div class="math notranslate nohighlight">
 \[
 a_{n} = f(x_{n + N}), \hspace{1em} b_{n} = g(x_{n + N}), \hspace{1em} \text{and} c_{n} = h(x_{n + N}),
 \]</div>
-<p>for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>. By (<a class="reference internal" href="#eq:sw1"><span class="xref myst">eq:sw1</span></a>), for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>,</p>
+<p>for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>. By <a class="reference internal" href="#equation-sw1">(2.1)</a>, for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
 a_n \leq b_n \leq c_n, \hspace{2em}
 \]</div>
-<p>and by  (<a class="reference internal" href="#eq:sw2"><span class="xref myst">eq:sw2</span></a>), <span class="math notranslate nohighlight">\(\displaystyle\lim_{n\rightarrow\infty}a_n = \lim_{n\rightarrow\infty}c_n = l\)</span>. Hence by the sandwich rule for sequences,</p>
+<p>and by  <a class="reference internal" href="#equation-sw2">(2.2)</a>, <span class="math notranslate nohighlight">\(\displaystyle\lim_{n\rightarrow\infty}a_n = \lim_{n\rightarrow\infty}c_n = l\)</span>. Hence by the sandwich rule for sequences,</p>
 <div class="math notranslate nohighlight">
 \[
 \lim_{n\rightarrow \infty}c_n = \lim_{n\rightarrow \infty} g(x_n)= l,
@@ -621,50 +654,62 @@ a_n \leq b_n \leq c_n, \hspace{2em}
 </section>
 <section id="divergence">
 <h2><span class="section-number">2.3. </span>Divergence<a class="headerlink" href="#divergence" title="Link to this heading">#</a></h2>
-<p>In the same setting as Definition~<a class="reference internal" href="#def:functionlimit"><span class="xref myst">2</span></a>, we say that a function <span class="math notranslate nohighlight">\(f:X \rightarrow \mathbb{R}\)</span> <em>diverges</em> at <span class="math notranslate nohighlight">\(x=a\)</span> if <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} f(x)\)</span> does not exist. There are some interesting types of behaviour involved here. For example, we say that the function <span class="math notranslate nohighlight">\(f\)</span> <em>diverges to infinity</em> at <span class="math notranslate nohighlight">\(x = a\)</span> and we write <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} f(x) = \infty\)</span> if for every sequence <span class="math notranslate nohighlight">\((x_{n})\)</span>, with <span class="math notranslate nohighlight">\(x_{n} \in X\)</span>, <span class="math notranslate nohighlight">\(x_n\neq a\)</span>, which satisfies $ \lim_{n\rightarrow\infty} x_{n} = a$, we have <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty} f(x_{n}) = \infty\)</span>, i.e. the sequence of real numbers <span class="math notranslate nohighlight">\((f(x_{n}))\)</span> diverges to infinity. The notion of <em>divergence to minus infinity</em> is defined similarly, and in that case we write <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} f(x) = -\infty\)</span>. For an example of divergence to infinity, consider e.g. <span class="math notranslate nohighlight">\(\lim_{x \rightarrow 0}\frac{1}{x^2}\)</span>. The details are left to you.</p>
+<p>In the same setting as <a class="reference internal" href="#functionlimit">Definition 2.2</a>, we say that a function <span class="math notranslate nohighlight">\(f:X \rightarrow \mathbb{R}\)</span> <em>diverges</em> at <span class="math notranslate nohighlight">\(x=a\)</span> if <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} f(x)\)</span> does not exist.</p>
+<p>There are some interesting types of behaviour involved here. For example, we say that the function <span class="math notranslate nohighlight">\(f\)</span> <em>diverges to infinity</em> at <span class="math notranslate nohighlight">\(x = a\)</span> and we write</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{x\rightarrow a} f(x) = \infty
+\]</div>
+<p>if for every sequence <span class="math notranslate nohighlight">\((x_{n})\)</span>, with <span class="math notranslate nohighlight">\(x_{n} \in X\)</span>, <span class="math notranslate nohighlight">\(x_n\neq a\)</span>, which satisfies <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty} x_{n} = a\)</span>, we have <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty} f(x_{n}) = \infty\)</span>, i.e. the sequence of real numbers <span class="math notranslate nohighlight">\((f(x_{n}))\)</span> diverges to infinity.</p>
+<p>The notion of <em>divergence to minus infinity</em> is defined similarly, and in that case we write <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} f(x) = -\infty\)</span>. For an example of divergence to infinity, consider e.g. <span class="math notranslate nohighlight">\(\lim_{x \rightarrow 0}\frac{1}{x^2}\)</span>. The details are left to you.</p>
 <p>If convergence fails for a function <span class="math notranslate nohighlight">\(f:X\to\mathbb{R}\)</span> at a point <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span>, it may be that a weaker notion of convergence still applies, in which the direction of approach is restricted to one side at a time.</p>
-<p>\begin{mydef}
-Let <span class="math notranslate nohighlight">\(f:X\to\mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span> be a limit point of <span class="math notranslate nohighlight">\(X\)</span>. We say that <span class="math notranslate nohighlight">\(f\)</span> has <em>left limit</em> <span class="math notranslate nohighlight">\(l\)</span> at a point <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span>, and write
-$<span class="math notranslate nohighlight">\(
+<div class="proof definition admonition" id="definition-12">
+<p class="admonition-title"><span class="caption-number">Definition 2.3 </span> (Marginal limits)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f:X\to\mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span> be a limit point of <span class="math notranslate nohighlight">\(X\)</span>. We say that <span class="math notranslate nohighlight">\(f\)</span> has <em>left limit</em> <span class="math notranslate nohighlight">\(l\)</span> at a point <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span>, and write</p>
+<div class="math notranslate nohighlight">
+\[
 \lim_{x\rightarrow a^-}f(x) = l
-\)</span><span class="math notranslate nohighlight">\(
-if for all \)</span>\varepsilon&gt;0<span class="math notranslate nohighlight">\( there exists a \)</span>\delta&gt;0<span class="math notranslate nohighlight">\( such that \)</span>|f(x)-l|&lt;\varepsilon<span class="math notranslate nohighlight">\( whenever \)</span>0&lt;x-a&lt;\delta$.</p>
+\]</div>
+<p>if for all <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span> there exists a <span class="math notranslate nohighlight">\(\delta&gt;0\)</span> such that <span class="math notranslate nohighlight">\(|f(x)-l|&lt;\varepsilon\)</span> whenever <span class="math notranslate nohighlight">\(0&lt;x-a&lt;\delta\)</span>.</p>
 <p>We say <span class="math notranslate nohighlight">\(f\)</span> has a <em>right limit</em> <span class="math notranslate nohighlight">\(l\)</span> at <span class="math notranslate nohighlight">\(a\)</span>, and write,</p>
 <div class="math notranslate nohighlight">
 \[
 \lim_{x\rightarrow a^+}f(x) = l
 \]</div>
-<p>if for all <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span> there exists a <span class="math notranslate nohighlight">\(\delta&gt;0\)</span> such that <span class="math notranslate nohighlight">\(|f(x)-l|&lt;\varepsilon\)</span> whenever <span class="math notranslate nohighlight">\(\delta&lt;x-a&lt;0\)</span>.
-\end{mydef}</p>
-<p>Equivalently, in terms of sequences,</p>
+<p>if for all <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span> there exists a <span class="math notranslate nohighlight">\(\delta&gt;0\)</span> such that <span class="math notranslate nohighlight">\(|f(x)-l|&lt;\varepsilon\)</span> whenever <span class="math notranslate nohighlight">\(\delta&lt;x-a&lt;0\)</span>.</p>
+</section>
+</div><p>Equivalently, in terms of sequences,</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\lim_{x\rightarrow a^-}f(x) = l\)</span> if for any sequence <span class="math notranslate nohighlight">\((x_n)\)</span> in <span class="math notranslate nohighlight">\(X\)</span> for which <span class="math notranslate nohighlight">\(x_n&lt;a\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span> and <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty}=a\)</span>, we have <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty}f(x_n)=l\)</span>, for some <span class="math notranslate nohighlight">\(l\in\mathbb{R}\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\lim_{x\rightarrow a^+}f(x) = l\)</span> if for any sequence <span class="math notranslate nohighlight">\((x_n)\)</span> in <span class="math notranslate nohighlight">\(X\)</span> for which <span class="math notranslate nohighlight">\(x_n&gt;a\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span> and <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty}=a\)</span>, we have <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty}f(x_n)=l\)</span>, for some <span class="math notranslate nohighlight">\(l\in\mathbb{R}\)</span>.</p></li>
 </ul>
 <p>The proof that these definitions are equivalent is very similar to that of Theorem <a class="reference internal" href="#ed"><span class="xref myst">2</span></a>, and is left to you to do as an exercise.</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{eg}
-Heaviside's indicator function, $\textbf{1}_{[0,\infty)}$, as defined in Example~\ref{indicatorfn}, has both left and right limits at the point $0$: one can check that $\lim_{x\rightarrow 0^-}=0$ and $\lim_{x\rightarrow 0^+}=1$. Since these limits disagree, there is no well-defined limit for this function at this point. 
-\end{eg}
-\]</div>
-<p>We also meet functions that diverge in different ways when approached from the left and from the right of a given point.</p>
-<p>\begin{eg}
-Consider <span class="math notranslate nohighlight">\(f: \mathbb{R} \setminus \{0\}\to \mathbb{R}\)</span> given by <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span>. Then it is easily verified that <span class="math notranslate nohighlight">\(\lim_{x \rightarrow 0^-}f(x) = - \infty\)</span>, and <span class="math notranslate nohighlight">\(\lim_{x \rightarrow 0^+}f(x) =  \infty\)</span>.</p>
-<p>\iflatexml
-<img alt="" src="figs/1,x" />
-\else
-$<span class="math notranslate nohighlight">\(
-\begin{tikzpicture}[thick]
-\begin{axis}[width=.9*\textwidth, xlabel=\)</span>x<span class="math notranslate nohighlight">\(, ylabel=\)</span>y<span class="math notranslate nohighlight">\(, unit vector ratio*=1 1 1, xmin=-6.9, xmax=6.9, ymin=-6.9, ymax=6.9, axis lines=middle, tick align=outside, samples=1000,thick]
-\addplot[domain=-10:-.01,no marks,blu] {1/x};
-\addplot[domain=.01:10,no marks,blu] {1/x};
-\end{axis}
-\end{tikzpicture}
-\)</span><span class="math notranslate nohighlight">\(
-\fi
-Figure 2: Graph of \)</span>f(x) = \displaystyle\frac{1}{x}$</p>
-<p>\end{eg}</p>
+<div class="proof example admonition" id="example-13">
+<p class="admonition-title"><span class="caption-number">Example 2.7 </span></p>
+<section class="example-content" id="proof-content">
+<p>Heaviside’s indicator function, <span class="math notranslate nohighlight">\(\textbf{1}_{[0,\infty)}\)</span>, as defined in <a class="reference internal" href="#indicatorfn">Example 2.4</a>, has both left and right limits at the point <span class="math notranslate nohighlight">\(0\)</span>: one can check that <span class="math notranslate nohighlight">\(\lim_{x\rightarrow 0^-}=0\)</span> and <span class="math notranslate nohighlight">\(\lim_{x\rightarrow 0^+}=1\)</span>. Since these limits disagree, there is no well-defined limit for this function at <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+</section>
+</div><p>We also meet functions that diverge in different ways when approached from the left and from the right of a given point.</p>
+<div class="proof example admonition" id="example-14">
+<p class="admonition-title"><span class="caption-number">Example 2.8 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider <span class="math notranslate nohighlight">\(f: \mathbb{R} \setminus \{0\}\to \mathbb{R}\)</span> given by <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span>.</p>
+<figure class="align-default" id="x">
+<a class="reference internal image-reference" href="_images/1,x.png"><img alt="_images/1%2Cx.png" src="_images/1%2Cx.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Graph of <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span>.</span><a class="headerlink" href="#x" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>It is easily verified that <span class="math notranslate nohighlight">\(\lim_{x \rightarrow 0^-}f(x) = - \infty\)</span>, and <span class="math notranslate nohighlight">\(\lim_{x \rightarrow 0^+}f(x) =  \infty\)</span>.</p>
+</section>
+</div><hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="contrapositive" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>That is,  we use the fact that if <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> are propositions, then <span class="math notranslate nohighlight">\(P \Rightarrow Q\)</span> if and only if <span class="math notranslate nohighlight">\(\neg Q \Rightarrow \neg P\)</span>.</p>
+</aside>
+</aside>
 </section>
 </section>
 
@@ -733,11 +778,7 @@ Figure 2: Graph of \)</span>f(x) = \displaystyle\frac{1}{x}$</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-on-the-real-line">2.1. Functions on the real line</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-function-examples">2.1.1. Standard function examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pointwise-operations-with-functions">2.1.2. Pointwise operations with functions</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-on-the-real-line">2.1. Functions on the real line</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-limit-of-a-function">2.2. The limit of a function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence">2.3. Divergence</a></li>
 </ul>
