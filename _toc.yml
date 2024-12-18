@@ -6,5 +6,5 @@ root: 0Intro.md
 options:
   numbered: true
 chapters:
-  - file: 1Revision
+  - file: 1Rev
   - file: 2Limits_of_functions
