@@ -573,7 +573,7 @@ This is left as  an exercise. Again, <span class="math notranslate nohighlight">
 <span class="math notranslate nohighlight">\(f(5)=\frac{1}{20}\)</span>. On the other hand, at <span class="math notranslate nohighlight">\(a=-5\)</span> and at <span class="math notranslate nohighlight">\(a=3\)</span>, there is no value we could assign for <span class="math notranslate nohighlight">\(f(a)\)</span>
 that would extend <span class="math notranslate nohighlight">\(f\)</span> to a continuous function there.  We will return to all these issues of continuity in <a class="reference internal" href="3Cty.html#chap-cty"><span class="std std-ref">Chapter 3</span></a>.</p>
 </section>
-</div><div class="proof theorem admonition" id="theorem-8">
+</div><div class="proof theorem admonition" id="AOL2">
 <p class="admonition-title"><span class="caption-number">Theorem 2.1 </span> (Algebra of limits)</p>
 <section class="theorem-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\(f:A \rightarrow \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(g :B \rightarrow \mathbb{R}\)</span>, and <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span> is such that <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} f(x) = l\)</span> and <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} g(x) = m\)</span>, then</p>
@@ -582,7 +582,7 @@ that would extend <span class="math notranslate nohighlight">\(f\)</span> to a c
 <p>(iii) <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\rightarrow a} (\alpha f)(x) = \alpha l\)</span>, for all <span class="math notranslate nohighlight">\(\alpha \in \mathbb{R}\)</span>,</p>
 <p>(iv) <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\rightarrow a} \left(\displaystyle\frac{f}{g}\right)(x) = \displaystyle\frac{l}{m}\)</span>, if <span class="math notranslate nohighlight">\(m \neq 0\)</span>.</p>
 </section>
-</div><p><em>Proof.</em> These all follow from the algebra of limits for sequences. For example, for (i), if <span class="math notranslate nohighlight">\((x_{n})\)</span> is an arbitrary sequence in <span class="math notranslate nohighlight">\(A\cap B\)</span> with <span class="math notranslate nohighlight">\(x_n\neq a\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span> such that <span class="math notranslate nohighlight">\((x_n)\)</span> that converges to <span class="math notranslate nohighlight">\(a\)</span>, then</p>
+</div><p><strong>Proof.</strong> These all follow from the algebra of limits for sequences. For example, for (i), if <span class="math notranslate nohighlight">\((x_{n})\)</span> is an arbitrary sequence in <span class="math notranslate nohighlight">\(A\cap B\)</span> with <span class="math notranslate nohighlight">\(x_n\neq a\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span> such that <span class="math notranslate nohighlight">\((x_n)\)</span> that converges to <span class="math notranslate nohighlight">\(a\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*} 
@@ -592,7 +592,7 @@ that would extend <span class="math notranslate nohighlight">\(f\)</span> to a c
 \end{align*}
 \end{split}\]</div>
 <p>as required.
-Here the first line uses the definition of a sum of functions and the second line uses algebra of limits (for real sequences). <span class="math notranslate nohighlight">\(\square\)</span></p>
+Here the first line uses the definition of a sum of functions and the second line uses algebra of limits (for real sequences). <span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
 <p>From a geometric perspective, the idea of a limit is that as <span class="math notranslate nohighlight">\(x\)</span> gets closer and closer to <span class="math notranslate nohighlight">\(a\)</span>, so <span class="math notranslate nohighlight">\(f(x)\)</span> should get closer and closer to <span class="math notranslate nohighlight">\(l\)</span>. More insight to this is given by the following theorem, which establishes the important <span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion for existence of limits.</p>
 <div class="proof theorem admonition" id="ed">
 <p class="admonition-title"><span class="caption-number">Theorem 2.2 </span> (<span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion)</p>
@@ -625,7 +625,7 @@ x_{2} \in X\text{ satisfies } 0&lt;|x_{2} - a| &lt; \frac{1}{2}\text{ and }|f(x_
 x_{n} \in X\text{ satisfies }0&lt;|x_{n} - a| &lt; \frac{1}{n}\text{ and }|f(x_{n}) - l| \geq \varepsilon.
 \end{split}\]</div>
 <p>Then <span class="math notranslate nohighlight">\((x_n)\)</span> is a sequence in <span class="math notranslate nohighlight">\(X\setminus\{a\}\)</span> and by the sandwich rule, we have <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty} x_{n} = a\)</span>. Also, by the above construction the sequence <span class="math notranslate nohighlight">\((f(x_{n}))\)</span> does not converge to <span class="math notranslate nohighlight">\(l\)</span>.</p>
-<p>So we have shown that if the <span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion fails, then the function <span class="math notranslate nohighlight">\(f\)</span> does not have limit <span class="math notranslate nohighlight">\(l\)</span> at <span class="math notranslate nohighlight">\(a\)</span>. It follows that <span class="math notranslate nohighlight">\((ii)\Rightarrow(i)\)</span>. <span class="math notranslate nohighlight">\(\square\)</span></p>
+<p>So we have shown that if the <span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span> criterion fails, then the function <span class="math notranslate nohighlight">\(f\)</span> does not have limit <span class="math notranslate nohighlight">\(l\)</span> at <span class="math notranslate nohighlight">\(a\)</span>. It follows that <span class="math notranslate nohighlight">\((ii)\Rightarrow(i)\)</span>. <span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
 <div class="proof theorem admonition" id="theorem-11">
 <p class="admonition-title"><span class="caption-number">Theorem 2.3 </span> (Sandwich rule for functions)</p>
 <section class="theorem-content" id="proof-content">
@@ -637,7 +637,7 @@ x_{n} \in X\text{ satisfies }0&lt;|x_{n} - a| &lt; \frac{1}{n}\text{ and }|f(x_{
 <span class="eqno">(2.2)<a class="headerlink" href="#equation-sw2" title="Link to this equation">#</a></span>\[	\lim_{x \rightarrow c}f(x) = \lim_{x \rightarrow c}h(x) = l,\]</div>
 <p>then <span class="math notranslate nohighlight">\(\displaystyle\lim_{x \rightarrow c}g(x)\)</span> exists and is equal to <span class="math notranslate nohighlight">\(l\)</span>.</p>
 </section>
-</div><p><em>Proof.</em> Let <span class="math notranslate nohighlight">\((x_{n})\)</span> be an arbitrary sequence that converges to <span class="math notranslate nohighlight">\(c\)</span>.
+</div><p><strong>Proof.</strong> Let <span class="math notranslate nohighlight">\((x_{n})\)</span> be an arbitrary sequence that converges to <span class="math notranslate nohighlight">\(c\)</span>.
 Note that by taking <span class="math notranslate nohighlight">\(N \in \mathbb{N}\)</span> sufficiently large, we can ensure that <span class="math notranslate nohighlight">\(x_{n} \in (a, b)\)</span> for all <span class="math notranslate nohighlight">\(n\geq N\)</span>. Define sequences <span class="math notranslate nohighlight">\((a_n)\)</span>, <span class="math notranslate nohighlight">\((b_n)\)</span> and <span class="math notranslate nohighlight">\((c_n)\)</span> by</p>
 <div class="math notranslate nohighlight">
 \[
@@ -653,7 +653,7 @@ a_n \leq b_n \leq c_n, \hspace{2em}
 \[
 \lim_{n\rightarrow \infty}c_n = \lim_{n\rightarrow \infty} g(x_n)= l,
 \]</div>
-<p>and we have established that <span class="math notranslate nohighlight">\(\displaystyle\lim_{x \rightarrow c}g(x)\)</span> exists and is equal to <span class="math notranslate nohighlight">\(l\)</span>. <span class="math notranslate nohighlight">\(\square\)</span></p>
+<p>and we have established that <span class="math notranslate nohighlight">\(\displaystyle\lim_{x \rightarrow c}g(x)\)</span> exists and is equal to <span class="math notranslate nohighlight">\(l\)</span>. <span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
 </section>
 <section id="divergence">
 <h2><span class="section-number">2.3. </span>Divergence<a class="headerlink" href="#divergence" title="Link to this heading">#</a></h2>

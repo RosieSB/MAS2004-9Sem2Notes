@@ -61,6 +61,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '4Diff';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -340,7 +342,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -356,6 +360,18 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">4.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiation-as-a-limit">4.2. Differentiation as a limit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-for-differentiation">4.3. Rules for differentiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turning-points-and-rolle-s-theorem">4.4. Turning points and Rolle’s theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mean-value-theorem">4.5. The mean value theorem</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -367,6 +383,314 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="differentiation">
 <span id="chap-diff"></span><h1><span class="section-number">4. </span>Differentiation<a class="headerlink" href="#differentiation" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2><span class="section-number">4.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>The processes of <em>differentiation</em> and <em>integration</em> constitute the two corner–stones of the <em>calculus</em> which revolutionised mathematics (and its applications), starting from the groundbreaking work of Newton and Leibniz in the seventeenth century. In this chapter we will focus on understanding differentiation from a rigorous analytic viewpoint, using the knowledge that we have gained about limits of functions. Before we start this process let us remind ourselves what differentiation is for.</p>
+<p>The geometric motivation for differentiation is to find the <em>slope</em> or <em>gradient</em> of the tangent to a curve at a point lying on it. If the curve is given by a formula <span class="math notranslate nohighlight">\(y = f(x)\)</span>, then the gradient of the tangent at the point <span class="math notranslate nohighlight">\((x, y)\)</span>  appears to be well–approximated by the slope of a chord connecting the very nearby points <span class="math notranslate nohighlight">\((x, y)\)</span> and <span class="math notranslate nohighlight">\((x + \Delta x, y + \Delta y)\)</span>. This slope is given by the ratio:</p>
+<div class="math notranslate nohighlight">
+\[
+\displaystyle\frac{\Delta y}{\Delta x} = \displaystyle\frac{f(x + \Delta x) - f(x)}{\Delta x}.
+\]</div>
+<p>But to get from the slope of the chord to the slope of the tangent, it seems that we must put <span class="math notranslate nohighlight">\(\Delta x = 0\)</span>. This
+cannot be taken literally as it gives us the meaningless ratio <span class="math notranslate nohighlight">\(0/0\)</span>.</p>
+<p>The dynamic motivation for differentiation is to find the <em>instantaneous rate of change</em> of  one quantity with respect to another. Let us assume that we are dealing with a physical quantity <span class="math notranslate nohighlight">\(F(t)\)</span> that changes as a function of time <span class="math notranslate nohighlight">\(t\)</span>. For example <span class="math notranslate nohighlight">\(F(t)\)</span> could be position of a moving particle at time <span class="math notranslate nohighlight">\(t\)</span>, in which case the required rate of change is the velocity. Or <span class="math notranslate nohighlight">\(F(t)\)</span> could be the charge on a conductor at time <span class="math notranslate nohighlight">\(t\)</span>, in which case the rate of change is the current. Then over a very small time interval <span class="math notranslate nohighlight">\(\Delta t\)</span>, the average rate of change is:</p>
+<div class="math notranslate nohighlight">
+\[
+\displaystyle\frac{\Delta F(t)}{\Delta t} = \displaystyle\frac{F(t + \Delta t) - F(t)}{\Delta t},
+\]</div>
+<p>and we again want to understand what happens when <span class="math notranslate nohighlight">\(\Delta t = 0\)</span>.</p>
+<p>Of course, we now know that we must solve both of these problems by taking a limit as <span class="math notranslate nohighlight">\(\Delta x\)</span>, or <span class="math notranslate nohighlight">\(\Delta t\)</span>, tends to zero.</p>
+<p>As before we will study real-valued functions defined on some subset <span class="math notranslate nohighlight">\(A\)</span> of the real numbers, <span class="math notranslate nohighlight">\(f:A\to \mathbb{R}\)</span>.</p>
+</section>
+<section id="differentiation-as-a-limit">
+<h2><span class="section-number">4.2. </span>Differentiation as a limit<a class="headerlink" href="#differentiation-as-a-limit" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="def:diff">
+<p class="admonition-title"><span class="caption-number">Definition 4.1 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f:A\to\mathbb{R}\)</span> be a function. We say that <span class="math notranslate nohighlight">\(f\)</span> is <em>differentiable</em> at <span class="math notranslate nohighlight">\(a \in A\)</span> if
+<span class="math notranslate nohighlight">\( \lim_{x \rightarrow a}\displaystyle\frac{f(x) - f(a)}{x - a}\)</span> exists. In this case we write</p>
+<div class="math notranslate nohighlight">
+\[
+f'(a) = \lim_{x \rightarrow a}\displaystyle\frac{f(x) - f(a)}{x - a} = \lim_{h \rightarrow 0}\displaystyle\frac{f(a +h) - f(a)}{h},
+\]</div>
+<p>and we call <span class="math notranslate nohighlight">\(f'(a) \in \mathbb{R}\)</span>, the <em>derivative of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(a\)</span></em>.}
+We say that <span class="math notranslate nohighlight">\(f\)</span> is <em>differentiable</em> on <span class="math notranslate nohighlight">\(S \subseteq A\)</span> if it is differentiable at every point <span class="math notranslate nohighlight">\(a \in S\)</span>. Then the mapping <span class="math notranslate nohighlight">\(a \mapsto f'(a)\)</span> defines a real-valued function which is called the der*ivative} of <span class="math notranslate nohighlight">\(f\)</span>, and denoted by <span class="math notranslate nohighlight">\(f'\)</span>. This has domain</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Dom}\left(f'\right) = \{x \in A : f\ \text{is differentiable at $x$}\}.
+\]</div>
+</section>
+</div><p>Note that this definition involves the limit at <span class="math notranslate nohighlight">\(a\)</span> of the function</p>
+<div class="math notranslate nohighlight">
+\[
+x\mapsto\frac{f(x) - f(a)}{x - a},
+\]</div>
+<p>in the sense of <a class="reference internal" href="2LoF.html#functionlimit">Definition 2.2</a>. Or, equivalently, the limit at <span class="math notranslate nohighlight">\(0\)</span> of the function <span class="math notranslate nohighlight">\(h\mapsto \displaystyle\frac{f(a +h) - f(a)}{h}\)</span>.</p>
+<p>In applied mathematics, we may often write <span class="math notranslate nohighlight">\(y = f(x)\)</span>, and express the function <span class="math notranslate nohighlight">\(f'\)</span> as <span class="math notranslate nohighlight">\(\frac{dy}{dx}\)</span>. Then <span class="math notranslate nohighlight">\(f'(a) = \left.\frac{dy}{dx}\right|_{x=a}\)</span>. In analysis, this notation is not so helpful; it is usually easier to work with <span class="math notranslate nohighlight">\(f'\)</span>.</p>
+<p>We can of course, iterate the notion of differentiability in the usual way. Suppose that <span class="math notranslate nohighlight">\(a \in \text{Dom}\left(f'\right)\)</span> and that <span class="math notranslate nohighlight">\(f'\)</span> is differentiable at <span class="math notranslate nohighlight">\(a\)</span>, then we define the second derivative <span class="math notranslate nohighlight">\(f^{\prime \prime}(a)\)</span> of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(a\)</span> by</p>
+<div class="math notranslate nohighlight">
+\[
+f^{\prime \prime} (a) = \left(f'\right)'(a).
+\]</div>
+<p>More generally if <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span> with <span class="math notranslate nohighlight">\(n &gt; 2\)</span> we define the <span class="math notranslate nohighlight">\(n\)</span>th derivative of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(a\)</span> by</p>
+<div class="math notranslate nohighlight">
+\[
+f^{(n)}(a) = (f^{(n-1)})'(a),
+\]</div>
+<p>whenever the limit on the right-hand side exists. We say that <span class="math notranslate nohighlight">\(f\)</span> is <em>infinitely differentiable</em> or <em>smooth</em> at <span class="math notranslate nohighlight">\(a\)</span> if <span class="math notranslate nohighlight">\(f^{(n)}(a)\)</span> exists (and is finite) for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>. It is also sometimes useful to employ the notation <span class="math notranslate nohighlight">\(f(a) = f^{(0)}(a)\)</span>.</p>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 4.1 </span></p>
+<section class="example-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(f:\mathbb{R}\to\mathbb{R}\)</span> is given by <span class="math notranslate nohighlight">\(f(x) = c\)</span>, where <span class="math notranslate nohighlight">\(c\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> is constant, it is easy to check directly from <a class="reference internal" href="#def:diff">Definition 4.1</a> that <span class="math notranslate nohighlight">\(\text{Dom}\left(f'\right)= \mathbb{R}\)</span>, and <span class="math notranslate nohighlight">\(f'(a) = 0\)</span> for all <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span>.</p>
+</section>
+</div><div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 4.2 </span></p>
+<section class="example-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f:\mathbb{R}\to\mathbb{R}\)</span> be given by <span class="math notranslate nohighlight">\(f(x) = x^{n}\)</span>, where <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span> is fixed.
+Use the Binomial Theorem to show directly from the definition that <span class="math notranslate nohighlight">\(f\)</span> is differentiable at all <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span>,
+with  <span class="math notranslate nohighlight">\(f'(x) = nx^{n-1}\)</span>.</p>
+</section>
+</div><p><strong>Solution.</strong>
+Let <span class="math notranslate nohighlight">\(a, h \in \mathbb{R}\)</span>. Using the binomial theorem, we have</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;\frac{f(a + h) - f(a)}{h} \\
+&amp;\qquad=  \frac{(a + h)^{n} - a^{n}}{h} \\
+&amp;\qquad=  \frac{a^{n} + na^{n-1}h + \frac{1}{2}n(n-1)a^{n-2}h^{2} + \cdots + nah^{n-1} + h^{n} - a^{n}}{h}\\
+&amp;\qquad=  na^{n-1} +\frac{1}{2}n(n-1)a^{n-2}h + \cdots + nah^{n-2} + h^{n-1}.
+\end{align*}\]</div>
+<p>Thus, using algebra of limits,</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{h\to 0}  \frac{f(a + h) - f(a)}{h}= na^{n-1},
+\]</div>
+<p>so <span class="math notranslate nohighlight">\(f'(x) = nx^{n-1}\)</span> for all <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span>, and <span class="math notranslate nohighlight">\(\text{Dom}\left(f'\right) = \mathbb{R}\)</span>.</p>
+<p>Next we turn our attention to the relationship between differentiability and continuity.</p>
+<div class="proof theorem admonition" id="dcont">
+<p class="admonition-title"><span class="caption-number">Theorem 4.1 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(f:A\to\mathbb{R}\)</span> is differentiable at <span class="math notranslate nohighlight">\(a \in A\)</span> then <span class="math notranslate nohighlight">\(f\)</span> is continuous at <span class="math notranslate nohighlight">\(a\)</span>.</p>
+</section>
+</div><p><strong>Proof.</strong> Using the definition of continuity (<a class="reference internal" href="3Cty.html#defcont">Definition 3.1</a>), we need to show that <span class="math notranslate nohighlight">\(\lim_{x\rightarrow a} f(x) = f(a)\)</span>. For <span class="math notranslate nohighlight">\(x \neq a\)</span>, write</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) - f(a) = \frac{f(x) - f(a)}{x - a}\cdot(x - a).
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(f\)</span> is differentiable at <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\rightarrow a} \displaystyle\frac{f(x) - f(a)}{x - a} = f'(a)\)</span>, and of course <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\rightarrow a} (x - a) = 0\)</span>. Hence by algebra of limits (<a class="reference internal" href="2LoF.html#AOL2">Theorem 2.1</a>),</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{x\rightarrow a} \frac{f(x) - f(a)}{x - a}\cdot(x - a) =  f'(a)\cdot 0=0.
+\]</div>
+<p>So <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\rightarrow a}(f(x) - f(a))\)</span> exists and equals zero, and the result follows, by algebra of limits again.</p>
+<div align="right">□</div>
+<p>On the other hand, it is not true that every function that is continuous at <span class="math notranslate nohighlight">\(a\)</span>  is differentiable at <span class="math notranslate nohighlight">\(a\)</span>.</p>
+<div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 4.3 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider the function <span class="math notranslate nohighlight">\(f:\mathbb{R}\to\mathbb{R}\)</span> given by <span class="math notranslate nohighlight">\(f(x) = |x|\)</span>. It is continuous at every point in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. It is also easy to see that it is differentiable at every <span class="math notranslate nohighlight">\(x \neq 0\)</span>. Show that it is not differentiable at zero, by showing that the relevant left and right limits are different there.</p>
+</section>
+</div><p><strong>Solution.</strong>
+We have</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\lim_{h \rightarrow 0^-}\displaystyle\frac{f(0 + h) - f(0)}{h} 
+&amp;= \lim_{h \rightarrow 0^-}\displaystyle\frac{|h|}{h} = \lim_{h \rightarrow 0^-}\frac{-h}{h} = -1.\\
+\lim_{h \rightarrow 0^+}\displaystyle\frac{f(0 + h) - f(0)}{h} 
+&amp;= \lim_{h \rightarrow 0^+}\displaystyle\frac{|h|}{h} = \lim_{h \rightarrow 0^+}\frac{h}{h} = 1.
+\end{align*}\]</div>
+<p>Thus the left and right limits are different and so <span class="math notranslate nohighlight">\(\lim_{h \to 0}\displaystyle\frac{f(0 + h) - f(0)}{h} \)</span> does not exist.</p>
+<p>Generalising the last example, we have the following definition.</p>
+<div class="proof definition admonition" id="definition-5">
+<p class="admonition-title"><span class="caption-number">Definition 4.2 </span></p>
+<section class="definition-content" id="proof-content">
+<p>We say that the function <span class="math notranslate nohighlight">\(f:A\to\mathbb{R}\)</span> has a <em>left derivative</em> at <span class="math notranslate nohighlight">\(a \in A\)</span> if <span class="math notranslate nohighlight">\(f_{-}'(a) = \lim_{h \rightarrow 0^-}\displaystyle\frac{f(a +h) - f(a)}{h}\)</span> exists, and that it has a <em>right derivative</em> at <span class="math notranslate nohighlight">\(a \in A\)</span> if <span class="math notranslate nohighlight">\(f_{+}'(a) = \lim_{h \rightarrow 0^+}\displaystyle\frac{f(a +h) - f(a)}{h}\)</span> exists.</p>
+</section>
+</div><div class="proof theorem admonition" id="lrd">
+<p class="admonition-title"><span class="caption-number">Theorem 4.2 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>One can show that a function <span class="math notranslate nohighlight">\(f:A\to \mathbb{R}\)</span> is differentiable at <span class="math notranslate nohighlight">\(a \in A\)</span> if and only if both the left and right derivatives at <span class="math notranslate nohighlight">\(a\)</span> exist and are equal. In this case</p>
+<div class="math notranslate nohighlight">
+\[
+f'(a) = f_{-}'(a) = f_{+}'(a).
+\]</div>
+</section>
+</div></section>
+<section id="rules-for-differentiation">
+<h2><span class="section-number">4.3. </span>Rules for differentiation<a class="headerlink" href="#rules-for-differentiation" title="Link to this heading">#</a></h2>
+<p>The results in this section should all be familiar from MAS106, but now we can make the proofs rigorous.</p>
+<div class="proof theorem admonition" id="theorem-7">
+<p class="admonition-title"><span class="caption-number">Theorem 4.3 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> be real-valued functions that are differentiable at <span class="math notranslate nohighlight">\(a \in \text{Dom}(f) \cap \text{Dom}(g)\)</span>. Then the following hold.</p>
+<p>(i) For each <span class="math notranslate nohighlight">\(\alpha,\beta \in \mathbb{R}\)</span>, the function <span class="math notranslate nohighlight">\(\alpha f + \beta g\)</span> is differentiable at <span class="math notranslate nohighlight">\(a\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[
+(\alpha f + \beta g)'(a) = \alpha f'(a) + \beta g'(a).
+\]</div>
+<p>(ii) (The Product Rule) The function <span class="math notranslate nohighlight">\(fg\)</span> is differentiable at <span class="math notranslate nohighlight">\(a\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[
+(fg)'(a) = f'(a)g(a) + f(a)g'(a).\]</div>
+<p>(iii) (The Quotient Rule) If <span class="math notranslate nohighlight">\(g(a) \neq 0\)</span> then <span class="math notranslate nohighlight">\(f/g\)</span> is differentiable at <span class="math notranslate nohighlight">\(a\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[
+\left(\frac{f}{g}\right)'(a) = \frac{g(a)f'(a) - f(a)g'(a)}{g(a)^{2}}.
+\]</div>
+</section>
+</div><p><strong>Proof.</strong>
+(i) We have</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{ (\alpha f + \beta g)(a+h)- (\alpha f + \beta g)(a)}{h}=
+\alpha \frac{f(a+h)-f(a)}{h}+\beta\frac{g(a+h)-g(a)}{h}
+\]</div>
+<p>and, taking limits as <span class="math notranslate nohighlight">\(h\)</span> goes to <span class="math notranslate nohighlight">\(0\)</span>, the result follows from the algebra of limits (<a class="reference internal" href="2LoF.html#AOL2">Theorem 2.1</a>).</p>
+<p>(ii) For all <span class="math notranslate nohighlight">\(h \neq 0\)</span>,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;\displaystyle\frac{(fg)(a + h) - (fg)(a)}{h}\\
+&amp;= \frac{f(a + h)g(a + h) - f(a)g(a + h)}{h} + \frac{f(a)g(a + h) - f(a)g(a)}{h}\\
+&amp;= \left(\frac{f(a+h) -f(a)}{h}\right)g(a + h) + f(a)\left(\frac{g(a + h) - g(a)}{h}\right). 
+\end{align*}\]</div>
+<p>The result follows by taking limits as <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span> and using <a class="reference internal" href="#def:diff">Definition 4.1</a> and the algebra of limits, together with the fact that at <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(g\)</span> is differentiable, hence continuous by <a class="reference internal" href="#dcont">Theorem 4.1</a>, and so <span class="math notranslate nohighlight">\(\lim_{h \rightarrow 0}g(a + h) = g(a)\)</span>.
+3. First observe that by Problem 18, there exists <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> such that <span class="math notranslate nohighlight">\(g(x) \neq 0\)</span> for all <span class="math notranslate nohighlight">\(x \in (a - \delta, a + \delta)\)</span>. Consider <span class="math notranslate nohighlight">\(h \in \mathbb{R}\)</span> such that <span class="math notranslate nohighlight">\(|h| &lt; \delta\)</span>. Then</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp; \frac{1}{h}\left(\left(\frac{f}{g}\right)(a + h) - \left(\frac{f}{g}\right)(a)\right) \\
+&amp;= \frac{1}{h}\left(\frac{f(a+h)g(a) - f(a)g(a + h)}{g(a)g(a + h)}\right)\\
+&amp;= \frac{1}{g(a)g(a+h)}\left( \frac{f(a+h) - f(a)}{h}g(a) - f(a)\frac{g(a + h) - g(a)}{h}\right), 
+\end{align*}\]</div>
+<p>and the result follows by algebra of limits, taking the limit as <span class="math notranslate nohighlight">\(h\)</span> goes to <span class="math notranslate nohighlight">\(0\)</span>, using the fact that (as above), <span class="math notranslate nohighlight">\(\lim_{h \rightarrow 0}g(a + h) = g(a)\)</span>.</p>
+<div align="right">□</div>
+<div class="proof theorem admonition" id="chain">
+<p class="admonition-title"><span class="caption-number">Theorem 4.4 </span> (Chain rule)</p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f, g\)</span> be real-valued functions such that the range of <span class="math notranslate nohighlight">\(g\)</span> is contained in the domain of <span class="math notranslate nohighlight">\(f\)</span>. Suppose that <span class="math notranslate nohighlight">\(g\)</span> is differentiable at <span class="math notranslate nohighlight">\(a\)</span> and that <span class="math notranslate nohighlight">\(f\)</span> is differentiable at <span class="math notranslate nohighlight">\(g(a)\)</span>. Then <span class="math notranslate nohighlight">\(f \circ g\)</span> is differentiable at <span class="math notranslate nohighlight">\(a\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[
+(f \circ g)'(a) = f'(g(a))g'(a).
+\]</div>
+</section>
+</div><p><strong>Proof.</strong> For <span class="math notranslate nohighlight">\(x\in \text{Dom}(g)\)</span>,  we consider</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{(f \circ g)(x) - (f \circ g)(a)}{x-a} = \frac{ f(g(x)) - f(g(a))}{x-a}.
+\]</div>
+<p>We would like to write this as</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{ f(g(x)) - f(g(a))}{g(x) - g(a)}\frac{g(x) - g(a)}{x-a},
+\]</div>
+<p>but that only makes sense when <span class="math notranslate nohighlight">\(g(x)\neq g(a)\)</span>.
+To overcome this problem, we introduce the function <span class="math notranslate nohighlight">\(Q:\text{Dom}(f)\to \mathbb{R}\)</span> defined by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Q(y) = 
+\begin{cases} 
+\frac{f(y) - f(g(a))}{y-g(a)} &amp; ~\mbox{if}~y\neq g(a),\\
+f'(g(a))&amp; ~\mbox{if}~y=g(a). 
+\end{cases}
+\end{split}\]</div>
+<p>We claim that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{ f(g(x)) - f(g(a))}{x-a}=Q(g(x))\frac{g(x) - g(a)}{x-a},
+\]</div>
+<p>for all <span class="math notranslate nohighlight">\(x\in \text{Dom}(g)\)</span>. Indeed, for <span class="math notranslate nohighlight">\(x\)</span> such that <span class="math notranslate nohighlight">\(g(x) \neq g(a)\)</span>, this is clear because the factors of <span class="math notranslate nohighlight">\(g(x)-g(a)\)</span> cancel. And for <span class="math notranslate nohighlight">\(x\)</span> such that <span class="math notranslate nohighlight">\(g(x)=g(a)\)</span>, both sides are zero.</p>
+<p>So we need to study</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{x\to a} Q(g(x))\frac{g(x) - g(a)}{x-a}.
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(g\)</span> is differentiable at <span class="math notranslate nohighlight">\(a\)</span>, by <a class="reference internal" href="#dcont">Theorem 4.1</a>, <span class="math notranslate nohighlight">\(g\)</span> is continuous at <span class="math notranslate nohighlight">\(a\)</span>. Since <span class="math notranslate nohighlight">\(f\)</span> is differentiable
+at <span class="math notranslate nohighlight">\(g(a)\)</span>, <span class="math notranslate nohighlight">\(Q\)</span> is continuous at <span class="math notranslate nohighlight">\(g(a)\)</span>. So <span class="math notranslate nohighlight">\(Q\circ g\)</span> is continuous at <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(\lim_{x\to a} Q(g(x))\)</span> exists and
+is equal to <span class="math notranslate nohighlight">\(Q(g(a))=f'(g(a))\)</span>. Using the algebra of limits, we then have</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\lim_{x\to a} Q(g(x))\frac{g(x) - g(a)}{x-a}
+&amp;=\lim_{x\to a} Q(g(x))\lim_{x\to a}\frac{g(x) - g(a)}{x-a}\\
+&amp;=f'(g(a))g'(a),
+\end{align*}\]</div>
+<p>as required.</p>
+<div align="right">□</div>
+</section>
+<section id="turning-points-and-rolle-s-theorem">
+<h2><span class="section-number">4.4. </span>Turning points and Rolle’s theorem<a class="headerlink" href="#turning-points-and-rolle-s-theorem" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-9">
+<p class="admonition-title"><span class="caption-number">Definition 4.3 </span></p>
+<section class="definition-content" id="proof-content">
+<p>A function <span class="math notranslate nohighlight">\(f:A\to\mathbb{R}\)</span> has a <em>local minimum</em> at <span class="math notranslate nohighlight">\(a \in A\)</span> if there exists <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> such that <span class="math notranslate nohighlight">\((a-\delta, a+\delta)\subseteq A\)</span> and  <span class="math notranslate nohighlight">\(f(x) \geq f(a)\)</span> for all <span class="math notranslate nohighlight">\(x \in (a-\delta, a+\delta)\)</span>.</p>
+<p>A  function <span class="math notranslate nohighlight">\(f:A\to\mathbb{R}\)</span> has a  <em>local maximum</em> at <span class="math notranslate nohighlight">\(a \in A\)</span> if there exists <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> such that <span class="math notranslate nohighlight">\((a-\delta, a+\delta)\subseteq A\)</span> and <span class="math notranslate nohighlight">\(f(x) \leq f(a)\)</span> for all <span class="math notranslate nohighlight">\(x\in (a-\delta, a+\delta)\)</span>.</p>
+<p>A <em>turning point</em> (sometimes called an <em>extreme point</em>}) for <span class="math notranslate nohighlight">\(f\)</span> is a point in its domain that is either a local minimum or a local  maximum.</p>
+</section>
+</div><p>It is important to distinguish carefully between local maxima and minima and global maxima and minima, when the latter exist. For example if <span class="math notranslate nohighlight">\(f:[a, b] \rightarrow \mathbb{R}\)</span> is continuous, then we know by the extreme value theorem (<a class="reference internal" href="3Cty.html#thm:evt">Theorem 3.5</a>) that it attains both its supremum and infimum on <span class="math notranslate nohighlight">\([a, b]\)</span>. So these are the global maximum and minimum, respectively. But they are not necessarily turning points, because they might be at the endpoints of the interval <span class="math notranslate nohighlight">\([a,b]\)</span>. And, of course, a local minimum/maximum need not be a global one.</p>
+<div class="proof example admonition" id="example-10">
+<p class="admonition-title"><span class="caption-number">Example 4.4 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider the function <span class="math notranslate nohighlight">\(f:[-3, 2] \rightarrow \mathbb{R}\)</span> defined by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x) = \begin{cases} x+2&amp; ~\mbox{if}~x \in [-3, -1),\\  x^{2} &amp; ~\mbox{if}~x \in [-1, 2].\\ \end{cases}
+\end{split}\]</div>
+<p>Identify any turning points and the global maximum and minimum.</p>
+</section>
+</div><p><strong>Solution.</strong>
+Note that the function is continuous (by checking what happens at <span class="math notranslate nohighlight">\(x=-1\)</span>), so as above there is a global maximum and minimum. The global maximum is <span class="math notranslate nohighlight">\(4\)</span>, attained at <span class="math notranslate nohighlight">\(x = 2\)</span>. The global minimum is  <span class="math notranslate nohighlight">\(-1\)</span>, attained at <span class="math notranslate nohighlight">\(x = -3\)</span>. Neither of these is a turning point (because they are the endpoints of the interval: we cannot find a <span class="math notranslate nohighlight">\(\delta\)</span> such that all points within distance <span class="math notranslate nohighlight">\(\delta\)</span> are contained in the domain). There is a local minimum at <span class="math notranslate nohighlight">\(x = 0\)</span> and a local maximum at <span class="math notranslate nohighlight">\(x=-1\)</span>.</p>
+<div class="proof theorem admonition" id="ext1">
+<p class="admonition-title"><span class="caption-number">Theorem 4.5 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>If  <span class="math notranslate nohighlight">\(f:A\to\mathbb{R}\)</span> is differentiable at <span class="math notranslate nohighlight">\(a \in A\)</span> and <span class="math notranslate nohighlight">\(a\)</span> is a turning point for <span class="math notranslate nohighlight">\(f\)</span>, then <span class="math notranslate nohighlight">\(f'(a) = 0\)</span>.</p>
+</section>
+</div><p><strong>Proof.</strong> We suppose that <span class="math notranslate nohighlight">\(f\)</span> has a local minimum at <span class="math notranslate nohighlight">\(a\)</span>.  So there exists <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> so that <span class="math notranslate nohighlight">\((a-\delta, a+\delta)\subseteq\text{Dom}(f)\)</span> and <span class="math notranslate nohighlight">\(f(x) \geq f(a)\)</span> for all <span class="math notranslate nohighlight">\(x \in (a-\delta, a+\delta)\)</span>. Hence</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;\displaystyle\frac{f(x) - f(a)}{x - a} \leq 0 \qquad \text{for all $x$ such that $a - \delta &lt; x &lt; a$,}\\
+&amp;\displaystyle\frac{f(x) - f(a)}{x - a} \geq 0 \qquad \text{for all $x$ such that $a &lt; x &lt; a + \delta$}.
+\end{align*}\]</div>
+<p>Taking one-sided limits as <span class="math notranslate nohighlight">\(x \rightarrow a\)</span>, we deduce that <span class="math notranslate nohighlight">\(f_{-}'(a) \leq 0\)</span> and <span class="math notranslate nohighlight">\(f_{+}'(a) \geq 0\)</span>. But <span class="math notranslate nohighlight">\(f\)</span> is differentiable at <span class="math notranslate nohighlight">\(a\)</span>, and so <span class="math notranslate nohighlight">\(f_{-}'(a)  = f_{+}'(a) = f'(a)\)</span>. We conclude that <span class="math notranslate nohighlight">\(f'(a) = 0\)</span>, as required.</p>
+<p>The argument in the case of a local maximum is very similar.</p>
+<div align="right">□</div>
+<p>A point where a differentiable function has derivative zero is sometimes called a <em>stationary</em> point. So <a class="reference internal" href="#ext1">Theorem 4.5</a> says that turning points are stationary points. The converse to <a class="reference internal" href="#ext1">Theorem 4.5</a> is false: not all stationary points are turning points.  Consider for example the familiar case of <span class="math notranslate nohighlight">\(f(x) = x^{3}\)</span>. Then <span class="math notranslate nohighlight">\(f'(0) = 0\)</span> but <span class="math notranslate nohighlight">\(0\)</span> is neither a local maximum nor a local minimum; it is what is called an <em>inflection point</em>}. We will not pursue the story of classifying stationary points further here. You have seen this before in MAS106, and it is revisited in one of the exercises. Instead we will use  <a class="reference internal" href="#ext1">Theorem 4.5</a> to explore some new territory.</p>
+<div class="proof theorem admonition" id="Roll">
+<p class="admonition-title"><span class="caption-number">Theorem 4.6 </span> (Rolle’s theorem)</p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f:[a,b]\to\mathbb{R}\)</span> be a function that is continuous on <span class="math notranslate nohighlight">\([a,b]\)</span> and differentiable on <span class="math notranslate nohighlight">\((a,b)\)</span> with <span class="math notranslate nohighlight">\(f(a)=f(b)\)</span>. Then there exists <span class="math notranslate nohighlight">\(c\in(a,b)\)</span> such that <span class="math notranslate nohighlight">\(f'(c) = 0\)</span>.</p>
+</section>
+</div><p><strong>Proof.</strong> If <span class="math notranslate nohighlight">\(f\)</span> is constant, the result is obvious, so assume that <span class="math notranslate nohighlight">\(f\)</span> takes at least two distinct values. By <a class="reference internal" href="3Cty.html#thm:evt">Theorem 3.5</a>, <span class="math notranslate nohighlight">\(f\)</span> is bounded on <span class="math notranslate nohighlight">\([a, b]\)</span> and attains both its supremum and infimum. It cannot attain both of these at the end-points, as then they would be equal and <span class="math notranslate nohighlight">\(f\)</span> would be constant. So there must be a <span class="math notranslate nohighlight">\(c\in (a,b)\)</span> where either the supremum or infimum is attained. But then <span class="math notranslate nohighlight">\(c\)</span> is a turning point, and so <span class="math notranslate nohighlight">\(f'(c) = 0\)</span> by <a class="reference internal" href="#ext1">Theorem 4.5</a>.</p>
+<div align="right">□</div>
+</section>
+<section id="the-mean-value-theorem">
+<h2><span class="section-number">4.5. </span>The mean value theorem<a class="headerlink" href="#the-mean-value-theorem" title="Link to this heading">#</a></h2>
+<p>The next result is a generalisation of Rolle’s theorem and a very important result, with lots of interesting consequences.</p>
+<div class="proof theorem admonition" id="mvt">
+<p class="admonition-title"><span class="caption-number">Theorem 4.7 </span> (Mean value theorem)</p>
+<section class="theorem-content" id="proof-content">
+<p>If  <span class="math notranslate nohighlight">\(f:[a,b]\to\mathbb{R}\)</span> is continuous on <span class="math notranslate nohighlight">\([a, b]\)</span> and differentiable on <span class="math notranslate nohighlight">\((a,b)\)</span>, then there exists <span class="math notranslate nohighlight">\(c \in (a, b)\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+f'(c) = \frac{f(b) - f(a)}{b - a}.
+\]</div>
+</section>
+</div><p><strong>Proof.</strong> Let  <span class="math notranslate nohighlight">\(\alpha = \frac{f(b) - f(a)}{b - a}\)</span>. Define <span class="math notranslate nohighlight">\(g:[a,b]\to\mathbb{R}\)</span> by  <span class="math notranslate nohighlight">\(g(x) = f(x) - \alpha(x - a)\)</span>. Then <span class="math notranslate nohighlight">\(g\)</span> is continuous on <span class="math notranslate nohighlight">\([a, b]\)</span>, and differentiable on <span class="math notranslate nohighlight">\((a, b)\)</span>, because <span class="math notranslate nohighlight">\(f\)</span> is. You can check easily that <span class="math notranslate nohighlight">\(g(a) = g(b) = f(a)\)</span>, and so we may apply Rolle’s theorem (<a class="reference internal" href="#Roll">Theorem 4.6</a>) to deduce that there exists <span class="math notranslate nohighlight">\(c \in (a, b)\)</span> such that <span class="math notranslate nohighlight">\(g^{\prime }(c) = 0\)</span>. But <span class="math notranslate nohighlight">\(g'(c)=f'(c)-\alpha\)</span> and
+hence <span class="math notranslate nohighlight">\(f'(c) = \alpha\)</span>, as required.</p>
+<div align="right">□</div>
+<p>The mean value theorem gives a rigorous foundation to the “geometrically obvious’’ assertion that a differentiable function <span class="math notranslate nohighlight">\(f\)</span> on an interval <span class="math notranslate nohighlight">\([a, b]\)</span> must at some point attain a slope equal to the slope of the line through the endpoints <span class="math notranslate nohighlight">\((a, f(a))\)</span> and <span class="math notranslate nohighlight">\((b, f(b))\)</span> — see <a class="reference internal" href="#mvt"><span class="std std-numref">Fig. 4.1</span></a>.</p>
+<figure class="align-default" id="mvt">
+<a class="reference internal image-reference" href="_images/MVT.png"><img alt="_images/MVT.png" src="_images/MVT.png" style="height: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">A visual representation of the mean value theorem.</span><a class="headerlink" href="#mvt" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In analysis, for any statement connecting calculus to some geometric property of a curve, the mean value theorem is likely to feature in its proof. We investigate one example of this next.</p>
+<p><strong>Proof.</strong> We’ll just do the first of these, as the others are so similar.
+Choose arbitrary <span class="math notranslate nohighlight">\(\alpha, \beta\)</span> such that <span class="math notranslate nohighlight">\(a \leq \alpha &lt; \beta \leq b\)</span>. By the mean value theorem (<a class="reference internal" href="#mvt">Theorem 4.7</a>), there exists <span class="math notranslate nohighlight">\(c \in (\alpha, \beta)\)</span> so that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{f(\beta) - f(\alpha)}{\beta - \alpha} = f'(c) \geq 0.
+\]</div>
+<p>Hence <span class="math notranslate nohighlight">\(f(\beta) \geq f(\alpha)\)</span> and so <span class="math notranslate nohighlight">\(f\)</span> is monotonic increasing, as required.</p>
+<div align="right">□</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -423,6 +747,26 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">4.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiation-as-a-limit">4.2. Differentiation as a limit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-for-differentiation">4.3. Rules for differentiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turning-points-and-rolle-s-theorem">4.4. Turning points and Rolle’s theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mean-value-theorem">4.5. The mean value theorem</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

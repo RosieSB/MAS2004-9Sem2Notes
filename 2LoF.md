@@ -249,6 +249,7 @@ that would extend $f$ to a continuous function there.  We will return to all the
 ````
 
 ````{prf:theorem} Algebra of limits
+:label: AOL2
 Suppose that $f:A \rightarrow \mathbb{R}$, $g :B \rightarrow \mathbb{R}$, and $a \in \mathbb{R}$ is such that $\lim_{x\rightarrow a} f(x) = l$ and $\lim_{x\rightarrow a} g(x) = m$, then
 
 (i) $\displaystyle\lim_{x\rightarrow a} (f + g)(x) = l + m$,
@@ -260,7 +261,7 @@ Suppose that $f:A \rightarrow \mathbb{R}$, $g :B \rightarrow \mathbb{R}$, and $a
 (iv) $\displaystyle\lim_{x\rightarrow a} \left(\displaystyle\frac{f}{g}\right)(x) = \displaystyle\frac{l}{m}$, if $m \neq 0$.
 ````
 
-*Proof.* These all follow from the algebra of limits for sequences. For example, for (i), if $(x_{n})$ is an arbitrary sequence in $A\cap B$ with $x_n\neq a$ for all $n\in\mathbb{N}$ such that $(x_n)$ that converges to $a$, then
+**Proof.** These all follow from the algebra of limits for sequences. For example, for (i), if $(x_{n})$ is an arbitrary sequence in $A\cap B$ with $x_n\neq a$ for all $n\in\mathbb{N}$ such that $(x_n)$ that converges to $a$, then
 
 $$
 \begin{align*} 
@@ -270,7 +271,7 @@ $$
 \end{align*}
 $$
 as required.
-Here the first line uses the definition of a sum of functions and the second line uses algebra of limits (for real sequences). $\square$
+Here the first line uses the definition of a sum of functions and the second line uses algebra of limits (for real sequences). <span style="float:right;">$\square$</span>
 
 
 From a geometric perspective, the idea of a limit is that as $x$ gets closer and closer to $a$, so $f(x)$ should get closer and closer to $l$. More insight to this is given by the following theorem, which establishes the important $(\varepsilon-\delta)$ criterion for existence of limits.
@@ -317,7 +318,7 @@ $$
 
 Then $(x_n)$ is a sequence in $X\setminus\{a\}$ and by the sandwich rule, we have $\lim_{n\rightarrow\infty} x_{n} = a$. Also, by the above construction the sequence $(f(x_{n}))$ does not converge to $l$.
 
-So we have shown that if the $(\varepsilon-\delta)$ criterion fails, then the function $f$ does not have limit $l$ at $a$. It follows that $(ii)\Rightarrow(i)$. $\square$
+So we have shown that if the $(\varepsilon-\delta)$ criterion fails, then the function $f$ does not have limit $l$ at $a$. It follows that $(ii)\Rightarrow(i)$. <span style="float:right;">$\square$</span>
 
 
 ````{prf:theorem} Sandwich rule for functions
@@ -338,7 +339,7 @@ If for some $c \in (a, b)$ and $l\in\mathbb{R}$ we have
 then $\displaystyle\lim_{x \rightarrow c}g(x)$ exists and is equal to $l$.
 ````
 
-*Proof.* Let $(x_{n})$ be an arbitrary sequence that converges to $c$. 
+**Proof.** Let $(x_{n})$ be an arbitrary sequence that converges to $c$. 
 Note that by taking $N \in \mathbb{N}$ sufficiently large, we can ensure that $x_{n} \in (a, b)$ for all $n\geq N$. Define sequences $(a_n)$, $(b_n)$ and $(c_n)$ by
 
 $$
@@ -357,7 +358,7 @@ $$
 \lim_{n\rightarrow \infty}c_n = \lim_{n\rightarrow \infty} g(x_n)= l,
 $$
 
-and we have established that $\displaystyle\lim_{x \rightarrow c}g(x)$ exists and is equal to $l$. $\square$
+and we have established that $\displaystyle\lim_{x \rightarrow c}g(x)$ exists and is equal to $l$. <span style="float:right;">$\square$</span>
 
 
 ## Divergence

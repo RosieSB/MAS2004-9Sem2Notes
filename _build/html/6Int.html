@@ -61,6 +61,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '6Int';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -339,7 +341,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -355,6 +359,20 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partitions-and-riemann-sums">6.1. 1. Partitions and Riemann sums</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-riemann-integral">6.2. 2. The Riemann integral</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-integral">6.3. 3. Properties of the integral</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exchanging-limits-in-an-integral">6.3.1. 3.0.1. Exchanging limits in an integral</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fundamental-theorem-of-calculus">6.4. 4. The fundamental theorem of calculus</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -366,6 +384,550 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="riemann-integration">
 <span id="chap-int"></span><h1><span class="section-number">6. </span>Riemann integration<a class="headerlink" href="#riemann-integration" title="Link to this heading">#</a></h1>
+<p>In this chapter we will go over the rigorous definition of the integral, defined in terms of area beneath curves. You have seen the idea before in MAS106, but now we can make it precise using limits.</p>
+<section id="partitions-and-riemann-sums">
+<h2><span class="section-number">6.1. </span>1. Partitions and Riemann sums<a class="headerlink" href="#partitions-and-riemann-sums" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\([a,b]\subseteq\mathbb{R}\)</span> be a closed bounded interval. A <em>partition</em> of <span class="math notranslate nohighlight">\([a,b]\)</span> refers to any finite subset <span class="math notranslate nohighlight">\(P={x_0,x_1,\ldots,x_n}\)</span> of <span class="math notranslate nohighlight">\([a,b]\)</span> that contains the endpoints <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>. It is convenient to assume that</p>
+<div class="math notranslate nohighlight">
+\[
+a=x_0&lt;x_1&lt;x_2&lt;\ldots&lt;x_n=b.
+\]</div>
+<p>Let <span class="math notranslate nohighlight">\(f:[a,b]\to\mathbb{R}\)</span> be a <strong>bounded</strong> function. For each partition <span class="math notranslate nohighlight">\(P\)</span>, we associate two ways of approximating the area under the graph of <span class="math notranslate nohighlight">\(f\)</span> by rectangles. One of these ways will always be an overestimate, the other an underestimate.</p>
+<figure class="align-default" id="rlower">
+<a class="reference internal image-reference" href="_images/Rlower.png"><img alt="_images/Rlower.png" src="_images/Rlower.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Riemann lower sum</span><a class="headerlink" href="#rlower" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="rupper">
+<a class="reference internal image-reference" href="_images/Rupper.png"><img alt="_images/Rupper.png" src="_images/Rupper.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.2 </span><span class="caption-text">Riemann upper sum</span><a class="headerlink" href="#rupper" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 6.1 </span> (Riemann sums)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f:[a,b]\to\mathbb{R}\)</span> be a bounded function, and let <span class="math notranslate nohighlight">\(P=\{x_0,x_q,\ldots,x_n\}\)</span> be a partition.</p>
+<p>For <span class="math notranslate nohighlight">\(k=1,\ldots,n\)</span> let</p>
+<div class="math notranslate nohighlight">
+\[
+m_k=\inf\{f(x) : x\in[x_{k-1},x_k]\} \hspace{1em} \text{and} \hspace{1em} M_k=\sup\{f(x) : x\in[x_{k-1},x_k]\}.
+\]</div>
+<p>The sum</p>
+<div class="math notranslate nohighlight">
+\[
+L(f,P) := \sum_{k=1}^nm_k(x_k-x_{k-1})
+\]</div>
+<p>is called the (<em>Riemann) lower sum</em> of <span class="math notranslate nohighlight">\(f\)</span> with respect to <span class="math notranslate nohighlight">\(P\)</span>, and</p>
+<div class="math notranslate nohighlight">
+\[
+U(f,P) := \sum_{k=1}^nM_k(x_k-x_{k-1})
+\]</div>
+<p>is the (<em>Riemann) upper sum</em> of <span class="math notranslate nohighlight">\(f\)</span> with respect to <span class="math notranslate nohighlight">\(P\)</span>.</p>
+</section>
+</div><p>For both the upper and lower sum, the widths of the rectangles are the same: they are determined by the partition <span class="math notranslate nohighlight">\(P\)</span>. It is the heights of the rectangles that provide the distinction: for the lower sum, the heights <span class="math notranslate nohighlight">\(m_k\)</span> are determined by taking the infimum of <span class="math notranslate nohighlight">\(f\)</span> over each interval <span class="math notranslate nohighlight">\([x_{k-1},x_k]\)</span> (see <a class="reference internal" href="#rlower"><span class="std std-numref">Fig. 6.1</span></a>). For the upper sum, heights <span class="math notranslate nohighlight">\(M_k\)</span> are the suprema over each of these intervals (c.f. <a class="reference internal" href="#rupper"><span class="std std-numref">Fig. 6.2</span></a>).</p>
+<p>The lower sums <span class="math notranslate nohighlight">\(L(f,P)\)</span> are always an under-approximation for the (signed) area between <span class="math notranslate nohighlight">\(f\)</span> and the <span class="math notranslate nohighlight">\(x\)</span> axis, while the upper sums <span class="math notranslate nohighlight">\(U(f,P)\)</span> always over-approximate this area.</p>
+<p>In particular, <span class="math notranslate nohighlight">\(L(f,P)&lt;U(f,Q)\)</span> for any two partitions <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> of <span class="math notranslate nohighlight">\([a,b]\)</span>, with the true value of the signed area under <span class="math notranslate nohighlight">\(f\)</span> lying somewhere between these two values.</p>
+<p>We introduce the notion of refinement of partitions, which will be useful for proving properties of the Riemann integral.</p>
+<div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 6.2 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> be partitions of <span class="math notranslate nohighlight">\([a,b]\)</span>. We say that <span class="math notranslate nohighlight">\(Q\)</span> is a <em>refinement</em> of <span class="math notranslate nohighlight">\(P\)</span> if <span class="math notranslate nohighlight">\(P\subseteq Q\)</span>.</p>
+</section>
+</div><div class="proof lemma admonition" id="lem:ref">
+<p class="admonition-title"><span class="caption-number">Lemma 6.1 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f:[a,b]\to\mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> be partitions of <span class="math notranslate nohighlight">\([a,b]\)</span>. If <span class="math notranslate nohighlight">\(Q\)</span> is a refinement of <span class="math notranslate nohighlight">\(P\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+L(f,Q) \geq L(f,P) \text{ and } U(f,Q)\leq U(f,P).
+\]</div>
+</section>
+</div><div class="proof remark admonition" id="remark-3">
+<p class="admonition-title"><span class="caption-number">Remark 6.1 </span></p>
+<section class="remark-content" id="proof-content">
+<p><a class="reference internal" href="#lem:ref">Lemma 6.1</a> says that refining a partion has the effect of shrinking the difference between the upper and lower sums: if <span class="math notranslate nohighlight">\(Q\)</span> is a refinement of <span class="math notranslate nohighlight">\(P\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+U(f,Q)-L(f,Q)\leq U(f,P)-U(f,Q).
+\]</div>
+</section>
+</div><p><strong>Proof.</strong> Let <span class="math notranslate nohighlight">\(P=\{x_0,x_1,\ldots,x_n\}\)</span> where <span class="math notranslate nohighlight">\(a=x_0&lt;x_1&lt;\ldots&lt;x_n=b\)</span>. Consider first the effect of adding one point to <span class="math notranslate nohighlight">\(P\)</span>: say we add <span class="math notranslate nohighlight">\(c\in[x_{k-1},x_k]\)</span>. We will show that <span class="math notranslate nohighlight">\(L(f,P\cup\{c\})\geq L(f,P)\)</span>.</p>
+<figure class="align-default" id="addpt">
+<a class="reference internal image-reference" href="_images/addpt.png"><img alt="_images/addpt.png" src="_images/addpt.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.3 </span><span class="caption-text">The effect of adding a point to a partition</span><a class="headerlink" href="#addpt" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Let <span class="math notranslate nohighlight">\(\;\displaystyle m_k = \inf_{x\in[x_{k-1},x_k]}f(x)\)</span>, <span class="math notranslate nohighlight">\(\;\displaystyle m_k' = \inf_{x\in[x_{k-1},c]}f(x)\)</span>, and <span class="math notranslate nohighlight">\(\;\displaystyle m_k'' = \inf_{x\in[c,x_k]}f(x)\)</span>.</p>
+<p>Observe that <span class="math notranslate nohighlight">\(m_k'\geq m_k\)</span> and <span class="math notranslate nohighlight">\(m_k''\geq m_k\)</span>. This is because <span class="math notranslate nohighlight">\(m_k\)</span> is the infimum of <span class="math notranslate nohighlight">\(f(x)\)</span> taken over the whole of <span class="math notranslate nohighlight">\([x_{k-1},x_k]\)</span>, while <span class="math notranslate nohighlight">\(m_k'\)</span> and <span class="math notranslate nohighlight">\(m_k''\)</span> are infima taken over subintervals <span class="math notranslate nohighlight">\([x_{k-1},c]\)</span> and  <span class="math notranslate nohighlight">\([c,x_k]\)</span>. Therefore,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+L(&amp;f,P\cup\{c\}) \\
+&amp;=  m_0(x_1-x_0) + \ldots + m_k'(c-x_{k-1}) + m_k''(x_k-c)  + \ldots + m_n(x_n-x_{n-1}) \\
+&amp;\geq m_0(x_1-x_0) + \ldots + m_k(c-x_{k-1}) + m_k(x_k-c)  + \ldots + m_n(x_n-x_{n-1}) \\
+&amp;= m_0(x_1-x_0) + \ldots + m_kc-m_kx_{k-1} + m_kx_k-m_kc  + \ldots + m_n(x_n-x_{n-1}) \\
+&amp;= m_0(x_1-x_0) + \ldots + m_k(x_k-x_{k-1})  + \ldots + m_n(x_n-x_{n-1}) \\
+&amp;= L(f,P).
+\end{align*}\]</div>
+<p>Applying a similar argument to the upper sums shows that</p>
+<div class="math notranslate nohighlight">
+\[
+U(f,P\cup\{c\})\leq U(f,P).
+\]</div>
+<p>Finally, suppose <span class="math notranslate nohighlight">\(Q\)</span> is a refinement of <span class="math notranslate nohighlight">\(P\)</span>. Since <span class="math notranslate nohighlight">\(Q\setminus P\)</span> is finite, we can apply the above argument recursively to prove that <span class="math notranslate nohighlight">\(L(f,Q)\geq L(f,P)\)</span> and <span class="math notranslate nohighlight">\(U(f,Q)\leq U(f,P)\)</span>. <span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
+</section>
+<section id="the-riemann-integral">
+<h2><span class="section-number">6.2. </span>2. The Riemann integral<a class="headerlink" href="#the-riemann-integral" title="Link to this heading">#</a></h2>
+<p>We are now ready to define the Riemann integral.</p>
+<p>Let <span class="math notranslate nohighlight">\(f:[a,b]\to\mathbb{R}\)</span> be a bounded function, and consider the set of all lower sums</p>
+<div class="math notranslate nohighlight">
+\[
+\{L(f,P):\text{ partitions } P \text{ of } [a,b]\}.
+\]</div>
+<p>This set is certainly non-empty, and it is bounded above by the area we have been trying to calculate. This means we can take its supremum.</p>
+<p>Similarly, the set of all upper sums</p>
+<div class="math notranslate nohighlight">
+\[
+\{U(f,P):\text{ partitions } P \text{ of } [a,b]\}.
+\]</div>
+<p>is non-empty and bounded below. So we can take its infimum.</p>
+<div class="proof definition admonition" id="definition-4">
+<p class="admonition-title"><span class="caption-number">Definition 6.3 </span></p>
+<section class="definition-content" id="proof-content">
+<p>The <em>lower integral</em> of <span class="math notranslate nohighlight">\(f\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+L(f) = \sup\{L(f,P):\text{ partitions } P \text{ of } [a,b]\}.
+\]</div>
+<p>The <em>upper integral</em> of <span class="math notranslate nohighlight">\(f\)</span> is defined to be</p>
+<div class="math notranslate nohighlight">
+\[
+U(f) = \inf\{U(f,P):\text{ partitions } P \text{ of } [a,b]\}.
+\]</div>
+</section>
+</div><p>The lower and upper integrals exist for <strong>any</strong> bounded function on <span class="math notranslate nohighlight">\([a,b]\)</span>, though they may not be equal to each other. However, it is always the case that</p>
+<div class="math notranslate nohighlight">
+\[
+L(f) \leq U(f),
+\]</div>
+<p>since <span class="math notranslate nohighlight">\(L(f,P)&lt;U(f,Q)\)</span> for any two partitions <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> of <span class="math notranslate nohighlight">\([a,b]\)</span>.</p>
+<div class="proof proposition admonition" id="prop:intcond">
+<p class="admonition-title"><span class="caption-number">Proposition 6.1 </span></p>
+<section class="proposition-content" id="proof-content">
+<p>We say that a bounded function <span class="math notranslate nohighlight">\(f:[a,b]\to\mathbb{R}\)</span> is <em>Riemann integrable</em> if <span class="math notranslate nohighlight">\(L(f)=U(f)\)</span>. In this case, we write</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x)dx := L(f) = U(f).
+\]</div>
+</section>
+</div><div class="proof example admonition" id="eg:const">
+<p class="admonition-title"><span class="caption-number">Example 6.1 </span></p>
+<section class="example-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(f:[a,b]\to\mathbb{R}\)</span> is a constant function; say <span class="math notranslate nohighlight">\(f(x)=C\)</span> for all <span class="math notranslate nohighlight">\(x\in[a,b]\)</span>. Then for any partition <span class="math notranslate nohighlight">\(P=\{x_0,\ldots,x_n\}\)</span>, where <span class="math notranslate nohighlight">\(a=x_0&lt;x_1&lt;\ldots&lt;x_n=b\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+M_k=\sup_{x\in[x_k,x_{k-1}]}f(x) = C
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+m_k=\inf_{x\in[x_k,x_{k-1}]}f(x) = C.
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+L(f,P) = U(f,P) = \sum_{k=1}^nC(x_k-x_{k-1}) = C(x_n-x_0)=C(b-a).
+\]</div>
+<p>It follows that <span class="math notranslate nohighlight">\(L(f)=U(f)=C(b-a)\)</span>, and hence <span class="math notranslate nohighlight">\(f\)</span> is integrable, with</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^bf(x)dx=\int_a^bCdx=C(b-a).
+\]</div>
+</section>
+</div><p>The following is a handy criterion for proving that more sophisticated functions are integrable.</p>
+<p><strong>Proof.</strong> A bounded function <span class="math notranslate nohighlight">\(f:[a,b]\to\mathbb{R}\)</span> is integrable if and only if the following criterion holds:</p>
+<blockquote>
+<div><p>For all <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, there is a partition <span class="math notranslate nohighlight">\(P\)</span> such that <span class="math notranslate nohighlight">\(U(f,P) - L(f,P) &lt; \varepsilon\)</span>.
+<span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
+</div></blockquote>
+<p><strong>Proof.</strong> (<span class="math notranslate nohighlight">\(\Leftarrow\)</span>) Observe that for any partition <span class="math notranslate nohighlight">\(P\)</span> of <span class="math notranslate nohighlight">\([a,b]\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+0\leq U(f)-L(f) \leq U(f,P)-L(f,P).
+\]</div>
+<p>Therefore, if the criterion holds, it follows that</p>
+<div class="math notranslate nohighlight">
+\[
+0\leq U(f)-L(f) &lt;\varepsilon,
+\]</div>
+<p>for any <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>. Hence <span class="math notranslate nohighlight">\(U(f)=L(f)\)</span>, and so <span class="math notranslate nohighlight">\(f\)</span> is Riemann integrable.</p>
+<p>(<span class="math notranslate nohighlight">\(\Rightarrow\)</span>) Conversely, if <span class="math notranslate nohighlight">\(f\)</span> is Riemann integrable,  then we know that <span class="math notranslate nohighlight">\(\int_a^b f(x)dx = L(f)=U(f)\)</span>. By definition of <span class="math notranslate nohighlight">\(L(f)\)</span> and <span class="math notranslate nohighlight">\(U(f)\)</span>, given <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, we can find partitions <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> of <span class="math notranslate nohighlight">\([a,b]\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+L(f,P) &gt; L(f) - \frac{\epsilon}{2},
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+U(f,Q) &lt; U(f) + \frac{\epsilon}{2}.
+\]</div>
+<p>Note that the union <span class="math notranslate nohighlight">\(P\cup Q\)</span> is a refinement of both <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span>. By <a class="reference internal" href="#lem:ref">Lemma 6.1</a>,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+U(f,P\cup Q) - L(f,P\cup Q) &amp;\leq U(f,Q) - L(f,P) \\
+&amp;\leq U(f) + \frac{\epsilon}{2} - (L(f) - \frac{\epsilon}{2}) = \epsilon.
+\end{align*}\]</div>
+<p><span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
+<p>As an application of this, we can prove that all monotone functions defined on a closed bounded interval are integrable.</p>
+<div class="proof theorem admonition" id="theorem-7">
+<p class="admonition-title"><span class="caption-number">Theorem 6.1 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f:[a,b]\to\mathbb{R}\)</span> be a monotone function. Then <span class="math notranslate nohighlight">\(f\)</span> is integrable.</p>
+</section>
+</div><p><strong>Proof.</strong>
+Assume for simplicity that <span class="math notranslate nohighlight">\(f\)</span> is monotone increasing. The proof for monotone decreasing functions is very similar.</p>
+<p>Let <span class="math notranslate nohighlight">\(P=\{x_0,x_1,\ldots,x_n\}\)</span> be a partition of <span class="math notranslate nohighlight">\([a,b]\)</span>, where <span class="math notranslate nohighlight">\(a=x_0&lt;x_1&lt;\ldots&lt;x_n=b\)</span> as before. Then since <span class="math notranslate nohighlight">\(f\)</span> is increasing, for all <span class="math notranslate nohighlight">\(1\leq k\leq n\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+M_k = \sup_{x\in[x_{k-1},x_k]}f(x) = f(x_k),
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+m_k = \inf_{x\in[x_{k-1},x_k]}f(x) = f(x_{k-1}).
+\]</div>
+<p>Therefore,</p>
+<div class="math notranslate nohighlight" id="equation-eq-mono">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-eq-mono" title="Link to this equation">#</a></span>\[\begin{split}\begin{aligned}
+U(f,P) - L(f,P) &amp;= \sum_{k=1}^nf(x_k)(x_{k-1}-x_k) - \sum_{k=1}^nf(x_{k-1})(x_{k-1}-x_k) \\
+&amp;= \sum_{k=1}^n\big(f(x_k)-f(x_{k-1})\big)(x_{k-1}-x_k).
+\end{aligned}\end{split}\]</div>
+<p>This is true for any partition <span class="math notranslate nohighlight">\(P\)</span>. Let <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>. We aim to choose a partition <span class="math notranslate nohighlight">\(P\)</span> in such a way that <span class="math notranslate nohighlight">\(U(f,P) - L(f,P)&lt;\varepsilon\)</span>; the result will then follow by <a class="reference internal" href="#prop:intcond">Proposition 6.1</a>.</p>
+<p>Let <span class="math notranslate nohighlight">\(P\)</span> be the partition with points</p>
+<div class="math notranslate nohighlight">
+\[
+x_k=a+\left(\frac{b-a}{n}\right)k, \hspace{2em} \text{ for } k=0,1,\ldots,n.
+\]</div>
+<p>That, is <span class="math notranslate nohighlight">\(P\)</span> divides <span class="math notranslate nohighlight">\([a,b]\)</span> into <span class="math notranslate nohighlight">\(n\)</span> equal pieces. In particular, <span class="math notranslate nohighlight">\(x_k-x_{k-1}=\frac{b-a}{n}\)</span> for each <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p>By equation <a class="reference internal" href="#equation-eq-mono">(6.1)</a>,</p>
+<div class="math notranslate nohighlight">
+\[
+U(f,P) - L(f,P) = \frac{b-a}{n}\sum_{k=1}^n\big(f(x_k)-f(x_{k-1})\big)
+\]</div>
+<p>This is a telescopic sum, and when written out, most of the terms cancel. We get</p>
+<div class="math notranslate nohighlight">
+\[
+U(f,P)-L(f,P) = \frac{b-a}{n}\big(f(x_n)-f(x_0)\big) = \frac{b-a}{n}\big(f(b)-f(a)\big)
+\]</div>
+<p>(since <span class="math notranslate nohighlight">\(x_0=a\)</span> and <span class="math notranslate nohighlight">\(x_n=b\)</span>).</p>
+<p>Proving the condition from <a class="reference internal" href="#prop:intcond">Proposition 6.1</a> is now simply a matter of choosing <span class="math notranslate nohighlight">\(n\)</span> sufficiently large so that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{b-a}{n}\big(f(b)-f(a)\big) &lt; \varepsilon.
+\]</div>
+<p>Any integer larger than <span class="math notranslate nohighlight">\(\displaystyle\frac{(b-a)(f(b)-f(a))}{\varepsilon}\)</span> will suffice. <span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
+<p>Another large class of integrable functions is the continuous functions on closed bounded intervals. Unfortunately there is not sufficient time in this module to cover its proof, though the general approach is not disimilar to <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">thm:mono</span></code>. A non-examinable proof can be found in the appendix for interest.</p>
+<div class="proof theorem admonition" id="theorem-8">
+<p class="admonition-title"><span class="caption-number">Theorem 6.2 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f:[a,b]\to \mathbb{R}\)</span> be continuous. Then <span class="math notranslate nohighlight">\(f\)</span> is Riemann integrable.</p>
+</section>
+</div><p>In case we are tempted to think that all functions are integrable, here is an example of a non-integrable function.</p>
+<div class="proof example admonition" id="example-9">
+<p class="admonition-title"><span class="caption-number">Example 6.2 </span></p>
+<section class="example-content" id="proof-content">
+<p>Define <span class="math notranslate nohighlight">\(f:[0,1]\rightarrow \mathbb{R}\)</span> by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x) = \left\{ \begin{array}{lll} 0 &amp; x\in \mathbb{Q}, \\ 1 &amp; x\not\in \mathbb{Q}. \\ \end{array} \right.
+\end{split}\]</div>
+<p>Show that <span class="math notranslate nohighlight">\(f\)</span> is not Riemann integrable.</p>
+</section>
+</div><p><strong>Solution.</strong>
+We show that <span class="math notranslate nohighlight">\(U(f)\neq L(f)\)</span>, by direct calculation. Let <span class="math notranslate nohighlight">\(P=\{x_0,x_1,\ldots,x_n\}\)</span> be a partition of <span class="math notranslate nohighlight">\([0,1]\)</span>, and assume as usual that <span class="math notranslate nohighlight">\(0=x_0&lt;x_1&lt;\ldots&lt;x_n=1\)</span>.</p>
+<p>Note that <em>every</em> interval, however small, contains both rational and irrational numbers. This means that</p>
+<div class="math notranslate nohighlight">
+\[
+M_k = \sup_{x\in[x_{k-1},x_k]}f(x) = 1 \hspace{1em} \text{ and } \hspace{1em} m_k = \inf{x\in[x_{k-1},x_k]}f(x) = 0
+\]</div>
+<p>for <span class="math notranslate nohighlight">\(k=1,\ldots,n\)</span>. But then</p>
+<div class="math notranslate nohighlight">
+\[
+U(f,P) = \sum_{k=1}^n(x_k-x_{k-1}) = x_n-x_0 = 1,
+\]</div>
+<p>while <span class="math notranslate nohighlight">\(L(f,P)=0\)</span>. Taking <span class="math notranslate nohighlight">\(\sup\)</span>’s and <span class="math notranslate nohighlight">\(\inf\)</span>’s over all partitions <span class="math notranslate nohighlight">\(P\)</span> of <span class="math notranslate nohighlight">\([0,1]\)</span>, it follows that <span class="math notranslate nohighlight">\(U(f)=1\)</span> and <span class="math notranslate nohighlight">\(L(f)=0\)</span>. So <span class="math notranslate nohighlight">\(U(f)\neq L(f)\)</span>, and <span class="math notranslate nohighlight">\(f\)</span> is not Riemann integrable.</p>
+</section>
+<section id="properties-of-the-integral">
+<h2><span class="section-number">6.3. </span>3. Properties of the integral<a class="headerlink" href="#properties-of-the-integral" title="Link to this heading">#</a></h2>
+<p>We gather together some useful properties of the Riemann integral. Those that are not proven directly here will be proven in the problem booklet.</p>
+<div class="proof proposition admonition" id="propsint">
+<p class="admonition-title"><span class="caption-number">Proposition 6.2 </span></p>
+<section class="proposition-content" id="proof-content">
+<p>Let the bounded functions <span class="math notranslate nohighlight">\(f,g:[a,b]\rightarrow \mathbb{R}\)</span> be Riemann integrable.</p>
+<p>(i)  Suppose <span class="math notranslate nohighlight">\(f(x)\leq g(x)\)</span> for all <span class="math notranslate nohighlight">\(x\in [a,b]\)</span>. Then</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x)dx \leq \int_a^b g(x)dx.
+\]</div>
+<p>(ii) Let <span class="math notranslate nohighlight">\(f:[a,b]\to\mathbb{R}\)</span> be bounded, and let <span class="math notranslate nohighlight">\(c\in [a,b]\)</span>. If <span class="math notranslate nohighlight">\(f\)</span> is integrable, then so is the restriction of <span class="math notranslate nohighlight">\(f\)</span> to <span class="math notranslate nohighlight">\([a,c]\)</span> and <span class="math notranslate nohighlight">\([c,b]\)</span>, and</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x)dx = \int_a^cf(x)dx + \int_c^bf(x)dx.
+\]</div>
+<p>Conversely, if <span class="math notranslate nohighlight">\(f\)</span> is integrable on <span class="math notranslate nohighlight">\([a,c]\)</span> and <span class="math notranslate nohighlight">\([c,b]\)</span> then it is integrable on <span class="math notranslate nohighlight">\([a,b]\)</span>.</p>
+<p>(iii)  Let <span class="math notranslate nohighlight">\(\alpha ,\beta \in \mathbb{R}\)</span>. Then <span class="math notranslate nohighlight">\(\alpha f+ \beta g:[a,b]\to\mathbb{R}\)</span> is Riemann integrable and</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b\big(\alpha f(x) + \beta g(x)\big)dx = \alpha \int_a^b f(x)dx + \beta \int_a^b g(x)dx.
+\]</div>
+<p>(iv)  The function <span class="math notranslate nohighlight">\(|f|:[a,b]\to \mathbb{R}\)</span>; <span class="math notranslate nohighlight">\(x\mapsto|f(x)|\)</span> is Riemann integrable, and</p>
+<div class="math notranslate nohighlight">
+\[
+\left| \int_a^b f(x)dx \right| \leq \int_a^b |f(x)|dx.
+\]</div>
+</section>
+</div><p><strong>Proof.</strong> (i) Since <span class="math notranslate nohighlight">\(f\)</span> is integrable, we have <span class="math notranslate nohighlight">\(\int_a^b f(x)dx = U(f) = \inf\{U(f,P):P\text{ a partition of }[a,b]\}\)</span>. Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x)dx \leq U(f,P)
+\]</div>
+<p>for any partition <span class="math notranslate nohighlight">\(P\)</span> of <span class="math notranslate nohighlight">\([a,b]\)</span>. Also, since <span class="math notranslate nohighlight">\(f(x)\leq g(x)\)</span> for all <span class="math notranslate nohighlight">\(x\in[a,b]\)</span>, it is easy to check that <span class="math notranslate nohighlight">\(U(f,P)\leq U(g,P)\)</span>. Hence</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x)dx \leq U(g,P)
+\]</div>
+<p>for all partitions <span class="math notranslate nohighlight">\(P\)</span> of <span class="math notranslate nohighlight">\([a,b]\)</span>. Taking the infimum over <span class="math notranslate nohighlight">\(P\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x)dx \leq U(g) = \int_a^bg(x)dx,
+\]</div>
+<p>since <span class="math notranslate nohighlight">\(g\)</span> is integrable.</p>
+<p>(ii) Let <span class="math notranslate nohighlight">\(f|_{[a,c]}\)</span> denote the restriction of <span class="math notranslate nohighlight">\(f\)</span> to <span class="math notranslate nohighlight">\([a,c]\)</span>, and <span class="math notranslate nohighlight">\(f|_{[c,b]}\)</span> the restriction of <span class="math notranslate nohighlight">\(f\)</span> to <span class="math notranslate nohighlight">\([c,b]\)</span>.</p>
+<p>We first show that</p>
+<div class="math notranslate nohighlight">
+\[
+U(f) = U(f|_{[a,c]})+U(f|_{[c,b]}) \hspace{.5em} \text{and}\hspace{.5em} L(f) = L(f|_{[a,c]})+L(f|_{[c,b]}).
+\]</div>
+<p>Let <span class="math notranslate nohighlight">\(P_1\)</span> be any partition of <span class="math notranslate nohighlight">\([a,c]\)</span> and <span class="math notranslate nohighlight">\(P_2\)</span> be any partition of <span class="math notranslate nohighlight">\([c,b]\)</span>. Then <span class="math notranslate nohighlight">\(P:=P_1\cup P_2\)</span> is a partition of <span class="math notranslate nohighlight">\([a,b]\)</span>. One can check by writing out the Riemann sums explicitly that</p>
+<div class="math notranslate nohighlight">
+\[
+U(f,P) = U(f|_{[a,c]},P_1)+U(f|_{[c,b]},P_2).
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+L(f,P) = L(f|_{[a,c]},P_1)+L(f|_{[c,b]},P_2).
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight" id="equation-eq-u">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-eq-u" title="Link to this equation">#</a></span>\[U(f) \leq U(f|_{[a,c]},P_1)+U(f|_{[c,b]},P_2),\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq-l">
+<span class="eqno">(6.5)<a class="headerlink" href="#equation-eq-l" title="Link to this equation">#</a></span>\[L(f) \geq L(f|_{[a,c]},P_1)+L(f|_{[c,b]},P_2)\]</div>
+<p>Taking the infimum in <a class="reference internal" href="#equation-eq-u">(6.4)</a> first over <span class="math notranslate nohighlight">\(P_1\)</span> and then over <span class="math notranslate nohighlight">\(P_2\)</span> gives</p>
+<div class="math notranslate nohighlight" id="equation-eq-u">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-eq-u" title="Link to this equation">#</a></span>\[U(f) \leq U(f|_{[a,c]})+U(f|_{[c,b]}).\]</div>
+<p>Similarly, taking the supremum in <a class="reference internal" href="#equation-eq-l">(6.5)</a>, first over <span class="math notranslate nohighlight">\(P_1\)</span> and then over <span class="math notranslate nohighlight">\(P_2\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-eq-l">
+<span class="eqno">(6.5)<a class="headerlink" href="#equation-eq-l" title="Link to this equation">#</a></span>\[L(f) \geq L(f|_{[a,c]})+L(f|_{[c,b]}).\]</div>
+<p>On the other hand, if <span class="math notranslate nohighlight">\(P\)</span> now denotes any partition of <span class="math notranslate nohighlight">\([a,b]\)</span>, then by <a class="reference internal" href="#lem:ref">Lemma 6.1</a>,</p>
+<div class="math notranslate nohighlight">
+\[
+U(f,P) \geq U(f,P\cup\{c\}).
+\]</div>
+<p>Let <span class="math notranslate nohighlight">\(P_1=\Big(P\cup\{c\}\Big)\cap[a,c]\)</span> and <span class="math notranslate nohighlight">\(P_2=\Big(P\cup\{c\}\Big)\cap[c,b]\)</span>. Then <span class="math notranslate nohighlight">\(P_1\)</span> is a partition of <span class="math notranslate nohighlight">\([a,c]\)</span>, <span class="math notranslate nohighlight">\(P_2\)</span> is a partition of <span class="math notranslate nohighlight">\([c,b]\)</span>, and <span class="math notranslate nohighlight">\(P\cup\{c\} = P_1\cup P_2\)</span>. Hence,</p>
+<div class="math notranslate nohighlight">
+\[
+U(f,P) \geq U(f,P\cup\{c\}) = U(f,P_1) + U(f,P_2) \geq U(f|_{[a,c]}) + U(f_{[c,b]}).
+\]</div>
+<p>Taking <span class="math notranslate nohighlight">\(\inf\)</span>’s over <span class="math notranslate nohighlight">\(P\)</span>, we have <span class="math notranslate nohighlight">\(U(f) \geq U(f|_{[a,c]})+U(f|_{[c,b]})\)</span>, which when combined with <a class="reference internal" href="#equation-eq-u">(6.4)</a> gives</p>
+<div class="math notranslate nohighlight">
+\[
+U(f) = U(f|_{[a,c]})+U(f|_{[c,b]}).
+\]</div>
+<p>A similar argument applied to the lower sums shows that <span class="math notranslate nohighlight">\(L(f) \leq L(f|_{[a,c]})+L(f|_{[c,b]})\)</span>, and so by <a class="reference internal" href="#equation-eq-l">(6.5)</a>,</p>
+<div class="math notranslate nohighlight">
+\[
+L(f) = L(f|_{[a,c]})+L(f|_{[c,b]}).
+\]</div>
+<p>Finally, observe that we can now write</p>
+<div class="math notranslate nohighlight">
+\[
+0\leq U(f) - L(f) = \Big(U(f|_{[a,c]}) - L(f|_{[a,c]})\Big) + \Big(U(f|_{[c,b]}) - L(f|_{[c,b]}\Big),
+\]</div>
+<p>and each of these two brackets are greater than or equal to zero. It follows that <span class="math notranslate nohighlight">\(U(f)=L(f)\)</span> if and only if <span class="math notranslate nohighlight">\(U(f|_{[a,c]}) = L(f|_{[a,c]})\)</span> and <span class="math notranslate nohighlight">\(U(f|_{[c,b]}) = L(f|_{[c,b]}\)</span>. That is, <span class="math notranslate nohighlight">\(f\)</span> is integrable if and only if <span class="math notranslate nohighlight">\(f|_{[a,c]}\)</span> and <span class="math notranslate nohighlight">\(f|_{[c,b]}\)</span> are both integrable. If this is the case, then</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x)dx = U(f) = U(f|_{[a,c]}) + U(f|_{[c,b]}) = \int_a^cf(x)dx+\int_c^bf(x)dx.
+\]</div>
+<p>(iii) See Problems 67 and 68.</p>
+<p>(iv) Since <span class="math notranslate nohighlight">\(-|f(x)|\leq f(x) \leq |f(x)|\)</span> for all <span class="math notranslate nohighlight">\(x\in[a,b]\)</span> the result will follow from part (i) if we can show that <span class="math notranslate nohighlight">\(|f|\)</span> is integrable. This is for you to do as Problem 69.<span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
+<p><a class="reference internal" href="#propsint">Proposition 6.2</a>(ii) is particularly useful as it allows us to integrate functions with a finite number of jump discontinuities, by splitting its domain into intervals on which it is continuous.</p>
+<div class="proof example admonition" id="eg:step">
+<p class="admonition-title"><span class="caption-number">Example 6.3 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider the step function</p>
+<div class="math notranslate nohighlight">
+\[
+s:[0,4] \rightarrow \mathbb{R}; \; s(x) = \mathbf{1}_{[2,3]}(x)-\mathbf{1}_{[0,2)}(x)+2\mathbf{1}_{(3,4]}(x).
+\]</div>
+<p>Show that <span class="math notranslate nohighlight">\(s\)</span> is integrable and calculate <span class="math notranslate nohighlight">\(\int_0^4s(x)dx\)</span>.</p>
+</section>
+</div><p><strong>Solution.</strong>
+Using the definition of an indicator function, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+s(x) = \left\{\begin{array}{cc} -1 &amp; \text{if } 0\leq x&lt;2 \\ 1 &amp; \text{if } 2\leq x\leq 3 \\ 2 &amp; \text{if } 3&lt; x\leq 4 \end{array}\right.
+\end{split}\]</div>
+<figure class="align-default" id="rs">
+<a class="reference internal image-reference" href="_images/rs.png"><img alt="_images/rs.png" src="_images/rs.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.4 </span><span class="caption-text">Graph of the step function <span class="math notranslate nohighlight">\(s\)</span>.</span><a class="headerlink" href="#rs" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Direct inspection of the graph of <span class="math notranslate nohighlight">\(s\)</span> indicates that</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^2s(x)dx=-2,\; \int_2^3s(x)dx=1, \; \text{ and } \; \int_3^4s(x)dx=2.
+\]</div>
+<p>Hence by <a class="reference internal" href="#propsint">Proposition 6.2</a>(ii),</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^4s(x)dx = \int_0^2s(x)dx + \int_2^3s(x)dx + \int_3^4s(x)dx = -2 + 1 + 2 = 1.
+\]</div>
+<section id="exchanging-limits-in-an-integral">
+<h3><span class="section-number">6.3.1. </span>3.0.1. Exchanging limits in an integral<a class="headerlink" href="#exchanging-limits-in-an-integral" title="Link to this heading">#</a></h3>
+<p>Technically, we have only defined <span class="math notranslate nohighlight">\(\int_a^bf(x)dx\)</span> when <span class="math notranslate nohighlight">\(a&lt;b\)</span>.</p>
+<div class="proof definition admonition" id="def:intba">
+<p class="admonition-title"><span class="caption-number">Definition 6.4 </span></p>
+<section class="definition-content" id="proof-content">
+<p>For an integrable function <span class="math notranslate nohighlight">\(f:[a,b]\to\mathbb{R}\)</span>, we define</p>
+<div class="math notranslate nohighlight">
+\[
+\int_b^af(x)dx = -\int_a^bf(x)dx,
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^af(x)dx=0.
+\]</div>
+</section>
+</div><p><a class="reference internal" href="#def:intba">Definition 6.4</a> is a natural convention that mainly serves the purpose of simplifying the algebra of integrals. Importantly, it does not disturb the validity of any part of <a class="reference internal" href="#propsint">Proposition 6.2</a>.</p>
+</section>
+</section>
+<section id="the-fundamental-theorem-of-calculus">
+<h2><span class="section-number">6.4. </span>4. The fundamental theorem of calculus<a class="headerlink" href="#the-fundamental-theorem-of-calculus" title="Link to this heading">#</a></h2>
+<p>So far, integration has exclusively referred to area calculation. In this section we link it with the reverse of differentiation. This is known as the <em>fundamental theorem of calculus</em>. You are already familiar with this statement, but now we are in a position to give a full proof.</p>
+<p>We first need a quick lemma.</p>
+<div class="proof lemma admonition" id="lemma-13">
+<p class="admonition-title"><span class="caption-number">Lemma 6.2 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>Let the bounded function <span class="math notranslate nohighlight">\(f:[a,b]\rightarrow \mathbb{R}\)</span> be Riemann integrable. Let</p>
+<div class="math notranslate nohighlight">
+\[
+m = \inf \{ f(x) : x\in [a,b] \}, \qquad M = \sup \{ f(x) : x\in [a,b] \}.
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+m(b-a) \leq \int_a^b f(x)dx \leq M(b-a).
+\]</div>
+</section>
+</div><p><strong>Proof.</strong> Consider the partition <span class="math notranslate nohighlight">\(P=\{a,b\}\)</span> of <span class="math notranslate nohighlight">\([a,b]\)</span>. The associated Riemann sums are</p>
+<div class="math notranslate nohighlight">
+\[
+L(f,P) = m(b-a) \hspace{1em} \text{ and } \hspace{1em}  U(f,P) = M(b-a).
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(f\)</span> is integrable,</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x)dx = L(f) \geq m(b-a),
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x)dx = U(f) \leq M(b-a).
+\]</div>
+<p><span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
+<div class="proof theorem admonition" id="ftc">
+<p class="admonition-title"><span class="caption-number">Theorem 6.3 </span> (Fundamental theorem of calculus)</p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f:[a,b]\rightarrow \mathbb{R}\)</span> be continuous. Define <span class="math notranslate nohighlight">\(F:[a,b]\rightarrow \mathbb{R}\)</span> by</p>
+<div class="math notranslate nohighlight">
+\[
+F(x) = \int_a^x f(t)dt.
+\]</div>
+<p>Then <span class="math notranslate nohighlight">\(F\)</span> is differentiable, and <span class="math notranslate nohighlight">\(F'(x) = f(x)\)</span> for all <span class="math notranslate nohighlight">\(x\in [a,b]\)</span>.</p>
+</section>
+</div><p><strong>Proof.</strong> Note first that <span class="math notranslate nohighlight">\(F\)</span> is well defined: by <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">thm:ctsint</span></code>, <span class="math notranslate nohighlight">\(f\)</span> is integrable.</p>
+<p>Let <span class="math notranslate nohighlight">\(h&gt;0\)</span> and let <span class="math notranslate nohighlight">\(x\in [a,b]\)</span>. Then, using <a class="reference internal" href="#propsint">Proposition 6.2</a>(ii),</p>
+<div class="math notranslate nohighlight">
+\[
+F(x+h)-F(x) = \int_a^{x+h} f(t) dt -\int_a^{x} f(t)  dt = \int_x^{x+h} f(t) dt.
+\]</div>
+<p>In other words, <span class="math notranslate nohighlight">\(F(x+h)-F(x)\)</span> is the area under the curve between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(x+h\)</span>.</p>
+<figure class="align-default" id="ftc">
+<a class="reference internal image-reference" href="_images/FTC.png"><img alt="_images/FTC.png" src="_images/FTC.png" style="height: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.5 </span><span class="caption-text">Visualisation of <span class="math notranslate nohighlight">\(F(x+h)-F(x)\)</span>.</span><a class="headerlink" href="#ftc" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Since <span class="math notranslate nohighlight">\(f\)</span> is continuous, by the extreme value theorem (<a class="reference internal" href="3Cty.html#thm:evt">Theorem 3.5</a>) it is bounded on <span class="math notranslate nohighlight">\([x,x+h]\)</span> and attains its bounds. That is,</p>
+<div class="math notranslate nohighlight">
+\[
+f(c_h) = \inf \{ f(t) : t\in [x,x+h ] \}, \hspace{1em} \text{ and } \hspace{1em} f(k_h) = \sup \{ f(t) : t\in [x,x+h] \},
+\]</div>
+<p>for some <span class="math notranslate nohighlight">\(c_h,k_h\in[x,x+h]\)</span>. Therefore, by <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">bdint</span></code>,</p>
+<div class="math notranslate nohighlight">
+\[
+hf(c_h) \leq F(x+h) - F(x) \leq h\cdot f(k_h),
+\]</div>
+<p>and so</p>
+<div class="math notranslate nohighlight" id="equation-eq-fch">
+<span class="eqno">(6.6)<a class="headerlink" href="#equation-eq-fch" title="Link to this equation">#</a></span>\[f(c_h)\leq \frac{F(x+h)-F(x)}{h} \leq f(k_h). \]</div>
+<p>The same inequality holds when <span class="math notranslate nohighlight">\(h&lt;0\)</span>; the proof is similar.</p>
+<p>Since <span class="math notranslate nohighlight">\(c_h,k_h\in[x,x+h]\)</span> for all <span class="math notranslate nohighlight">\(h\)</span>, we have <span class="math notranslate nohighlight">\(c_h, k_h\rightarrow 0\)</span> as <span class="math notranslate nohighlight">\(h\rightarrow 0\)</span>. Therefore, by continuity of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{h\rightarrow 0} f(c_h) = \lim_{h\rightarrow 0} f(k_h) = f(x).
+\]</div>
+<p>Applying the sandwich rule to <a class="reference internal" href="#equation-eq-fch">(6.6)</a>,</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{h\rightarrow 0} \frac{F(x+h)-F(x)}{h} =  f(x).
+\]</div>
+<p>That is, <span class="math notranslate nohighlight">\(F\)</span> is differentiable at <span class="math notranslate nohighlight">\(x\)</span> and  <span class="math notranslate nohighlight">\(F'(x) =f(x)\)</span>. <span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
+<p>The version of the theorem that we use in practice to calculate integrals follows as a corollary.</p>
+<div class="proof corollary admonition" id="corollary-15">
+<p class="admonition-title"><span class="caption-number">Corollary 6.1 </span></p>
+<section class="corollary-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f:[a,b]\rightarrow \mathbb{R}\)</span> be a continuous function. Suppose we have a differentiable function <span class="math notranslate nohighlight">\(F:[a,b]\rightarrow \mathbb{R}\)</span> such that <span class="math notranslate nohighlight">\(F'(x) =f(x)\)</span> for all <span class="math notranslate nohighlight">\(x\in [a,b]\)</span>. Then</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(t)dt = F(b) - F(a).
+\]</div>
+</section>
+</div><p><strong>Proof.</strong> Let <span class="math notranslate nohighlight">\(G:[a,b]\to \mathbb{R}\)</span> be given by</p>
+<div class="math notranslate nohighlight">
+\[
+G(x) = \int_a^x f(t)dt.
+\]</div>
+<p>Then <span class="math notranslate nohighlight">\(G(a)=0\)</span>, and by <a class="reference internal" href="#ftc">Theorem 6.3</a>, <span class="math notranslate nohighlight">\(G\)</span> is differentiable with</p>
+<div class="math notranslate nohighlight">
+\[
+G'(x) =f(x) =F'(x).
+\]</div>
+<p>So we have a constant <span class="math notranslate nohighlight">\(C\)</span> such that <span class="math notranslate nohighlight">\(G(x)=F(x)+C\)</span> for all <span class="math notranslate nohighlight">\(x\in [a,b]\)</span>. Now</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int_a^b f(t)\ dt = G(b) &amp;= G(b) - G(a) \\
+&amp;= (F(b)+C) - (F(a)+C) = F(b) -F(a). 
+\end{align*}\]</div>
+<p><span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
+<p>Note that all of the techniques we already know about finding integrals, such as substitution and integration by parts, can be proved for continuous functions with an ``antiderivative”, <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">rules</span></code>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -413,6 +975,28 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partitions-and-riemann-sums">6.1. 1. Partitions and Riemann sums</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-riemann-integral">6.2. 2. The Riemann integral</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-integral">6.3. 3. Properties of the integral</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exchanging-limits-in-an-integral">6.3.1. 3.0.1. Exchanging limits in an integral</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fundamental-theorem-of-calculus">6.4. 4. The fundamental theorem of calculus</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

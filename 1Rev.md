@@ -143,8 +143,7 @@ $$
 \Big||a|-|b|\Big| \leq |a-b|.
 $$
 
-*Proof.*
-Since the statement is symmetric in $a$ and $b$, we can assume without loss of generality that $|a|>|b|$. By the triangle inequality,
+**Proof.** Since the statement is symmetric in $a$ and $b$, we can assume without loss of generality that $|a|>|b|$. By the triangle inequality,
 
 $$
 |a| = |(a-b) +b| \leq |a-b| +|b|,

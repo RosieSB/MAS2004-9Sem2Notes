@@ -365,12 +365,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-continuity-basic-properties-and-examples">3.1. 1. Definition of continuity, basic properties and examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discontinuity">3.2. 2. Discontinuity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-on-intervals">3.3. 3. Continuity on intervals</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-intermediate-value-theorem">3.3.1. 3.1. The intermediate value theorem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-extreme-value-theorem">3.3.2. 3.2. The extreme value theorem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverses">3.3.3. 3.3. Inverses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-continuity-basic-properties-and-examples">3.1. Definition of continuity, basic properties and examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discontinuity">3.2. Discontinuity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-on-intervals">3.3. Continuity on intervals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-intermediate-value-theorem">3.3.1. The intermediate value theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-extreme-value-theorem">3.3.2. The extreme value theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverses">3.3.3. Inverses</a></li>
 </ul>
 </li>
 </ul>
@@ -387,7 +387,7 @@
   <section class="tex2jax_ignore mathjax_ignore" id="continuity">
 <span id="chap-cty"></span><h1><span class="section-number">3. </span>Continuity<a class="headerlink" href="#continuity" title="Link to this heading">#</a></h1>
 <section id="definition-of-continuity-basic-properties-and-examples">
-<h2><span class="section-number">3.1. </span>1. Definition of continuity, basic properties and examples<a class="headerlink" href="#definition-of-continuity-basic-properties-and-examples" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span>Definition of continuity, basic properties and examples<a class="headerlink" href="#definition-of-continuity-basic-properties-and-examples" title="Link to this heading">#</a></h2>
 <p>Intuitively we think of functions as being ``continuous’’ if we can draw their graphs without ever taking our pen/pencil off the paper: the graph contains no gaps/jumps/discontinuities. So if we think of a typical point <span class="math notranslate nohighlight">\(a\)</span> in the domain of the function <span class="math notranslate nohighlight">\(f\)</span>, then as <span class="math notranslate nohighlight">\(x\)</span> gets closer and closer to <span class="math notranslate nohighlight">\(a\)</span>, we expect that <span class="math notranslate nohighlight">\(f(x)\)</span> will get closer and closer to <span class="math notranslate nohighlight">\(f(a)\)</span>. But from the work of <a class="reference internal" href="2LoF.html#chap-functionlimits"><span class="std std-ref">Chapter 2</span></a>, recall that as <span class="math notranslate nohighlight">\(x\)</span> gets closer and closer to <span class="math notranslate nohighlight">\(a\)</span>, then <span class="math notranslate nohighlight">\(f(x)\)</span> gets closer and closer to its limit at <span class="math notranslate nohighlight">\(a\)</span> (if this exists). This leads to the following definition.</p>
 <div class="proof definition admonition" id="defcont">
 <p class="admonition-title"><span class="caption-number">Definition 3.1 </span> (Continuity)</p>
@@ -396,11 +396,10 @@
 <p>We say that <span class="math notranslate nohighlight">\(f\)</span> is <em>continuous at the point</em> <span class="math notranslate nohighlight">\(a\)</span> if <span class="math notranslate nohighlight">\(\lim_{x \rightarrow a}f(x)\)</span> exists and equals <span class="math notranslate nohighlight">\(f(a)\)</span>.</p>
 <p>We say that <span class="math notranslate nohighlight">\(f\)</span> is <em>continuous on a set</em> <span class="math notranslate nohighlight">\(S \subseteq X\)</span> if it is continuous at every point of <span class="math notranslate nohighlight">\(S\)</span>.</p>
 </section>
-</div><div class="proof theorem admonition" id="theorem-1">
+</div><div class="proof theorem admonition" id="cont1">
 <p class="admonition-title"><span class="caption-number">Theorem 3.1 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(f:X\to\mathbb{R}\)</span> where <span class="math notranslate nohighlight">\(X\)</span> is a subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(a\in X\)</span>  be such that there is some sequence <span class="math notranslate nohighlight">\((x_n)\)</span> in
-<span class="math notranslate nohighlight">\(X\setminus\{a\}\)</span> with <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}x_{n} = a\)</span>.
+<p>Let <span class="math notranslate nohighlight">\(f:X\to\mathbb{R}\)</span> where <span class="math notranslate nohighlight">\(X\)</span> is a subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(a\in X\)</span>  be such that there is some sequence <span class="math notranslate nohighlight">\((x_n)\)</span> in <span class="math notranslate nohighlight">\(X\setminus\{a\}\)</span> with <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}x_{n} = a\)</span>.
 Then the following statements are equivalent.</p>
 <p>(i) <span class="math notranslate nohighlight">\(f\)</span> is continuous at <span class="math notranslate nohighlight">\(a\)</span>.</p>
 <p>(ii) Given any sequence <span class="math notranslate nohighlight">\((x_{n})\)</span> with <span class="math notranslate nohighlight">\(x_{n} \in X\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>, such that <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}x_{n} = a\)</span>, we have <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty} f(x_{n}) = f(a)\)</span>.</p>
@@ -411,14 +410,14 @@ Then the following statements are equivalent.</p>
 <p>(ii)’: Given any sequence <span class="math notranslate nohighlight">\((x_{n})\)</span> with <span class="math notranslate nohighlight">\(x_{n} \in X\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>,
 and <span class="math notranslate nohighlight">\(x_n\neq a\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>, such that <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}x_{n} = a\)</span>, we have <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty} f(x_{n}) = f(a)\)</span>.</p>
 <p>Let’s check that (ii) and (ii)’ are equivalent. The only difference is whether you allow terms of the sequence to be <span class="math notranslate nohighlight">\(a\)</span> or not. Obviously, (ii) implies (ii)’. On the other hand, to see that (ii)’ implies (ii), assume (ii)’ holds and consider a sequence <span class="math notranslate nohighlight">\((y_n)\)</span> in <span class="math notranslate nohighlight">\(X\)</span> converging to <span class="math notranslate nohighlight">\(a\)</span>. If there are infinitely many  terms of the sequence <span class="math notranslate nohighlight">\((y_n)\)</span> not equal to <span class="math notranslate nohighlight">\(a\)</span>,  consider the subsequence <span class="math notranslate nohighlight">\((x_n)\)</span> of these, which must also converge to <span class="math notranslate nohighlight">\(a\)</span> (see Proposition 3.12 in your MAS107 notes). Then <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty} f(x_n)=f(a)\)</span> by (ii)’ and clearly <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty} f(y_n)=\lim_{n\rightarrow\infty} f(x_n)\)</span>. On the other hand, if there are only finitely many terms not equal to <span class="math notranslate nohighlight">\(a\)</span>, then after some stage all terms are <span class="math notranslate nohighlight">\(a\)</span>, so clearly  <span class="math notranslate nohighlight">\(\lim_{n\rightarrow\infty} f(y_n)=f(a)\)</span>.</p>
-<p>Finally, the proof that (ii) and (iii) are equivalent is almost exactly the same as the proof of <a class="reference internal" href="2LoF.html#ed">Theorem 2.2</a>. <span class="math notranslate nohighlight">\(\square\)</span></p>
+<p>Finally, the proof that (ii) and (iii) are equivalent is almost exactly the same as the proof of <a class="reference internal" href="2LoF.html#ed">Theorem 2.2</a>. <span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
 <div class="proof remark admonition" id="remark-2">
 <p class="admonition-title"><span class="caption-number">Remark 3.1 </span></p>
 <section class="remark-content" id="proof-content">
-<p>We can rewrite Theorem <a class="reference internal" href="#cont1"><span class="xref myst">1</span></a>(iii) as</p>
-<center>
-``Given any $\varepsilon > 0$, there exists $\delta > 0$ such that whenever $x \in X$ with $x \in (a -\delta, a + \delta)$, we have $f(x) \in(f(a) - \varepsilon, f(a) + \varepsilon)$.''
-</center>
+<p>We can rewrite <a class="reference internal" href="#cont1">Theorem 3.1</a>(iii) as</p>
+<blockquote>
+<div><p>“Given any <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span>, there exists <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> such that whenever <span class="math notranslate nohighlight">\(x \in X\)</span> with <span class="math notranslate nohighlight">\(x \in (a -\delta, a + \delta)\)</span>, we have <span class="math notranslate nohighlight">\(f(x) \in(f(a) - \varepsilon, f(a) + \varepsilon)\)</span>.”</p>
+</div></blockquote>
 <p>An open interval of the form <span class="math notranslate nohighlight">\((a - \delta, a + \delta)\)</span>, where <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> is called an <em>open neighbourhood</em> of <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span>. This reformulation of the notion of continuity in terms of open neighbourhoods is better suited in more advanced topics, such as analysis with functions on <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, or more generally still, functions on a metric or topological space^[More on this in MAS331 Metric Spaces and beyond.].</p>
 </section>
 </div><div class="proof example admonition" id="constfn">
@@ -432,7 +431,7 @@ and <span class="math notranslate nohighlight">\(x_n\neq a\)</span> for all <spa
 <p>The linear function  <span class="math notranslate nohighlight">\(f:\mathbb{R}\to\mathbb{R}\)</span> given by <span class="math notranslate nohighlight">\(f(x) = x\)</span> is also continuous on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. Again given any sequence <span class="math notranslate nohighlight">\((x_{n})\)</span> converging to <span class="math notranslate nohighlight">\(a\)</span>,  <span class="math notranslate nohighlight">\(f(x_{n}) = x_{n}\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>, and so the sequence <span class="math notranslate nohighlight">\((f(x_{n}))\)</span> clearly converges to <span class="math notranslate nohighlight">\(f(a) = a\)</span>.</p>
 </section>
 </div><p>To build more interesting examples, we need the following.</p>
-<div class="proof theorem admonition" id="theorem-5">
+<div class="proof theorem admonition" id="AOL3">
 <p class="admonition-title"><span class="caption-number">Theorem 3.2 </span> (Algebra of limits revisited)</p>
 <section class="theorem-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\(f:A\to\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(g :B \rightarrow \mathbb{R}\)</span> are both continuous at <span class="math notranslate nohighlight">\(a \in A\cap B\)</span>. The following functions are also continuous at <span class="math notranslate nohighlight">\(a\)</span>.</p>
@@ -441,12 +440,12 @@ and <span class="math notranslate nohighlight">\(x_n\neq a\)</span> for all <spa
 <p>(iii) <span class="math notranslate nohighlight">\(\alpha f\)</span>, for all <span class="math notranslate nohighlight">\(\alpha \in \mathbb{R}\)</span>,</p>
 <p>(iv) <span class="math notranslate nohighlight">\(\displaystyle\frac{f}{g}\)</span>, provided <span class="math notranslate nohighlight">\(g(a) \neq 0\)</span>.</p>
 </section>
-</div><p><em>Proof.</em> This is a direct consequence of Theorem~<a class="reference internal" href="#AOL2"><span class="xref myst">AOL2</span></a>. \end{proof}</p>
-<p>Using algebra of limits and Examples~<a class="reference internal" href="#constfn"><span class="xref myst">constfn</span></a> and <a class="reference internal" href="#idfn"><span class="xref myst">idfn</span></a>, we can expand our supply of continuous functions.</p>
+</div><p><strong>Proof.</strong> This is a direct consequence of <a class="reference internal" href="2LoF.html#AOL2">Theorem 2.1</a>. <span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
+<p>Using algebra of limits and <a class="reference internal" href="#constfn">Example 3.1</a> and <a class="reference internal" href="#idfn">Example 3.2</a>, we can expand our supply of continuous functions.</p>
 <ul class="simple">
-<li><p>Using Theorem <a class="reference internal" href="#AOL3"><span class="xref myst">AOL3</span></a>(ii) repeatedly, we can show that <span class="math notranslate nohighlight">\(f(x) = x^{n}\)</span> is continuous on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>.</p></li>
-<li><p>Then using Theorem <a class="reference internal" href="#AOL3"><span class="xref myst">AOL3</span></a>(i) and (iii), it follows that every polynomial <span class="math notranslate nohighlight">\(p(x) = a_{0} + a_{1}x + \cdots + a_{n}x^{n}\)</span> is continuous on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p></li>
-<li><p>Finally using Theorem <a class="reference internal" href="#AOL3"><span class="xref myst">AOL3</span></a>(iv) we conclude that rational functions <span class="math notranslate nohighlight">\(r(x) = \frac{p(x)}{q(x)}\)</span> are continuous at every point where <span class="math notranslate nohighlight">\(q(x)\neq 0\)</span>.
+<li><p>Using <a class="reference internal" href="#AOL3">Theorem 3.2</a>(ii) repeatedly, we can show that <span class="math notranslate nohighlight">\(f(x) = x^{n}\)</span> is continuous on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>.</p></li>
+<li><p>Then using <a class="reference internal" href="#AOL3">Theorem 3.2</a>(i) and (iii), it follows that every polynomial <span class="math notranslate nohighlight">\(p(x) = a_{0} + a_{1}x + \cdots + a_{n}x^{n}\)</span> is continuous on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p></li>
+<li><p>Finally using <a class="reference internal" href="#AOL3">Theorem 3.2</a>(iv) we conclude that rational functions <span class="math notranslate nohighlight">\(r(x) = \frac{p(x)}{q(x)}\)</span> are continuous at every point where <span class="math notranslate nohighlight">\(q(x)\neq 0\)</span>.
 The continuity on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> of functions such as <span class="math notranslate nohighlight">\(f(x) = e^{k x}, g(x) = \sin(kx), h(x) = \cos(kx)\)</span>, for <span class="math notranslate nohighlight">\(k \in \mathbb{R}\)</span>, can be established using power series arguments. We will explore this further in <a class="reference internal" href="5SSF.html#chap-seq-seriesoffns"><span class="std std-ref">Chapter 5</span></a>.</p></li>
 </ul>
 <p>We also have a result for composition.</p>
@@ -456,8 +455,8 @@ The continuity on <span class="math notranslate nohighlight">\(\mathbb{R}\)</spa
 <p>Let <span class="math notranslate nohighlight">\(f:A\to B\)</span> and <span class="math notranslate nohighlight">\(g:B\to \mathbb{R}\)</span>, so we have the composition <span class="math notranslate nohighlight">\(g\circ f: A\to \mathbb{R}\)</span>, given by <span class="math notranslate nohighlight">\( (g \circ f)(x) = g(f(x))\)</span>. If <span class="math notranslate nohighlight">\(f\)</span> is continuous at <span class="math notranslate nohighlight">\(a\)</span>  and <span class="math notranslate nohighlight">\(g\)</span> is continuous at <span class="math notranslate nohighlight">\(f(a)\)</span>, then <span class="math notranslate nohighlight">\(g \circ f\)</span> is continuous at <span class="math notranslate nohighlight">\(a\)</span>.</p>
 </section>
 </div><p><strong>Proof.</strong>
-This is for you to do in Problem~\iflatexml 14 \else<a class="reference internal" href="#q:57"><span class="xref myst">q:57</span></a>\fi. <span class="math notranslate nohighlight">\(\square\)</span></p>
-<p>With Theorem~<a class="reference internal" href="#fof"><span class="xref myst">fof</span></a>, we can immediately deduce continuity on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> of functions such as <span class="math notranslate nohighlight">\(f:\mathbb{R}\to\mathbb{R}\)</span> given by <span class="math notranslate nohighlight">\(f(x) = \sin\left(\frac{2x-1}{x^{2} + 1}\right)\)</span>.</p>
+This is for you to do in Problem 14. <span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
+<p>With <a class="reference internal" href="#fof">Theorem 3.3</a>, we can immediately deduce continuity on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> of functions such as <span class="math notranslate nohighlight">\(f:\mathbb{R}\to\mathbb{R}\)</span> given by <span class="math notranslate nohighlight">\(f(x) = \sin\left(\frac{2x-1}{x^{2} + 1}\right)\)</span>.</p>
 <div class="proof example admonition" id="extex">
 <p class="admonition-title"><span class="caption-number">Example 3.3 </span></p>
 <section class="example-content" id="proof-content">
@@ -466,7 +465,7 @@ This is for you to do in Problem~\iflatexml 14 \else<a class="reference internal
 \[
 g(x) = x\sin\left(\frac{1}{x}\right).
 \]</div>
-<p>Using Theorems \ref{AOL3} and \ref{fof}, it is not hard to see that <span class="math notranslate nohighlight">\(g\)</span> is continuous at every point of its domain. In Problem~\iflatexml 9 \else \ref{q:51}\fi, we showed that <span class="math notranslate nohighlight">\(\displaystyle\lim_{x \rightarrow 0}g(x)\)</span> exists and is <span class="math notranslate nohighlight">\(0\)</span>. Now define a new function <span class="math notranslate nohighlight">\(\tilde{g}:\mathbb{R}\to\mathbb{R}\)</span> by</p>
+<p>Using <a class="reference internal" href="#AOL3">Theorem 3.2</a> and <a class="reference internal" href="#fof">Theorem 3.3</a>, it is not hard to see that <span class="math notranslate nohighlight">\(g\)</span> is continuous at every point of its domain. In Problem 9, we showed that <span class="math notranslate nohighlight">\(\displaystyle\lim_{x \rightarrow 0}g(x)\)</span> exists and is <span class="math notranslate nohighlight">\(0\)</span>. Now define a new function <span class="math notranslate nohighlight">\(\tilde{g}:\mathbb{R}\to\mathbb{R}\)</span> by</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \tilde{g}(x) = \begin{cases} g(x) &amp;\text{if $x \in \mathbb{R} \setminus \{0\}$},\\
@@ -479,7 +478,7 @@ g(x) = x\sin\left(\frac{1}{x}\right).
 <section class="definition-content" id="proof-content">
 <p>Given two functions <span class="math notranslate nohighlight">\(f_{1}:A\to\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(f_{2}:B\to \mathbb{R}\)</span>, we say that <span class="math notranslate nohighlight">\(f_{2}\)</span> is an <em>extension</em> of <span class="math notranslate nohighlight">\(f_{1}\)</span>, (and that <span class="math notranslate nohighlight">\(f_{1}\)</span> is a *restriction} of <span class="math notranslate nohighlight">\(f_{2}\)</span>) if <span class="math notranslate nohighlight">\(A \subseteq B\)</span> and <span class="math notranslate nohighlight">\(f_{1}(x) = f_{2}(x)\)</span> for all <span class="math notranslate nohighlight">\(x \in A\)</span>. If <span class="math notranslate nohighlight">\(f_{1}\)</span> is continuous on <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(f_{2}\)</span> is continuous on <span class="math notranslate nohighlight">\(B\)</span>, we say that <span class="math notranslate nohighlight">\(f_{2}\)</span> is a <em>continuous extension</em> of <span class="math notranslate nohighlight">\(f_{1}\)</span> (to <span class="math notranslate nohighlight">\(B\)</span>).</p>
 </section>
-</div><p>So in Example~<a class="reference internal" href="#extex"><span class="xref myst">extex</span></a>, <span class="math notranslate nohighlight">\(\tilde{g}\)</span> is a continuous extension of <span class="math notranslate nohighlight">\(g\)</span>. On the other hand, consider the function</p>
+</div><p>So in <a class="reference internal" href="#extex">Example 3.3</a>, <span class="math notranslate nohighlight">\(\tilde{g}\)</span> is a continuous extension of <span class="math notranslate nohighlight">\(g\)</span>. On the other hand, consider the function</p>
 <div class="math notranslate nohighlight">
 \[
 h: \mathbb{R} \setminus \{0\}\to\mathbb{R}; \hspace{1em} h(x) = \sin\left(\frac{1}{x}\right).
@@ -489,10 +488,10 @@ h: \mathbb{R} \setminus \{0\}\to\mathbb{R}; \hspace{1em} h(x) = \sin\left(\frac{
 \[\begin{split}
 \tilde{h}(x) = \left\{\begin{array}{l c} h(x) &amp; ~\mbox{if}~x \neq 0\\ 0&amp; ~\mbox{if}~x = 0 \end{array} \right.,
 \end{split}\]</div>
-<p>but since, as was shown in Problem~\iflatexml 8 \else<a class="reference internal" href="#q:50"><span class="xref myst">q:50</span></a>\fi, <span class="math notranslate nohighlight">\(\displaystyle\lim_{x \rightarrow 0}h(x)\)</span> does not exist,  there are no continuous extensions of <span class="math notranslate nohighlight">\(h\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
+<p>but since, as was shown in Problem 8, <span class="math notranslate nohighlight">\(\displaystyle\lim_{x \rightarrow 0}h(x)\)</span> does not exist,  there are no continuous extensions of <span class="math notranslate nohighlight">\(h\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
 </section>
 <section id="discontinuity">
-<h2><span class="section-number">3.2. </span>2. Discontinuity<a class="headerlink" href="#discontinuity" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span>Discontinuity<a class="headerlink" href="#discontinuity" title="Link to this heading">#</a></h2>
 <p>A function <span class="math notranslate nohighlight">\(f:X \rightarrow \mathbb{R}\)</span> is said to have a <em>discontinuity</em> at <span class="math notranslate nohighlight">\(a \in X\)</span> if it fails to be continuous there. In this case we say that <span class="math notranslate nohighlight">\(f\)</span> is <em>discontinuous</em> at <span class="math notranslate nohighlight">\(a\)</span>. For example, the indicator function <span class="math notranslate nohighlight">\({\bf 1}_{[a, b]}:\mathbb{R}\to\mathbb{R}\)</span> is discontinuous at <span class="math notranslate nohighlight">\(a\)</span>, and at <span class="math notranslate nohighlight">\(b\)</span>, but is continuous on <span class="math notranslate nohighlight">\(\mathbb{R} \setminus \{a, b\}\)</span>. To show that a function is discontinuous at <span class="math notranslate nohighlight">\(a\)</span>, it is sufficient to find a single sequence <span class="math notranslate nohighlight">\((x_{n})\)</span> in <span class="math notranslate nohighlight">\(X \setminus \{a\}\)</span>, such that <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}x_{n} = a\)</span>, but <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}f(x_{n}) \neq f(a)\)</span>.</p>
 <p>We can learn more about what happens at a discontinuity by using right and left limits.</p>
 <div class="proof definition admonition" id="definition-9">
@@ -501,8 +500,9 @@ h: \mathbb{R} \setminus \{0\}\to\mathbb{R}; \hspace{1em} h(x) = \sin\left(\frac{
 <p>We say that <span class="math notranslate nohighlight">\(f:X\to\mathbb{R}\)</span> is <em>left continuous</em> at <span class="math notranslate nohighlight">\(a \in X\)</span> if <span class="math notranslate nohighlight">\(\lim_{x \rightarrow a^-}f(x) = f(a)\)</span>, and <em>right continuous</em> at <span class="math notranslate nohighlight">\(a \in X\)</span> if <span class="math notranslate nohighlight">\(\lim_{x \rightarrow a^+}f(x) = f(a)\)</span>.</p>
 </section>
 </div><div class="proof example admonition" id="example-10">
-<p class="admonition-title"><span class="caption-number">Example 3.4 </span> (The function <span class="math notranslate nohighlight">\({\bf 1}_{[a, b]}:\mathbb{R}\to\mathbb{R}\)</span> is left continuous at <span class="math notranslate nohighlight">\(x = b\)</span>, and right continuous at <span class="math notranslate nohighlight">\(x = a\)</span>.)</p>
+<p class="admonition-title"><span class="caption-number">Example 3.4 </span></p>
 <section class="example-content" id="proof-content">
+<p>The function <span class="math notranslate nohighlight">\({\bf 1}_{[a, b]}:\mathbb{R}\to\mathbb{R}\)</span> is left continuous at <span class="math notranslate nohighlight">\(x = b\)</span>, and right continuous at <span class="math notranslate nohighlight">\(x = a\)</span>.</p>
 </section>
 </div><p><strong>Solution.</strong> We just prove the right continuity, as the other argument is so similar. Let <span class="math notranslate nohighlight">\((x_{n})\)</span> be any sequence with <span class="math notranslate nohighlight">\(x_{n} &gt; a\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span> that converges to <span class="math notranslate nohighlight">\(a\)</span>. Then
 for sufficiently large <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(x_n\in(a,b]\)</span> and  <span class="math notranslate nohighlight">\({\bf 1}_{[a, b]}(x_{n}) = 1\)</span>, so
@@ -546,7 +546,7 @@ g(x) =\begin{cases}
 	0&amp;\text{if $x \in \mathbb{R} \setminus \mathbb{Q}$}.
 \end{cases}
 \end{split}\]</div>
-<p>Show that <span class="math notranslate nohighlight">\(g\)</span> is continuous at every irrational number. (It is also discontinuous at every rational number —  this is left to you to do in Problem~\iflatexml 21 \else\ref{q:64}\fi.)</p>
+<p>Show that <span class="math notranslate nohighlight">\(g\)</span> is continuous at every irrational number. (It is also discontinuous at every rational number —  this is left to you to do in Problem 21.)</p>
 </section>
 </div><p><strong>Solution.</strong> Let <span class="math notranslate nohighlight">\(a\in\mathbb{R}\setminus\mathbb{Q}\)</span>. We’ll use the <span class="math notranslate nohighlight">\((\varepsilon-\delta)\)</span>-criterion to show that <span class="math notranslate nohighlight">\(g\)</span> is continuous at <span class="math notranslate nohighlight">\(a\)</span>. Let <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>. For each <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>, let</p>
 <div class="math notranslate nohighlight">
@@ -560,7 +560,7 @@ S_n = \left\{x \in [0, 1) : g(x) \geq \frac{1}{n}\right\}.
 \]</div>
 <p>and continuity at <span class="math notranslate nohighlight">\(a\)</span> is established.</p>
 <figure class="align-default" id="dirichlet2">
-<a class="reference internal image-reference" href="../MAS2004-9Sem2Notes/figs/dof)"><img alt="../MAS2004-9Sem2Notes/figs/dof)" src="../MAS2004-9Sem2Notes/figs/dof)" style="height: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/dof.png"><img alt="_images/dof.png" src="_images/dof.png" style="height: 500px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Dirichlet’s other function.</span><a class="headerlink" href="#dirichlet2" title="Link to this image">#</a></p>
 </figcaption>
@@ -568,14 +568,14 @@ S_n = \left\{x \in [0, 1) : g(x) \geq \frac{1}{n}\right\}.
 <div class="proof remark admonition" id="remark-13">
 <p class="admonition-title"><span class="caption-number">Remark 3.2 </span></p>
 <section class="remark-content" id="proof-content">
-<p>The function from Example \ref{eg:dirichlet2} is also sometimes called Thomae’s function.</p>
+<p>The function from <a class="reference internal" href="#dirichlet2"><span class="std std-numref">Fig. 3.1</span></a> is also sometimes called Thomae’s function.</p>
 </section>
 </div></section>
 <section id="continuity-on-intervals">
-<h2><span class="section-number">3.3. </span>3. Continuity on intervals<a class="headerlink" href="#continuity-on-intervals" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>Continuity on intervals<a class="headerlink" href="#continuity-on-intervals" title="Link to this heading">#</a></h2>
 <p>In this section we will study functions on closed intervals, <span class="math notranslate nohighlight">\(f:[a, b] \rightarrow \mathbb{R}\)</span>, which are continuous at every point of <span class="math notranslate nohighlight">\([a,b]\)</span>. Many well–known functions have this property, including polynomials, sines, cosines and exponential functions. It turns out, as we will see, that there are some very important and powerful theorems that can be proved in this context.</p>
 <section id="the-intermediate-value-theorem">
-<h3><span class="section-number">3.3.1. </span>3.1. The intermediate value theorem<a class="headerlink" href="#the-intermediate-value-theorem" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.3.1. </span>The intermediate value theorem<a class="headerlink" href="#the-intermediate-value-theorem" title="Link to this heading">#</a></h3>
 <div class="proof theorem admonition" id="ivp">
 <p class="admonition-title"><span class="caption-number">Theorem 3.4 </span> (The intermediate value theorem)</p>
 <section class="theorem-content" id="proof-content">
@@ -588,13 +588,13 @@ S_n = \left\{x \in [0, 1) : g(x) \geq \frac{1}{n}\right\}.
 <li><p><span class="math notranslate nohighlight">\(f(a_{n}) &gt; 0, f(b_{n}) &lt; 0\)</span>, for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>.
 To do this we proceed as follows. Take <span class="math notranslate nohighlight">\([a_{0}, b_{0}] = [a, b]\)</span>. %Then (ii) and (iii) hold, and (i) is irrelevant.</p></li>
 </ul>
-<p>\noindent Now construct the interval <span class="math notranslate nohighlight">\([a_{1}, b_{1}]\)</span> as follows. Let <span class="math notranslate nohighlight">\(m_{1} = \frac{(a+ b)}{2}\)</span>.
+<p>Now construct the interval <span class="math notranslate nohighlight">\([a_{1}, b_{1}]\)</span> as follows. Let <span class="math notranslate nohighlight">\(m_{1} = \frac{(a+ b)}{2}\)</span>.
 If <span class="math notranslate nohighlight">\(f(m_{1}) = 0\)</span>, then take <span class="math notranslate nohighlight">\(c = m_{1}\)</span> and the theorem is proved. Otherwise,
 define</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 [a_{1}, b_{1}]  =
-\begin{cases} [a, m_{1}] &amp;\text{if $f(m_{1}) &lt; 0$,}\\
+\begin{cases} [a, m_{1}] &amp;\text{if $f(m_{1}) &lt; 0$,}\\[.5em]
 [m_{1}, b] &amp; \text{if $f(m_{1}) &gt; 0$.}
 \end{cases}
 \end{split}\]</div>
@@ -604,16 +604,20 @@ the theorem is proved. Otherwise
 define</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-[a_{n+1}, b_{n+1}]  = \begin{cases} [a_{n}, m_{n+1}] &amp;\text{if $f(m_{n+1}) &lt; 0$,}\\ [m_{n+1}, b] &amp; \text{if $f(m_{n+1}) &gt; 0$.} \end{cases}
+[a_{n+1}, b_{n+1}]  = 
+\begin{cases} [a_{n}, m_{n+1}] &amp;\text{if $f(m_{n+1}) &lt; 0$,}\\[.5em]
+[m_{n+1}, b] &amp; \text{if $f(m_{n+1}) &gt; 0$.} \end{cases}
 \end{split}\]</div>
-<p>\noindent By construction (i) and (iii) hold and for (ii) we have</p>
+<p>By construction (i) and (iii) hold and for (ii) we have</p>
 <div class="math notranslate nohighlight">
 \[
 b_{n+1} - a_{n+1} = \frac{1}{2}(b_{n} - a_{n}) = \frac{1}{2}.2^{-n}(b -a) = 2^{-(n+1)}(b - a).
 \]</div>
-<p>So by induction, the required sequence of intervals is constructed. Furthermore, the sequence</p>
-<p><span class="math notranslate nohighlight">\((a_{n})\)</span> is monotonic increasing and bounded above (by <span class="math notranslate nohighlight">\(b\)</span>),
-<span class="math notranslate nohighlight">\((b_{n})\)</span> is monotonic decreasing and bounded below (by <span class="math notranslate nohighlight">\(a\)</span>).</p>
+<p>So by induction, the required sequence of intervals is constructed. Furthermore:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((a_{n})\)</span> is a monotonic increasing sequence and bounded above (by <span class="math notranslate nohighlight">\(b\)</span>),</p></li>
+<li><p><span class="math notranslate nohighlight">\((b_{n})\)</span> is a monotonic decreasing sequence and bounded below (by <span class="math notranslate nohighlight">\(a\)</span>).</p></li>
+</ul>
 <p>By the monotone convergence theorem (MAS107 Theorem 3.10), both sequences converge, and by algebra of limits and (ii):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -621,34 +625,46 @@ b_{n+1} - a_{n+1} = \frac{1}{2}(b_{n} - a_{n}) = \frac{1}{2}.2^{-n}(b -a) = 2^{-
 \]</div>
 <p>Define <span class="math notranslate nohighlight">\(c = \lim_{n\rightarrow\infty} b_{n} = \lim_{n\rightarrow\infty} a_{n}\)</span>. Then <span class="math notranslate nohighlight">\(c \in [a, b]\)</span>. By construction, we know that for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>, <span class="math notranslate nohighlight">\(f(a_n)&gt;0\)</span> and <span class="math notranslate nohighlight">\(f(b_n)&lt;0\)</span>. Therefore, by continuity of <span class="math notranslate nohighlight">\(f\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
+\[
 f(c) = \lim_{n\rightarrow\infty} f(a_{n}) \geq 0 \hspace{2em} \text{ and } \hspace{2em} f(c) = \lim_{n\rightarrow\infty} f(b_{n}) \leq 0.
-$$Hence $f(c) = 0$. As both $f(a)$ and $f(b) \neq 0$, $c \notin \{a, b\}$, i.e. $c \in (a, b)$. $\square$\\
-````{prf:corollary}
- :label: ivp2
-Let $f:[a,b]\to\mathbb{R}$ be continuous with $f(a) &lt; f(b)$. Then for each $\gamma \in (f(a), f(b))$, there exists $c \in (a, b)$ with $f(c) = \gamma$.
-````\\*Proof.* This is left for you to do as Problem~\iflatexml 23 \else [q:66](#q:66) \fi. $\square$\\
-Note that Corollary [ivp2](#ivp2) tells us that the image (or range) of the interval $[a, b]$ under the continuous function $f$ contains the interval $[f(a), f(b)]$, i.e. $[f(a), f(b)] \subseteq f([a, b])$.\\The next result gives a nice application of analysis to the theory of equations.\\````{prf:corollary}
- :label: pol
- Every polynomial of odd degree $p$ has at least one real root.
-````\\*Proof.* We write,\\\begin{split}\begin{align*} 
+\]</div>
+<p>Hence <span class="math notranslate nohighlight">\(f(c) = 0\)</span>. As both <span class="math notranslate nohighlight">\(f(a)\)</span> and <span class="math notranslate nohighlight">\(f(b) \neq 0\)</span>, <span class="math notranslate nohighlight">\(c \notin \{a, b\}\)</span>, i.e. <span class="math notranslate nohighlight">\(c \in (a, b)\)</span>. <span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
+<div class="proof corollary admonition" id="ivp2">
+<p class="admonition-title"><span class="caption-number">Corollary 3.1 </span></p>
+<section class="corollary-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f:[a,b]\to\mathbb{R}\)</span> be continuous with <span class="math notranslate nohighlight">\(f(a) &lt; f(b)\)</span>. Then for each <span class="math notranslate nohighlight">\(\gamma \in (f(a), f(b))\)</span>, there exists <span class="math notranslate nohighlight">\(c \in (a, b)\)</span> with <span class="math notranslate nohighlight">\(f(c) = \gamma\)</span>.</p>
+</section>
+</div><p><strong>Proof.</strong> This is left for you to do as Problem 23. <span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
+<p>Note that <a class="reference internal" href="#ivp2">Corollary 3.1</a> tells us that the image (or range) of the interval <span class="math notranslate nohighlight">\([a, b]\)</span> under the continuous function <span class="math notranslate nohighlight">\(f\)</span> contains the interval <span class="math notranslate nohighlight">\([f(a), f(b)]\)</span>, i.e. <span class="math notranslate nohighlight">\([f(a), f(b)] \subseteq f([a, b])\)</span>.</p>
+<p>The next result gives a nice application of analysis to the theory of equations.</p>
+<div class="proof corollary admonition" id="pol">
+<p class="admonition-title"><span class="caption-number">Corollary 3.2 </span></p>
+<section class="corollary-content" id="proof-content">
+<p>Every polynomial of odd degree <span class="math notranslate nohighlight">\(p\)</span> has at least one real root.</p>
+</section>
+</div><p><strong>Proof.</strong> We write,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*} 
 p(x) &amp;= a_{m}x^{m} + a_{m-1}x^{m-1} + \cdots + a_{1}x + a_{0} \\
 &amp;= x^{m}\left(a_{m} + \frac{a_{m-1}}{x} + \cdots + \frac{a_{1}}{x^{m-1}} + \frac{a_{0}}{x^{m}}\right),
-\end{align*}\end{split}\\where $a_m\neq 0$ and $m$ is odd. We'll do the case where $a_{m} &gt; 0$; the case $a_{m} &lt; 0$ is similar. Then, as was shown in Problem~\iflatexml 11 \else[q:54](#q:54)\fi,\end{aligned}\end{align} \]</div>
-<p>\lim_{x \rightarrow \infty}p(x) = \infty \hspace{1em} \text{ and } \hspace{1em} \lim_{x \rightarrow -\infty}p(x) = -\infty.
-$$</p>
-<p>So from the definition of divergence, there exist <span class="math notranslate nohighlight">\(- \infty &lt; a &lt; b &lt; \infty\)</span> such that <span class="math notranslate nohighlight">\(p(a) &lt; 0\)</span> and <span class="math notranslate nohighlight">\(p(b) &gt; 0\)</span>. But <span class="math notranslate nohighlight">\(p\)</span> is continuous on <span class="math notranslate nohighlight">\([a, b]\)</span> and so, by the intermediate value theorem, there exists <span class="math notranslate nohighlight">\(c \in (a, b)\)</span> such that <span class="math notranslate nohighlight">\(p(c) = 0\)</span>. <span class="math notranslate nohighlight">\(\square\)</span></p>
-<p>Of course, there is no analogue of Corollary <a class="reference internal" href="#pol"><span class="xref myst">pol</span></a> when <span class="math notranslate nohighlight">\(m\)</span> is even, e.g. <span class="math notranslate nohighlight">\(p(x) = x^{2} + 1\)</span> has no real roots.</p>
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_m\neq 0\)</span> and <span class="math notranslate nohighlight">\(m\)</span> is odd. We’ll do the case where <span class="math notranslate nohighlight">\(a_{m} &gt; 0\)</span>; the case <span class="math notranslate nohighlight">\(a_{m} &lt; 0\)</span> is similar. Then, as was shown in Problem 11,</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{x \rightarrow \infty}p(x) = \infty \hspace{1em} \text{ and } \hspace{1em} \lim_{x \rightarrow -\infty}p(x) = -\infty.
+\]</div>
+<p>So from the definition of divergence, there exist <span class="math notranslate nohighlight">\(- \infty &lt; a &lt; b &lt; \infty\)</span> such that <span class="math notranslate nohighlight">\(p(a) &lt; 0\)</span> and <span class="math notranslate nohighlight">\(p(b) &gt; 0\)</span>. But <span class="math notranslate nohighlight">\(p\)</span> is continuous on <span class="math notranslate nohighlight">\([a, b]\)</span> and so, by the intermediate value theorem, there exists <span class="math notranslate nohighlight">\(c \in (a, b)\)</span> such that <span class="math notranslate nohighlight">\(p(c) = 0\)</span>. <span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
+<p>Of course, there is no analogue of <a class="reference internal" href="#pol">Corollary 3.2</a> when <span class="math notranslate nohighlight">\(m\)</span> is even, e.g. <span class="math notranslate nohighlight">\(p(x) = x^{2} + 1\)</span> has no real roots.</p>
 </section>
 <section id="the-extreme-value-theorem">
-<h3><span class="section-number">3.3.2. </span>3.2. The extreme value theorem<a class="headerlink" href="#the-extreme-value-theorem" title="Link to this heading">#</a></h3>
-<div class="proof definition admonition" id="definition-15">
+<h3><span class="section-number">3.3.2. </span>The extreme value theorem<a class="headerlink" href="#the-extreme-value-theorem" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-17">
 <p class="admonition-title"><span class="caption-number">Definition 3.4 </span></p>
 <section class="definition-content" id="proof-content">
 <p>A function <span class="math notranslate nohighlight">\(f: X \rightarrow \mathbb{R}\)</span> is <em>bounded</em> on a non-empty set <span class="math notranslate nohighlight">\(S \subseteq X\)</span> if there exists <span class="math notranslate nohighlight">\(K &gt; 0\)</span>, such that <span class="math notranslate nohighlight">\(|f(x)| \leq K\)</span> for all <span class="math notranslate nohighlight">\(x \in S\)</span>.</p>
 </section>
 </div><p>In this situation, the set <span class="math notranslate nohighlight">\(\{f(x) : x \in S\}\)</span> is a non–empty bounded set of real numbers and so, by completeness,  it has a supremum, which we write as <span class="math notranslate nohighlight">\(\sup_{x \in S} f(x)\)</span>, and an infimum, which we write as <span class="math notranslate nohighlight">\(\inf_{x \in S}f(x)\)</span>.</p>
-<div class="proof definition admonition" id="definition-16">
+<div class="proof definition admonition" id="definition-18">
 <p class="admonition-title"><span class="caption-number">Definition 3.5 </span></p>
 <section class="definition-content" id="proof-content">
 <p>We say that <span class="math notranslate nohighlight">\(f:X\to\mathbb{R}\)</span> <em>attains its bounds</em> on <span class="math notranslate nohighlight">\(S\subseteq X\)</span> if there exist <span class="math notranslate nohighlight">\(a, b \in S\)</span> such that</p>
@@ -664,27 +680,27 @@ f(a) = \sup_{x \in S}f(x), \qquad f(b) = \inf_{x \in S}f(x).
 <section class="theorem-content" id="proof-content">
 <p>If <span class="math notranslate nohighlight">\(f:[a,b]\to\mathbb{R}\)</span> is continuous, then it is bounded on <span class="math notranslate nohighlight">\([a, b]\)</span> and it attains its bounds there.</p>
 </section>
-</div><p><em>Proof.</em> We first show that <span class="math notranslate nohighlight">\(f\)</span> is bounded. To do this, we’ll assume that it isn’t, and seek a contradiction.
+</div><p><strong>Proof.</strong> We first show that <span class="math notranslate nohighlight">\(f\)</span> is bounded. To do this, we’ll assume that it isn’t, and seek a contradiction.
 So assume <span class="math notranslate nohighlight">\(f\)</span> is not bounded.
 Let <span class="math notranslate nohighlight">\((x_{n})\)</span> be a sequence in <span class="math notranslate nohighlight">\([a, b]\)</span> such that</p>
 <div class="math notranslate nohighlight" id="equation-f-xn-geqn">
 <span class="eqno">(3.1)<a class="headerlink" href="#equation-f-xn-geqn" title="Link to this equation">#</a></span>\[|f(x_{n})|\geq n \hspace{1em}\text{ for each }n\in\mathbb{N}.\]</div>
 <p>Such a sequence certainly exists. For example,
 to construct such a sequence, we can consider <span class="math notranslate nohighlight">\(X_n=\{x \in [a, b] : |f(x)| \geq n\}\)</span>. This is non-empty since <span class="math notranslate nohighlight">\(f\)</span> is unbounded and it is bounded below by <span class="math notranslate nohighlight">\(a\)</span>, so it has an infimum, say <span class="math notranslate nohighlight">\(x_{n} = \inf(X_n)\)</span>. And then <span class="math notranslate nohighlight">\(|f(x_{n})|\geq n\)</span>.</p>
-<p>Now since <span class="math notranslate nohighlight">\((x_{n})\)</span> is a bounded sequence (as <span class="math notranslate nohighlight">\(a \leq x_{n} \leq b\)</span>, for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>),  it has a convergent subsequence <span class="math notranslate nohighlight">\((x_{n_{k}})\)</span> by the Bolzano–Weierstrass theorem^[This was Theorem 3.14 on page 83 of your MAS107 notes.]. Let <span class="math notranslate nohighlight">\(x = \lim_{k \rightarrow \infty}x_{n_{k}}\)</span>. By continuity, <span class="math notranslate nohighlight">\(f(x) = \lim_{k \rightarrow \infty}f(x_{n_{k}})\)</span>. The sequence <span class="math notranslate nohighlight">\((f(x_{n_{k}})))\)</span> converges, and so in particular it must be bounded. But this contradicts our assumption (<a class="reference internal" href="#equation-f-xn-geqn">(3.1)</a>).</p>
+<p>Now since <span class="math notranslate nohighlight">\((x_{n})\)</span> is a bounded sequence (as <span class="math notranslate nohighlight">\(a \leq x_{n} \leq b\)</span>, for all <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>),  it has a convergent subsequence <span class="math notranslate nohighlight">\((x_{n_{k}})\)</span> by the Bolzano–Weierstrass theorem^[This was Theorem 3.14 on page 83 of your MAS107 notes.]. Let <span class="math notranslate nohighlight">\(x = \lim_{k \rightarrow \infty}x_{n_{k}}\)</span>. By continuity, <span class="math notranslate nohighlight">\(f(x) = \lim_{k \rightarrow \infty}f(x_{n_{k}})\)</span>. The sequence <span class="math notranslate nohighlight">\((f(x_{n_{k}})))\)</span> converges, and so in particular it must be bounded. But this contradicts our assumption <a class="reference internal" href="#equation-f-xn-geqn">(3.1)</a>.</p>
 <p>Having proved that <span class="math notranslate nohighlight">\(f\)</span> is bounded on <span class="math notranslate nohighlight">\([a, b]\)</span>, we’ll prove that it attains its least upper bound. We again argue by seeking a contradiction.  Let <span class="math notranslate nohighlight">\(\beta = \sup_{x \in [a, b]}f(x)\)</span> and suppose that <span class="math notranslate nohighlight">\(\beta &gt; f(x)\)</span> for all <span class="math notranslate nohighlight">\(x \in [a, b]\)</span>. Then we can define <span class="math notranslate nohighlight">\(g: [a,b]\to\mathbb{R}\)</span> by</p>
 <div class="math notranslate nohighlight">
 \[
 g(x) = \displaystyle\frac{1}{\beta - f(x)},
 \]</div>
-<p>and <span class="math notranslate nohighlight">\(g\)</span> is continuous on <span class="math notranslate nohighlight">\([a, b]\)</span> by Theorem <a class="reference internal" href="#AOL3"><span class="xref myst">1</span></a>. By the first part of this current theorem, <span class="math notranslate nohighlight">\(g\)</span> is bounded on <span class="math notranslate nohighlight">\([a, b]\)</span>, so there exists <span class="math notranslate nohighlight">\(K &gt; 0\)</span> such that</p>
+<p>and <span class="math notranslate nohighlight">\(g\)</span> is continuous on <span class="math notranslate nohighlight">\([a, b]\)</span> by <a class="reference internal" href="#AOL3">Theorem 3.2</a>. By the first part of this current theorem, <span class="math notranslate nohighlight">\(g\)</span> is bounded on <span class="math notranslate nohighlight">\([a, b]\)</span>, so there exists <span class="math notranslate nohighlight">\(K &gt; 0\)</span> such that</p>
 <div class="math notranslate nohighlight" id="equation-eq-gxleqk">
 <span class="eqno">(3.2)<a class="headerlink" href="#equation-eq-gxleqk" title="Link to this equation">#</a></span>\[g(x) \leq K \hspace{1em} \text{ for all } x \in [a, b].\]</div>
-<p>The set <span class="math notranslate nohighlight">\(A=\{f(x) : x \in [a, b]\}\)</span> is nonempty, and bounded above since <span class="math notranslate nohighlight">\(f\)</span> is bounded. Therefore, for any <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, there exists <span class="math notranslate nohighlight">\(a\in A\)</span> such that <span class="math notranslate nohighlight">\(a&gt;\sup(A)-\varepsilon\)</span>. In particular, putting <span class="math notranslate nohighlight">\(\varepsilon = 1/K\)</span>, there exists <span class="math notranslate nohighlight">\(f(x) \in A\)</span> such that <span class="math notranslate nohighlight">\(f(x) &gt; \beta - 1/K\)</span>. But then <span class="math notranslate nohighlight">\(\beta - f(x) &lt; 1/K\)</span>, and so <span class="math notranslate nohighlight">\(g(x) &gt; K\)</span>, contradicting (<a class="reference internal" href="#equation-eq-gxleqk">(3.2)</a>).</p>
-<p>The argument for the greatest lower bound is similar, and is left for you as Problem~\iflatexml 27 \else<a class="reference internal" href="#q:69"><span class="xref myst">q:69</span></a>\fi. <span class="math notranslate nohighlight">\(\square\)</span></p>
-<p>It’s important to be clear what Theorem <a class="reference internal" href="#thm:evt"><span class="xref myst">thm:evt</span></a> is telling us. It says nothing about boundedness on  <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. Indeed any non-constant polynomial is unbounded on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, but its restriction to every closed interval <span class="math notranslate nohighlight">\([a, b]\)</span> is bounded.</p>
+<p>The set <span class="math notranslate nohighlight">\(A=\{f(x) : x \in [a, b]\}\)</span> is nonempty, and bounded above since <span class="math notranslate nohighlight">\(f\)</span> is bounded. Therefore, for any <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, there exists <span class="math notranslate nohighlight">\(a\in A\)</span> such that <span class="math notranslate nohighlight">\(a&gt;\sup(A)-\varepsilon\)</span>. In particular, putting <span class="math notranslate nohighlight">\(\varepsilon = 1/K\)</span>, there exists <span class="math notranslate nohighlight">\(f(x) \in A\)</span> such that <span class="math notranslate nohighlight">\(f(x) &gt; \beta - 1/K\)</span>. But then <span class="math notranslate nohighlight">\(\beta - f(x) &lt; 1/K\)</span>, and so <span class="math notranslate nohighlight">\(g(x) &gt; K\)</span>, contradicting <a class="reference internal" href="#equation-eq-gxleqk">(3.2)</a>.</p>
+<p>The argument for the greatest lower bound is similar, and is left for you as Problem 27. <span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
+<p>It’s important to be clear what <a class="reference internal" href="#thm:evt">Theorem 3.5</a> is telling us. It says nothing about boundedness on  <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. Indeed any non-constant polynomial is unbounded on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, but its restriction to every closed interval <span class="math notranslate nohighlight">\([a, b]\)</span> is bounded.</p>
 <div class="proof corollary admonition" id="interval">
-<p class="admonition-title"><span class="caption-number">Corollary 3.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Corollary 3.3 </span></p>
 <section class="corollary-content" id="proof-content">
 <p>If <span class="math notranslate nohighlight">\(f: X \to \mathbb{R}\)</span> is continuous and non–constant on <span class="math notranslate nohighlight">\([a, b] \subseteq X\)</span>, then there exists <span class="math notranslate nohighlight">\(m &lt; M\)</span> so that</p>
 <div class="math notranslate nohighlight">
@@ -692,13 +708,13 @@ g(x) = \displaystyle\frac{1}{\beta - f(x)},
 f([a, b]) = [m, M].
 \]</div>
 </section>
-</div><p><em>Proof.</em> By Theorem <a class="reference internal" href="#thm:evt"><span class="xref myst">thm:evt</span></a>, there exist <span class="math notranslate nohighlight">\(\gamma, \delta \in [a, b]\)</span> such that <span class="math notranslate nohighlight">\(f(\gamma) = \inf_{x \in [a, b]}f(x)\)</span> and <span class="math notranslate nohighlight">\(f(\delta) = \sup_{x \in [a, b]}f(x)\)</span>. We take <span class="math notranslate nohighlight">\(m = f(\gamma)\)</span> and <span class="math notranslate nohighlight">\(M = f(\delta)\)</span>.
+</div><p><strong>Proof.</strong> By <a class="reference internal" href="#thm:evt">Theorem 3.5</a>, there exist <span class="math notranslate nohighlight">\(\gamma, \delta \in [a, b]\)</span> such that <span class="math notranslate nohighlight">\(f(\gamma) = \inf_{x \in [a, b]}f(x)\)</span> and <span class="math notranslate nohighlight">\(f(\delta) = \sup_{x \in [a, b]}f(x)\)</span>. We take <span class="math notranslate nohighlight">\(m = f(\gamma)\)</span> and <span class="math notranslate nohighlight">\(M = f(\delta)\)</span>.
 Clearly, <span class="math notranslate nohighlight">\(m\leq M\)</span> and, since <span class="math notranslate nohighlight">\(f\)</span> is non-constant, <span class="math notranslate nohighlight">\(m&lt;M\)</span>.
 If <span class="math notranslate nohighlight">\(x \in [a,b]\)</span>, then <span class="math notranslate nohighlight">\(f(x) \in [m, M]\)</span> and so <span class="math notranslate nohighlight">\(f([a, b]) \subseteq [m, M]\)</span>.</p>
-<p>For the other inclusion, by Corollary <a class="reference internal" href="#ivp2"><span class="xref myst">ivp2</span></a>, given any <span class="math notranslate nohighlight">\(c \in (m, M)\)</span> there exists <span class="math notranslate nohighlight">\(y \in (\gamma, \delta)\)</span> (or in <span class="math notranslate nohighlight">\((\delta, \gamma)\)</span> depending on which number is smallest) so that <span class="math notranslate nohighlight">\(c = f(y)\)</span>, and it follows that <span class="math notranslate nohighlight">\([m, M] \subseteq f([\gamma, \delta]) \subseteq f([a, b])\)</span>. <span class="math notranslate nohighlight">\(\square\)</span></p>
+<p>For the other inclusion, by <a class="reference internal" href="#ivp2">Corollary 3.1</a>, given any <span class="math notranslate nohighlight">\(c \in (m, M)\)</span> there exists <span class="math notranslate nohighlight">\(y \in (\gamma, \delta)\)</span> (or in <span class="math notranslate nohighlight">\((\delta, \gamma)\)</span> depending on which number is smallest) so that <span class="math notranslate nohighlight">\(c = f(y)\)</span>, and it follows that <span class="math notranslate nohighlight">\([m, M] \subseteq f([\gamma, \delta]) \subseteq f([a, b])\)</span>. <span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
 </section>
 <section id="inverses">
-<h3><span class="section-number">3.3.3. </span>3.3. Inverses<a class="headerlink" href="#inverses" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.3.3. </span>Inverses<a class="headerlink" href="#inverses" title="Link to this heading">#</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> be arbitrary sets and <span class="math notranslate nohighlight">\(f:X \to Y\)</span> be a function. Recall from MAS106 that <span class="math notranslate nohighlight">\(f\)</span> is</p>
 <ul class="simple">
 <li><p><em>surjective</em> if the image of <span class="math notranslate nohighlight">\(f\)</span> is equal to <span class="math notranslate nohighlight">\(Y\)</span>, i.e.~for all <span class="math notranslate nohighlight">\(y \in Y\)</span> there exists <span class="math notranslate nohighlight">\(x \in X\)</span> such that <span class="math notranslate nohighlight">\(f(x) = y\)</span>,</p></li>
@@ -710,15 +726,27 @@ f^{-1}(f(x)) = x,~\mbox{for all}~x \in X~\mbox{and}~f(f^{-1}(y)) = y,~\mbox{for 
 \)</span>$</p></li>
 </ul>
 <p>In the first year, you also saw the following.</p>
-<p><strong>Proof.</strong> The function <span class="math notranslate nohighlight">\(f:X\rightarrow Y\)</span> is invertible if and only if it is bijective. <span class="math notranslate nohighlight">\(\square\)</span></p>
-<p>When studying sequences in MAS107, you also encountered the notion of monotonicity: a sequence <span class="math notranslate nohighlight">\((a_n)\)</span> of real numbers is monotonic increasing if <span class="math notranslate nohighlight">\(a_n\leq a_m\)</span> whenever <span class="math notranslate nohighlight">\(n&lt;m\)</span>. It is monotic decreasing if <span class="math notranslate nohighlight">\(a_n\geq a_m\)</span> whenever <span class="math notranslate nohighlight">\(n&lt;m\)</span>, and a similar definition exists for monotonic descreasing sequences.</p>
+<div class="proof proposition admonition" id="prop:inv">
+<p class="admonition-title"><span class="caption-number">Proposition 3.1 </span></p>
+<section class="proposition-content" id="proof-content">
+<p>The function <span class="math notranslate nohighlight">\(f:X\rightarrow Y\)</span> is invertible if and only if it is bijective.</p>
+</section>
+</div><p>When studying sequences in MAS107, you also encountered the notion of monotonicity: a sequence <span class="math notranslate nohighlight">\((a_n)\)</span> of real numbers is monotonic increasing if <span class="math notranslate nohighlight">\(a_n\leq a_m\)</span> whenever <span class="math notranslate nohighlight">\(n&lt;m\)</span>. It is monotic decreasing if <span class="math notranslate nohighlight">\(a_n\geq a_m\)</span> whenever <span class="math notranslate nohighlight">\(n&lt;m\)</span>, and a similar definition exists for monotonic descreasing sequences.</p>
 <p>We now extend this idea to functions <span class="math notranslate nohighlight">\(f:X\to \mathbb{R}\)</span> where <span class="math notranslate nohighlight">\(X\subseteq \mathbb{R}\)</span>.</p>
-<div class="proof definition admonition" id="definition-19">
+<div class="proof definition admonition" id="definition-22">
 <p class="admonition-title"><span class="caption-number">Definition 3.6 </span></p>
 <section class="definition-content" id="proof-content">
-<p>Let  <span class="math notranslate nohighlight">\(f:X\to \mathbb{R}\)</span> where <span class="math notranslate nohighlight">\(X\subseteq \mathbb{R}\)</span>. We say that <span class="math notranslate nohighlight">\(f\)</span> is <em>monotonic increasing</em> if whenever <span class="math notranslate nohighlight">\(x, y \in X\)</span> with <span class="math notranslate nohighlight">\(x &lt; y\)</span>, we have <span class="math notranslate nohighlight">\(f(x) \leq f(y)\)</span>, <em>monotonic decreasing</em> if whenever <span class="math notranslate nohighlight">\(x, y \in X\)</span> with <span class="math notranslate nohighlight">\(x &lt; y\)</span>, we have <span class="math notranslate nohighlight">\(f(x) \geq f(y)\)</span>, <em>monotone</em> if it is either monotonic increasing or decreasing, and <em>strictly increasing/decreasing</em> when the <span class="math notranslate nohighlight">\(\leq\)</span> or <span class="math notranslate nohighlight">\(\geq\)</span> in the above definitions is replaced with <span class="math notranslate nohighlight">\(&lt;\)</span> or <span class="math notranslate nohighlight">\(&gt;\)</span> (respectively).</p>
+<p>Let  <span class="math notranslate nohighlight">\(f:X\to \mathbb{R}\)</span> where <span class="math notranslate nohighlight">\(X\subseteq \mathbb{R}\)</span>.</p>
+<p>We say that <span class="math notranslate nohighlight">\(f\)</span> is</p>
+<ul class="simple">
+<li><p><em>monotonic increasing</em> if whenever <span class="math notranslate nohighlight">\(x, y \in X\)</span> with <span class="math notranslate nohighlight">\(x &lt; y\)</span>, we have <span class="math notranslate nohighlight">\(f(x) \leq f(y)\)</span>,</p></li>
+<li><p><em>monotonic decreasing</em> if whenever <span class="math notranslate nohighlight">\(x, y \in X\)</span> with <span class="math notranslate nohighlight">\(x &lt; y\)</span>, we have <span class="math notranslate nohighlight">\(f(x) \geq f(y)\)</span>,</p></li>
+<li><p><em>monotone</em> if it is either monotonic increasing or decreasing,</p></li>
+<li><p><em>strictly monotonic increasing/decreasing</em> when the <span class="math notranslate nohighlight">\(\leq\)</span> or <span class="math notranslate nohighlight">\(\geq\)</span> in the above definitions is replaced with <span class="math notranslate nohighlight">\(&lt;\)</span> or <span class="math notranslate nohighlight">\(&gt;\)</span> (respectively).</p></li>
+</ul>
 </section>
-</div><p>Here are some simple examples; it is easy to see that <span class="math notranslate nohighlight">\(f:\mathbb{R}\to\mathbb{R}\)</span> given by <span class="math notranslate nohighlight">\(f(x) = x\)</span> is strictly increasing, and that  <span class="math notranslate nohighlight">\(f:(0,\infty) \to\mathbb{R}\)</span> given by <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> is strictly decreasing. (So is <span class="math notranslate nohighlight">\(f:(-\infty, 0) \to\mathbb{R}\)</span> given by <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span>,
+</div><p><strong>Note.</strong> It is standard practice to suppress the term “monotonic” and just describe a function as increasing or decreasing.</p>
+<p>Here are some simple examples; it is easy to see that <span class="math notranslate nohighlight">\(f:\mathbb{R}\to\mathbb{R}\)</span> given by <span class="math notranslate nohighlight">\(f(x) = x\)</span> is strictly increasing, and that  <span class="math notranslate nohighlight">\(f:(0,\infty) \to\mathbb{R}\)</span> given by <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> is strictly decreasing. (So is <span class="math notranslate nohighlight">\(f:(-\infty, 0) \to\mathbb{R}\)</span> given by <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span>,
 but not <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> on all of <span class="math notranslate nohighlight">\(\mathbb{R}\setminus\{0\}\)</span>).</p>
 <p>Our key theorem considers the invertibility of monotone functions that are continuous on closed intervals.</p>
 <div class="proof theorem admonition" id="thm:IFT">
@@ -726,10 +754,11 @@ but not <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span>
 <section class="theorem-content" id="proof-content">
 <p>If <span class="math notranslate nohighlight">\(f: [a,b] \rightarrow \mathbb{R}\)</span> is continuous and strictly increasing (respectively, strictly decreasing), then <span class="math notranslate nohighlight">\(f\)</span> is invertible and <span class="math notranslate nohighlight">\(f^{-1}\)</span> is strictly increasing on <span class="math notranslate nohighlight">\([f(a), f(b)]\)</span> (respectively, strictly decreasing on <span class="math notranslate nohighlight">\([f(b), f(a)]\)</span>)  and continuous on <span class="math notranslate nohighlight">\([f(a), f(b)]\)</span> (respectively, on <span class="math notranslate nohighlight">\([f(b), f(a)]\)</span>).</p>
 </section>
-</div><p><em>Proof.</em> We’ll just consider the case where <span class="math notranslate nohighlight">\(f\)</span> is strictly increasing. The argument for <span class="math notranslate nohighlight">\(f\)</span> strictly decreasing is very similar.</p>
-<p>By Corollary <a class="reference internal" href="#interval"><span class="xref myst">interval</span></a>, the range of <span class="math notranslate nohighlight">\(f\)</span>  is of the form <span class="math notranslate nohighlight">\([m, M]\)</span>,
-so <span class="math notranslate nohighlight">\(f:[a, b] \rightarrow [m, M]\)</span> is surjective. Note that as <span class="math notranslate nohighlight">\(f\)</span> is increasing, <span class="math notranslate nohighlight">\(m = f(a)\)</span> and <span class="math notranslate nohighlight">\(M = f(b)\)</span>. If <span class="math notranslate nohighlight">\(x, y \in [a, b]\)</span> with <span class="math notranslate nohighlight">\(x &lt; y\)</span> then <span class="math notranslate nohighlight">\(f(x) &lt; f(y)\)</span>, so if <span class="math notranslate nohighlight">\(x \neq y\)</span> then <span class="math notranslate nohighlight">\(f(x) \neq f(y)\)</span>. Hence <span class="math notranslate nohighlight">\(f\)</span> is injective.</p>
-<p>So we have <span class="math notranslate nohighlight">\(f^{-1}:[f(a), f(b)]\to [a,b]\)</span>.</p>
+</div><p><strong>Proof.</strong> We’ll just consider the case where <span class="math notranslate nohighlight">\(f\)</span> is strictly increasing. The argument for <span class="math notranslate nohighlight">\(f\)</span> strictly decreasing is very similar.</p>
+<p>By <a class="reference internal" href="#interval">Corollary 3.3</a>, the range of <span class="math notranslate nohighlight">\(f\)</span>  is of the form <span class="math notranslate nohighlight">\([m, M]\)</span>,
+so <span class="math notranslate nohighlight">\(f:[a, b] \rightarrow [m, M]\)</span> is surjective. Note that as <span class="math notranslate nohighlight">\(f\)</span> is increasing, <span class="math notranslate nohighlight">\(m = f(a)\)</span> and <span class="math notranslate nohighlight">\(M = f(b)\)</span>. If <span class="math notranslate nohighlight">\(x, y \in [a, b]\)</span> with <span class="math notranslate nohighlight">\(x &lt; y\)</span> then <span class="math notranslate nohighlight">\(f(x) &lt; f(y)\)</span>, so if <span class="math notranslate nohighlight">\(x \neq y\)</span> then <span class="math notranslate nohighlight">\(f(x) \neq f(y)\)</span>. Hence <span class="math notranslate nohighlight">\(f\)</span> is injective.
+<a class="footnote-reference brackets" href="#contra2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> So <span class="math notranslate nohighlight">\(f\)</span> is bijective, and hence invertible by <a class="reference internal" href="#prop:inv">Proposition 3.1</a>.
+So we have <span class="math notranslate nohighlight">\(f^{-1}:[f(a), f(b)]\to [a,b]\)</span>.</p>
 <p>To show that <span class="math notranslate nohighlight">\(f^{-1}\)</span> is strictly increasing, let <span class="math notranslate nohighlight">\(f(a) \leq \alpha &lt; \beta \leq f(b)\)</span>. Then since <span class="math notranslate nohighlight">\(f\)</span> is surjective and increasing, there exist <span class="math notranslate nohighlight">\(a \leq x &lt; y \leq b\)</span> with <span class="math notranslate nohighlight">\(\alpha = f(x)\)</span> and <span class="math notranslate nohighlight">\(\beta = f(y)\)</span>. Hence</p>
 <div class="math notranslate nohighlight">
 \[
@@ -741,19 +770,27 @@ f^{-1}(\alpha) = f^{-1}(f(x)) = x &lt; y = f^{-1}(f(y)) = f^{-1}(\beta).
 f(a) &lt; y_{1} &lt; y_{0} &lt; y_{2} &lt; f(b),
 \]</div>
 <p>and if <span class="math notranslate nohighlight">\(y \in (y_{1}, y_{2})\)</span> we have <span class="math notranslate nohighlight">\(|f^{-1}(y) - f^{-1}(y_{0})| &lt; \varepsilon\)</span>. Then let <span class="math notranslate nohighlight">\(\delta = \min\{y_{2} - y_{0}, y_{0} - y_{1}\}\)</span>, and check that the <span class="math notranslate nohighlight">\(\varepsilon-\delta\)</span> criterion is satisfied.</p>
-<p>Finally, we leave continuity of  <span class="math notranslate nohighlight">\(f^{-1}\)</span> at <span class="math notranslate nohighlight">\(f(a)\)</span> and at <span class="math notranslate nohighlight">\(f(b)\)</span> as an exercise. <span class="math notranslate nohighlight">\(\square\)</span></p>
-<div class="proof example admonition" id="example-21">
+<p>Finally, we leave continuity of  <span class="math notranslate nohighlight">\(f^{-1}\)</span> at <span class="math notranslate nohighlight">\(f(a)\)</span> and at <span class="math notranslate nohighlight">\(f(b)\)</span> as an exercise. <span style="float:right;"><span class="math notranslate nohighlight">\(\square\)</span></span></p>
+<div class="proof example admonition" id="nthroot">
 <p class="admonition-title"><span class="caption-number">Example 3.7 </span> (<span class="math notranslate nohighlight">\(n\)</span>th roots)</p>
 <section class="example-content" id="proof-content">
-<p>Fix <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span> and let <span class="math notranslate nohighlight">\(f:[0,\infty)\to[0,\infty)\)</span> be given by <span class="math notranslate nohighlight">\(f(x) = x^n\)</span>. Then you can prove in Problem~\iflatexml 30 \else <a class="reference internal" href="#q:73"><span class="xref myst">q:73</span></a> \fi that <span class="math notranslate nohighlight">\(f\)</span> is strictly monotonic increasing on every <span class="math notranslate nohighlight">\([a, b] \subseteq [0, \infty)\)</span>. We already know that <span class="math notranslate nohighlight">\(f\)</span> is continuous.</p>
-<p>Consider the restriction <span class="math notranslate nohighlight">\(f:[a,b]\to [a^n, b^n]\)</span>. By Theorem~<a class="reference internal" href="#thm:IFT"><span class="xref myst">thm:IFT</span></a>, to see that we have an inverse <span class="math notranslate nohighlight">\(f^{-1}: [a^n, b^n]\to [a,b]\)</span> which is continuous and strictly monotonic increasing. Since we can do this for all intervals <span class="math notranslate nohighlight">\([a,b]\)</span>, this allows us to obtain the function <span class="math notranslate nohighlight">\([0, \infty)\to [0,\infty)\)</span> that we write as <span class="math notranslate nohighlight">\(f(x)= x^{\frac{1}{n}}\)</span>.</p>
-<p>So in particular, Theorem~<a class="reference internal" href="#thm:IFT"><span class="xref myst">thm:IFT</span></a> has given us a unified method for proving the existence of positive <span class="math notranslate nohighlight">\(n\)</span>th roots of any positive real number.</p>
+<p>Fix <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span> and let <span class="math notranslate nohighlight">\(f:[0,\infty)\to[0,\infty)\)</span> be given by <span class="math notranslate nohighlight">\(f(x) = x^n\)</span>. Then you can prove in Problem 30 that <span class="math notranslate nohighlight">\(f\)</span> is strictly monotonic increasing on every <span class="math notranslate nohighlight">\([a, b] \subseteq [0, \infty)\)</span>. We already know that <span class="math notranslate nohighlight">\(f\)</span> is continuous.</p>
+<p>Consider the restriction <span class="math notranslate nohighlight">\(f:[a,b]\to [a^n, b^n]\)</span>. By <a class="reference internal" href="#thm:IFT">Theorem 3.6</a>, to see that we have an inverse <span class="math notranslate nohighlight">\(f^{-1}: [a^n, b^n]\to [a,b]\)</span> which is continuous and strictly monotonic increasing. Since we can do this for all intervals <span class="math notranslate nohighlight">\([a,b]\)</span>, this allows us to obtain the function <span class="math notranslate nohighlight">\([0, \infty)\to [0,\infty)\)</span> that we write as <span class="math notranslate nohighlight">\(f(x)= x^{\frac{1}{n}}\)</span>.</p>
+<p>So in particular, <a class="reference internal" href="#thm:IFT">Theorem 3.6</a> has given us a unified method for proving the existence of positive <span class="math notranslate nohighlight">\(n\)</span>th roots of any positive real number.</p>
 </section>
-</div><div class="proof example admonition" id="example-22">
-<p class="admonition-title"><span class="caption-number">Example 3.8 </span> (In <a class="reference internal" href="5SSF.html#chap-seq-seriesoffns"><span class="std std-ref">Chapter 5</span></a>, we’ll prove that <span class="math notranslate nohighlight">\(f:\mathbb{R}\to (0, \infty)\)</span> given by <span class="math notranslate nohighlight">\(f(x) = e^{x}\)</span> is monotonic increasing, as well as showing it is continuous. By a similar argument to that of Example~\ref{nthroot}, we can deduce that it has a continuous, monotonic increasing inverse <span class="math notranslate nohighlight">\(f^{-1}:(0, \infty)\to\mathbb{R}\)</span>. Of course, in this case <span class="math notranslate nohighlight">\(f^{-1}(x) =\ln(x) \)</span> (or <span class="math notranslate nohighlight">\(\log_{e}(x)\)</span>, if you prefer) and so we are using Theorem~\ref{thm:IFT} to deduce that every positive real number has a natural logarithm.)</p>
+</div><div class="proof example admonition" id="example-25">
+<p class="admonition-title"><span class="caption-number">Example 3.8 </span></p>
 <section class="example-content" id="proof-content">
+<p>In <a class="reference internal" href="5SSF.html#chap-seq-seriesoffns"><span class="std std-ref">Chapter 5</span></a>, we’ll prove that <span class="math notranslate nohighlight">\(f:\mathbb{R}\to (0, \infty)\)</span> given by <span class="math notranslate nohighlight">\(f(x) = e^{x}\)</span> is monotonic increasing, as well as showing it is continuous. By a similar argument to that of <a class="reference internal" href="#nthroot">Example 3.7</a>, we can deduce that it has a continuous, monotonic increasing inverse <span class="math notranslate nohighlight">\(f^{-1}:(0, \infty)\to\mathbb{R}\)</span>. Of course, in this case <span class="math notranslate nohighlight">\(f^{-1}(x) =\ln(x) \)</span> (or <span class="math notranslate nohighlight">\(\log_{e}(x)\)</span>, if you prefer) and so we are using <a class="reference internal" href="#thm:IFT">Theorem 3.6</a> to deduce that every positive real number has a natural logarithm.</p>
 </section>
-</div></section>
+</div><hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="contra2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>We have used the contrapositive here.</p>
+</aside>
+</aside>
+</section>
 </section>
 </section>
 
@@ -822,12 +859,12 @@ f(a) &lt; y_{1} &lt; y_{0} &lt; y_{2} &lt; f(b),
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-continuity-basic-properties-and-examples">3.1. 1. Definition of continuity, basic properties and examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discontinuity">3.2. 2. Discontinuity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-on-intervals">3.3. 3. Continuity on intervals</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-intermediate-value-theorem">3.3.1. 3.1. The intermediate value theorem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-extreme-value-theorem">3.3.2. 3.2. The extreme value theorem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverses">3.3.3. 3.3. Inverses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-continuity-basic-properties-and-examples">3.1. Definition of continuity, basic properties and examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discontinuity">3.2. Discontinuity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-on-intervals">3.3. Continuity on intervals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-intermediate-value-theorem">3.3.1. The intermediate value theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-extreme-value-theorem">3.3.2. The extreme value theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverses">3.3.3. Inverses</a></li>
 </ul>
 </li>
 </ul>

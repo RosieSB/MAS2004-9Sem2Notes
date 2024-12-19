@@ -1,7 +1,7 @@
 (chap:cty)=
 # Continuity
 
-## 1. Definition of continuity, basic properties and examples
+## Definition of continuity, basic properties and examples
 
 Intuitively we think of functions as being ``continuous'' if we can draw their graphs without ever taking our pen/pencil off the paper: the graph contains no gaps/jumps/discontinuities. So if we think of a typical point $a$ in the domain of the function $f$, then as $x$ gets closer and closer to $a$, we expect that $f(x)$ will get closer and closer to $f(a)$. But from the work of [Chapter 2](#chap:functionlimits), recall that as $x$ gets closer and closer to $a$, then $f(x)$ gets closer and closer to its limit at $a$ (if this exists). This leads to the following definition.
 
@@ -15,8 +15,8 @@ We say that $f$ is *continuous on a set* $S \subseteq X$ if it is continuous at 
 ````
 
 ````{prf:theorem}
-Let $f:X\to\mathbb{R}$ where $X$ is a subset of $\mathbb{R}$ and let $a\in X$  be such that there is some sequence $(x_n)$ in
-$X\setminus\{a\}$ with $\lim_{n \rightarrow \infty}x_{n} = a$.
+:label: cont1
+Let $f:X\to\mathbb{R}$ where $X$ is a subset of $\mathbb{R}$ and let $a\in X$  be such that there is some sequence $(x_n)$ in $X\setminus\{a\}$ with $\lim_{n \rightarrow \infty}x_{n} = a$.
 Then the following statements are equivalent.
 
 (i) $f$ is continuous at $a$.
@@ -35,14 +35,12 @@ and $x_n\neq a$ for all $n\in\mathbb{N}$, such that $\lim_{n \rightarrow \infty}
 
 Let's check that (ii) and (ii)' are equivalent. The only difference is whether you allow terms of the sequence to be $a$ or not. Obviously, (ii) implies (ii)'. On the other hand, to see that (ii)' implies (ii), assume (ii)' holds and consider a sequence $(y_n)$ in $X$ converging to $a$. If there are infinitely many  terms of the sequence $(y_n)$ not equal to $a$,  consider the subsequence $(x_n)$ of these, which must also converge to $a$ (see Proposition 3.12 in your MAS107 notes). Then $\lim_{n\rightarrow\infty} f(x_n)=f(a)$ by (ii)' and clearly $\lim_{n\rightarrow\infty} f(y_n)=\lim_{n\rightarrow\infty} f(x_n)$. On the other hand, if there are only finitely many terms not equal to $a$, then after some stage all terms are $a$, so clearly  $\lim_{n\rightarrow\infty} f(y_n)=f(a)$.
 
-Finally, the proof that (ii) and (iii) are equivalent is almost exactly the same as the proof of {prf:ref}`ed`. $\square$
+Finally, the proof that (ii) and (iii) are equivalent is almost exactly the same as the proof of {prf:ref}`ed`. <span style="float:right;">$\square$</span>
 
 ````{prf:remark}
-We can rewrite Theorem [1](#cont1)(iii) as
+We can rewrite {prf:ref}`cont1`(iii) as
 
-<center>
-``Given any $\varepsilon > 0$, there exists $\delta > 0$ such that whenever $x \in X$ with $x \in (a -\delta, a + \delta)$, we have $f(x) \in(f(a) - \varepsilon, f(a) + \varepsilon)$.''
-</center>
+> "Given any $\varepsilon > 0$, there exists $\delta > 0$ such that whenever $x \in X$ with $x \in (a -\delta, a + \delta)$, we have $f(x) \in(f(a) - \varepsilon, f(a) + \varepsilon)$."
 
 An open interval of the form $(a - \delta, a + \delta)$, where $\delta > 0$ is called an *open neighbourhood* of $a \in \mathbb{R}$. This reformulation of the notion of continuity in terms of open neighbourhoods is better suited in more advanced topics, such as analysis with functions on $\mathbb{R}^n$, or more generally still, functions on a metric or topological space^[More on this in MAS331 Metric Spaces and beyond.].
 ````
@@ -59,6 +57,7 @@ The linear function  $f:\mathbb{R}\to\mathbb{R}$ given by $f(x) = x$ is also con
 To build more interesting examples, we need the following.
 
 ````{prf:theorem} Algebra of limits revisited
+:label: AOL3
 Suppose that $f:A\to\mathbb{R}$ and $g :B \rightarrow \mathbb{R}$ are both continuous at $a \in A\cap B$. The following functions are also continuous at $a$.
 
 (i) $f + g$,
@@ -71,13 +70,13 @@ Suppose that $f:A\to\mathbb{R}$ and $g :B \rightarrow \mathbb{R}$ are both conti
 ````
 
 
-*Proof.* This is a direct consequence of Theorem~[AOL2](#AOL2). \end{proof}
+**Proof.** This is a direct consequence of {prf:ref}`AOL2`. <span style="float:right;">$\square$</span>
 
-Using algebra of limits and Examples~[constfn](#constfn) and [idfn](#idfn), we can expand our supply of continuous functions.
+Using algebra of limits and {prf:ref}`constfn` and {prf:ref}`idfn`, we can expand our supply of continuous functions.
 
-- Using Theorem [AOL3](#AOL3)(ii) repeatedly, we can show that $f(x) = x^{n}$ is continuous on $\mathbb{R}$ for all $n\in\mathbb{N}$.
-- Then using Theorem [AOL3](#AOL3)(i) and (iii), it follows that every polynomial $p(x) = a_{0} + a_{1}x + \cdots + a_{n}x^{n}$ is continuous on $\mathbb{R}$.
-- Finally using Theorem [AOL3](#AOL3)(iv) we conclude that rational functions $r(x) = \frac{p(x)}{q(x)}$ are continuous at every point where $q(x)\neq 0$.
+- Using {prf:ref}`AOL3`(ii) repeatedly, we can show that $f(x) = x^{n}$ is continuous on $\mathbb{R}$ for all $n\in\mathbb{N}$.
+- Then using {prf:ref}`AOL3`(i) and (iii), it follows that every polynomial $p(x) = a_{0} + a_{1}x + \cdots + a_{n}x^{n}$ is continuous on $\mathbb{R}$.
+- Finally using {prf:ref}`AOL3`(iv) we conclude that rational functions $r(x) = \frac{p(x)}{q(x)}$ are continuous at every point where $q(x)\neq 0$.
 The continuity on $\mathbb{R}$ of functions such as $f(x) = e^{k x}, g(x) = \sin(kx), h(x) = \cos(kx)$, for $k \in \mathbb{R}$, can be established using power series arguments. We will explore this further in [Chapter 5](#chap:seq&seriesoffns).
 
 We also have a result for composition.
@@ -89,10 +88,10 @@ Let $f:A\to B$ and $g:B\to \mathbb{R}$, so we have the composition $g\circ f: A\
 ````
 
 **Proof.**
-This is for you to do in Problem~\iflatexml 14 \else[q:57](#q:57)\fi. $\square$
+This is for you to do in Problem 14. <span style="float:right;">$\square$</span>
 
 
-With Theorem~[fof](#fof), we can immediately deduce continuity on $\mathbb{R}$ of functions such as $f:\mathbb{R}\to\mathbb{R}$ given by $f(x) = \sin\left(\frac{2x-1}{x^{2} + 1}\right)$.
+With {prf:ref}`fof`, we can immediately deduce continuity on $\mathbb{R}$ of functions such as $f:\mathbb{R}\to\mathbb{R}$ given by $f(x) = \sin\left(\frac{2x-1}{x^{2} + 1}\right)$.
 
 ````{prf:example}
 :label: extex
@@ -102,7 +101,7 @@ $$
 g(x) = x\sin\left(\frac{1}{x}\right).
 $$
 
-Using Theorems \ref{AOL3} and \ref{fof}, it is not hard to see that $g$ is continuous at every point of its domain. In Problem~\iflatexml 9 \else \ref{q:51}\fi, we showed that $\displaystyle\lim_{x \rightarrow 0}g(x)$ exists and is $0$. Now define a new function $\tilde{g}:\mathbb{R}\to\mathbb{R}$ by
+Using {prf:ref}`AOL3` and {prf:ref}`fof`, it is not hard to see that $g$ is continuous at every point of its domain. In Problem 9, we showed that $\displaystyle\lim_{x \rightarrow 0}g(x)$ exists and is $0$. Now define a new function $\tilde{g}:\mathbb{R}\to\mathbb{R}$ by
 
 $$
 \tilde{g}(x) = \begin{cases} g(x) &\text{if $x \in \mathbb{R} \setminus \{0\}$},\\
@@ -116,7 +115,7 @@ Then $\tilde{g}$ is continuous on the whole of $\mathbb{R}$.
 Given two functions $f_{1}:A\to\mathbb{R}$ and $f_{2}:B\to \mathbb{R}$, we say that $f_{2}$ is an *extension* of $f_{1}$, (and that $f_{1}$ is a *restriction} of $f_{2}$) if $A \subseteq B$ and $f_{1}(x) = f_{2}(x)$ for all $x \in A$. If $f_{1}$ is continuous on $A$ and $f_{2}$ is continuous on $B$, we say that $f_{2}$ is a *continuous extension* of $f_{1}$ (to $B$).
 ````
 
-So in Example~[extex](#extex), $\tilde{g}$ is a continuous extension of $g$. On the other hand, consider the function
+So in {prf:ref}`extex`, $\tilde{g}$ is a continuous extension of $g$. On the other hand, consider the function
 
 $$
 h: \mathbb{R} \setminus \{0\}\to\mathbb{R}; \hspace{1em} h(x) = \sin\left(\frac{1}{x}\right).
@@ -128,9 +127,9 @@ $$
 \tilde{h}(x) = \left\{\begin{array}{l c} h(x) & ~\mbox{if}~x \neq 0\\ 0& ~\mbox{if}~x = 0 \end{array} \right.,
 $$
 
-but since, as was shown in Problem~\iflatexml 8 \else[q:50](#q:50)\fi, $\displaystyle\lim_{x \rightarrow 0}h(x)$ does not exist,  there are no continuous extensions of $h$ to $\mathbb{R}$.
+but since, as was shown in Problem 8, $\displaystyle\lim_{x \rightarrow 0}h(x)$ does not exist,  there are no continuous extensions of $h$ to $\mathbb{R}$.
 
-## 2. Discontinuity
+## Discontinuity
 
 A function $f:X \rightarrow \mathbb{R}$ is said to have a *discontinuity* at $a \in X$ if it fails to be continuous there. In this case we say that $f$ is *discontinuous* at $a$. For example, the indicator function ${\bf 1}_{[a, b]}:\mathbb{R}\to\mathbb{R}$ is discontinuous at $a$, and at $b$, but is continuous on $\mathbb{R} \setminus \{a, b\}$. To show that a function is discontinuous at $a$, it is sufficient to find a single sequence $(x_{n})$ in $X \setminus \{a\}$, such that $\lim_{n \rightarrow \infty}x_{n} = a$, but $\lim_{n \rightarrow \infty}f(x_{n}) \neq f(a)$.
 
@@ -140,7 +139,8 @@ We can learn more about what happens at a discontinuity by using right and left 
 We say that $f:X\to\mathbb{R}$ is *left continuous* at $a \in X$ if $\lim_{x \rightarrow a^-}f(x) = f(a)$, and *right continuous* at $a \in X$ if $\lim_{x \rightarrow a^+}f(x) = f(a)$.
 ````
 
-````{prf:example} The function ${\bf 1}_{[a, b]}:\mathbb{R}\to\mathbb{R}$ is left continuous at $x = b$, and right continuous at $x = a$.
+````{prf:example} 
+The function ${\bf 1}_{[a, b]}:\mathbb{R}\to\mathbb{R}$ is left continuous at $x = b$, and right continuous at $x = a$.
 ````
 
 **Solution.** We just prove the right continuity, as the other argument is so similar. Let $(x_{n})$ be any sequence with $x_{n} > a$ for all $n\in\mathbb{N}$ that converges to $a$. Then
@@ -196,7 +196,7 @@ g(x) =\begin{cases}
 \end{cases}
 $$
 
-Show that $g$ is continuous at every irrational number. (It is also discontinuous at every rational number ---  this is left to you to do in Problem~\iflatexml 21 \else\ref{q:64}\fi.)
+Show that $g$ is continuous at every irrational number. (It is also discontinuous at every rational number ---  this is left to you to do in Problem 21.)
 ````
 
 **Solution.** Let $a\in\mathbb{R}\setminus\mathbb{Q}$. We'll use the $(\varepsilon-\delta)$-criterion to show that $g$ is continuous at $a$. Let $\varepsilon>0$. For each $n\in\mathbb{N}$, let 
@@ -214,23 +214,23 @@ $$
 and continuity at $a$ is established.
 
 
-```{figure} ../MAS2004-9Sem2Notes/figs/dof)
+```{figure} ../MAS2004-9Sem2Notes/figs/dof.png
 ---
-height: 300px
-name: Dirichlet2
+height: 500px
+name: dirichlet2
 ---
  Dirichlet's other function.
 ```
 
 ````{prf:remark}
-The function from Example \ref{eg:dirichlet2} is also sometimes called Thomae's function.
+The function from {numref}`dirichlet2` is also sometimes called Thomae's function.
 ````
 
-## 3. Continuity on intervals
+## Continuity on intervals
 
 In this section we will study functions on closed intervals, $f:[a, b] \rightarrow \mathbb{R}$, which are continuous at every point of $[a,b]$. Many well--known functions have this property, including polynomials, sines, cosines and exponential functions. It turns out, as we will see, that there are some very important and powerful theorems that can be proved in this context.
 
-### 3.1. The intermediate value theorem
+### The intermediate value theorem
 
 ````{prf:theorem} The intermediate value theorem
 :label: ivp
@@ -244,13 +244,13 @@ Let $f:[a, b]\to\mathbb{R}$ be continuous  with $f(a) > 0$ and $f(b) < 0$, or $f
 - $f(a_{n}) > 0, f(b_{n}) < 0$, for all $n\in\mathbb{N}$.
 To do this we proceed as follows. Take $[a_{0}, b_{0}] = [a, b]$. %Then (ii) and (iii) hold, and (i) is irrelevant.
 
-\noindent Now construct the interval $[a_{1}, b_{1}]$ as follows. Let $m_{1} = \frac{(a+ b)}{2}$.
+Now construct the interval $[a_{1}, b_{1}]$ as follows. Let $m_{1} = \frac{(a+ b)}{2}$.
 If $f(m_{1}) = 0$, then take $c = m_{1}$ and the theorem is proved. Otherwise,
 define
 
 $$
 [a_{1}, b_{1}]  =
-\begin{cases} [a, m_{1}] &\text{if $f(m_{1}) < 0$,}\\
+\begin{cases} [a, m_{1}] &\text{if $f(m_{1}) < 0$,}\\[.5em]
 [m_{1}, b] & \text{if $f(m_{1}) > 0$.}
 \end{cases}
 $$
@@ -262,19 +262,21 @@ the theorem is proved. Otherwise
 define
 
 $$
-[a_{n+1}, b_{n+1}]  = \begin{cases} [a_{n}, m_{n+1}] &\text{if $f(m_{n+1}) < 0$,}\\ [m_{n+1}, b] & \text{if $f(m_{n+1}) > 0$.} \end{cases}
+[a_{n+1}, b_{n+1}]  = 
+\begin{cases} [a_{n}, m_{n+1}] &\text{if $f(m_{n+1}) < 0$,}\\[.5em]
+[m_{n+1}, b] & \text{if $f(m_{n+1}) > 0$.} \end{cases}
 $$
 
-\noindent By construction (i) and (iii) hold and for (ii) we have
+By construction (i) and (iii) hold and for (ii) we have
 
 $$
 b_{n+1} - a_{n+1} = \frac{1}{2}(b_{n} - a_{n}) = \frac{1}{2}.2^{-n}(b -a) = 2^{-(n+1)}(b - a).
 $$
 
-So by induction, the required sequence of intervals is constructed. Furthermore, the sequence
+So by induction, the required sequence of intervals is constructed. Furthermore:
 
-$(a_{n})$ is monotonic increasing and bounded above (by $b$),
-$(b_{n})$ is monotonic decreasing and bounded below (by $a$).
+- $(a_{n})$ is a monotonic increasing sequence and bounded above (by $b$),
+- $(b_{n})$ is a monotonic decreasing sequence and bounded below (by $a$).
 
 By the monotone convergence theorem (MAS107 Theorem 3.10), both sequences converge, and by algebra of limits and (ii):
 
@@ -286,7 +288,9 @@ Define $c = \lim_{n\rightarrow\infty} b_{n} = \lim_{n\rightarrow\infty} a_{n}$. 
 
 $$
 f(c) = \lim_{n\rightarrow\infty} f(a_{n}) \geq 0 \hspace{2em} \text{ and } \hspace{2em} f(c) = \lim_{n\rightarrow\infty} f(b_{n}) \leq 0.
-$$Hence $f(c) = 0$. As both $f(a)$ and $f(b) \neq 0$, $c \notin \{a, b\}$, i.e. $c \in (a, b)$. $\square$
+$$
+
+Hence $f(c) = 0$. As both $f(a)$ and $f(b) \neq 0$, $c \notin \{a, b\}$, i.e. $c \in (a, b)$. <span style="float:right;">$\square$</span>
 
 
 ````{prf:corollary}
@@ -294,10 +298,10 @@ $$Hence $f(c) = 0$. As both $f(a)$ and $f(b) \neq 0$, $c \notin \{a, b\}$, i.e. 
 Let $f:[a,b]\to\mathbb{R}$ be continuous with $f(a) < f(b)$. Then for each $\gamma \in (f(a), f(b))$, there exists $c \in (a, b)$ with $f(c) = \gamma$.
 ````
 
-*Proof.* This is left for you to do as Problem~\iflatexml 23 \else [q:66](#q:66) \fi. $\square$
+**Proof.** This is left for you to do as Problem 23. <span style="float:right;">$\square$</span>
 
 
-Note that Corollary [ivp2](#ivp2) tells us that the image (or range) of the interval $[a, b]$ under the continuous function $f$ contains the interval $[f(a), f(b)]$, i.e. $[f(a), f(b)] \subseteq f([a, b])$.
+Note that {prf:ref}`ivp2` tells us that the image (or range) of the interval $[a, b]$ under the continuous function $f$ contains the interval $[f(a), f(b)]$, i.e. $[f(a), f(b)] \subseteq f([a, b])$.
 
 
 
@@ -308,25 +312,25 @@ The next result gives a nice application of analysis to the theory of equations.
  Every polynomial of odd degree $p$ has at least one real root.
 ````
 
-*Proof.* We write,
+**Proof.** We write,
 
 \begin{align*} 
 p(x) &= a_{m}x^{m} + a_{m-1}x^{m-1} + \cdots + a_{1}x + a_{0} \\
 &= x^{m}\left(a_{m} + \frac{a_{m-1}}{x} + \cdots + \frac{a_{1}}{x^{m-1}} + \frac{a_{0}}{x^{m}}\right),
 \end{align*}
 
-where $a_m\neq 0$ and $m$ is odd. We'll do the case where $a_{m} > 0$; the case $a_{m} < 0$ is similar. Then, as was shown in Problem~\iflatexml 11 \else[q:54](#q:54)\fi,
+where $a_m\neq 0$ and $m$ is odd. We'll do the case where $a_{m} > 0$; the case $a_{m} < 0$ is similar. Then, as was shown in Problem 11,
 
 $$
 \lim_{x \rightarrow \infty}p(x) = \infty \hspace{1em} \text{ and } \hspace{1em} \lim_{x \rightarrow -\infty}p(x) = -\infty.
 $$
 
-So from the definition of divergence, there exist $- \infty < a < b < \infty$ such that $p(a) < 0$ and $p(b) > 0$. But $p$ is continuous on $[a, b]$ and so, by the intermediate value theorem, there exists $c \in (a, b)$ such that $p(c) = 0$. $\square$
+So from the definition of divergence, there exist $- \infty < a < b < \infty$ such that $p(a) < 0$ and $p(b) > 0$. But $p$ is continuous on $[a, b]$ and so, by the intermediate value theorem, there exists $c \in (a, b)$ such that $p(c) = 0$. <span style="float:right;">$\square$</span>
 
 
-Of course, there is no analogue of Corollary [pol](#pol) when $m$ is even, e.g. $p(x) = x^{2} + 1$ has no real roots.
+Of course, there is no analogue of {prf:ref}`pol` when $m$ is even, e.g. $p(x) = x^{2} + 1$ has no real roots.
 
-### 3.2. The extreme value theorem
+### The extreme value theorem
 
 ````{prf:definition}
 A function $f: X \rightarrow \mathbb{R}$ is *bounded* on a non-empty set $S \subseteq X$ if there exists $K > 0$, such that $|f(x)| \leq K$ for all $x \in S$.
@@ -352,7 +356,7 @@ We are interested in the case where $S$ is an interval and $f$ is continuous. Th
 If $f:[a,b]\to\mathbb{R}$ is continuous, then it is bounded on $[a, b]$ and it attains its bounds there.
 ````
 
-*Proof.* We first show that $f$ is bounded. To do this, we'll assume that it isn't, and seek a contradiction.
+**Proof.** We first show that $f$ is bounded. To do this, we'll assume that it isn't, and seek a contradiction.
 So assume $f$ is not bounded.
 Let $(x_{n})$ be a sequence in $[a, b]$ such that
 
@@ -364,9 +368,7 @@ Let $(x_{n})$ be a sequence in $[a, b]$ such that
 Such a sequence certainly exists. For example,
 to construct such a sequence, we can consider $X_n=\{x \in [a, b] : |f(x)| \geq n\}$. This is non-empty since $f$ is unbounded and it is bounded below by $a$, so it has an infimum, say $x_{n} = \inf(X_n)$. And then $|f(x_{n})|\geq n$.
 
-Now since $(x_{n})$ is a bounded sequence (as $a \leq x_{n} \leq b$, for all $n\in\mathbb{N}$),  it has a convergent subsequence $(x_{n_{k}})$ by the Bolzano--Weierstrass theorem^[This was Theorem 3.14 on page 83 of your MAS107 notes.]. Let $x = \lim_{k \rightarrow \infty}x_{n_{k}}$. By continuity, $f(x) = \lim_{k \rightarrow \infty}f(x_{n_{k}})$. The sequence $(f(x_{n_{k}})))$ converges, and so in particular it must be bounded. But this contradicts our assumption ([1](#f(xn)geqn)).
-
-%If you want to make this even more precise, we have just shown that there exists $L > 0$ so that $|f(x_{n_{k}}))| \leq L$ for all $k \in \mathbb{N}$. But by assumption, $f$ is unbounded, and so using the Archimedean property of the real numbers, we can find $k \in \mathbb{N}$ so that $|f(x_{n_{k}})| > n_{k} > L$, and we are done.
+Now since $(x_{n})$ is a bounded sequence (as $a \leq x_{n} \leq b$, for all $n\in\mathbb{N}$),  it has a convergent subsequence $(x_{n_{k}})$ by the Bolzano--Weierstrass theorem^[This was Theorem 3.14 on page 83 of your MAS107 notes.]. Let $x = \lim_{k \rightarrow \infty}x_{n_{k}}$. By continuity, $f(x) = \lim_{k \rightarrow \infty}f(x_{n_{k}})$. The sequence $(f(x_{n_{k}})))$ converges, and so in particular it must be bounded. But this contradicts our assumption [](f(xn)geqn).
 
 Having proved that $f$ is bounded on $[a, b]$, we'll prove that it attains its least upper bound. We again argue by seeking a contradiction.  Let $\beta = \sup_{x \in [a, b]}f(x)$ and suppose that $\beta > f(x)$ for all $x \in [a, b]$. Then we can define $g: [a,b]\to\mathbb{R}$ by
 
@@ -374,19 +376,19 @@ $$
 g(x) = \displaystyle\frac{1}{\beta - f(x)},
 $$
 
-and $g$ is continuous on $[a, b]$ by Theorem [1](#AOL3). By the first part of this current theorem, $g$ is bounded on $[a, b]$, so there exists $K > 0$ such that
+and $g$ is continuous on $[a, b]$ by {prf:ref}`AOL3`. By the first part of this current theorem, $g$ is bounded on $[a, b]$, so there exists $K > 0$ such that
 
 ```{math}
 :label: eq:gxleqK
 g(x) \leq K \hspace{1em} \text{ for all } x \in [a, b].
 ```
 
-The set $A=\{f(x) : x \in [a, b]\}$ is nonempty, and bounded above since $f$ is bounded. Therefore, for any $\varepsilon>0$, there exists $a\in A$ such that $a>\sup(A)-\varepsilon$. In particular, putting $\varepsilon = 1/K$, there exists $f(x) \in A$ such that $f(x) > \beta - 1/K$. But then $\beta - f(x) < 1/K$, and so $g(x) > K$, contradicting ([2](#eq:gxleqK)).
+The set $A=\{f(x) : x \in [a, b]\}$ is nonempty, and bounded above since $f$ is bounded. Therefore, for any $\varepsilon>0$, there exists $a\in A$ such that $a>\sup(A)-\varepsilon$. In particular, putting $\varepsilon = 1/K$, there exists $f(x) \in A$ such that $f(x) > \beta - 1/K$. But then $\beta - f(x) < 1/K$, and so $g(x) > K$, contradicting [](eq:gxleqK).
 
-The argument for the greatest lower bound is similar, and is left for you as Problem~\iflatexml 27 \else[q:69](#q:69)\fi. $\square$
+The argument for the greatest lower bound is similar, and is left for you as Problem 27. <span style="float:right;">$\square$</span>
 
 
-It's important to be clear what Theorem [thm:evt](#thm:evt) is telling us. It says nothing about boundedness on  $\mathbb{R}$. Indeed any non-constant polynomial is unbounded on $\mathbb{R}$, but its restriction to every closed interval $[a, b]$ is bounded.
+It's important to be clear what {prf:ref}`thm:evt` is telling us. It says nothing about boundedness on  $\mathbb{R}$. Indeed any non-constant polynomial is unbounded on $\mathbb{R}$, but its restriction to every closed interval $[a, b]$ is bounded.
 
 ````{prf:corollary}
  :label: interval
@@ -398,14 +400,14 @@ $$
 
 ````
 
-*Proof.* By Theorem [thm:evt](#thm:evt), there exist $\gamma, \delta \in [a, b]$ such that $f(\gamma) = \inf_{x \in [a, b]}f(x)$ and $f(\delta) = \sup_{x \in [a, b]}f(x)$. We take $m = f(\gamma)$ and $M = f(\delta)$.
+**Proof.** By {prf:ref}`thm:evt`, there exist $\gamma, \delta \in [a, b]$ such that $f(\gamma) = \inf_{x \in [a, b]}f(x)$ and $f(\delta) = \sup_{x \in [a, b]}f(x)$. We take $m = f(\gamma)$ and $M = f(\delta)$.
 Clearly, $m\leq M$ and, since $f$ is non-constant, $m<M$.
 If $x \in [a,b]$, then $f(x) \in [m, M]$ and so $f([a, b]) \subseteq [m, M]$.
 
-For the other inclusion, by Corollary [ivp2](#ivp2), given any $c \in (m, M)$ there exists $y \in (\gamma, \delta)$ (or in $(\delta, \gamma)$ depending on which number is smallest) so that $c = f(y)$, and it follows that $[m, M] \subseteq f([\gamma, \delta]) \subseteq f([a, b])$. $\square$
+For the other inclusion, by {prf:ref}`ivp2`, given any $c \in (m, M)$ there exists $y \in (\gamma, \delta)$ (or in $(\delta, \gamma)$ depending on which number is smallest) so that $c = f(y)$, and it follows that $[m, M] \subseteq f([\gamma, \delta]) \subseteq f([a, b])$. <span style="float:right;">$\square$</span>
 
 
-### 3.3. Inverses
+### Inverses
 
 Let $X$ and $Y$ be arbitrary sets and $f:X \to Y$ be a function. Recall from MAS106 that $f$ is
 
@@ -419,7 +421,10 @@ $$
 
 In the first year, you also saw the following.
 
-**Proof.** The function $f:X\rightarrow Y$ is invertible if and only if it is bijective. $\square$
+````{prf:proposition}
+:label: prop:inv
+ The function $f:X\rightarrow Y$ is invertible if and only if it is bijective.
+ ````
 
 
 When studying sequences in MAS107, you also encountered the notion of monotonicity: a sequence $(a_n)$ of real numbers is monotonic increasing if $a_n\leq a_m$ whenever $n<m$. It is monotic decreasing if $a_n\geq a_m$ whenever $n<m$, and a similar definition exists for monotonic descreasing sequences.
@@ -427,8 +432,21 @@ When studying sequences in MAS107, you also encountered the notion of monotonici
 We now extend this idea to functions $f:X\to \mathbb{R}$ where $X\subseteq \mathbb{R}$.
 
 ````{prf:definition}
-Let  $f:X\to \mathbb{R}$ where $X\subseteq \mathbb{R}$. We say that $f$ is *monotonic increasing* if whenever $x, y \in X$ with $x < y$, we have $f(x) \leq f(y)$, *monotonic decreasing* if whenever $x, y \in X$ with $x < y$, we have $f(x) \geq f(y)$, *monotone* if it is either monotonic increasing or decreasing, and *strictly increasing/decreasing* when the $\leq$ or $\geq$ in the above definitions is replaced with $<$ or $>$ (respectively).
+Let  $f:X\to \mathbb{R}$ where $X\subseteq \mathbb{R}$. 
+
+We say that $f$ is 
+
+- *monotonic increasing* if whenever $x, y \in X$ with $x < y$, we have $f(x) \leq f(y)$,
+
+- *monotonic decreasing* if whenever $x, y \in X$ with $x < y$, we have $f(x) \geq f(y)$,
+
+- *monotone* if it is either monotonic increasing or decreasing,
+
+- *strictly monotonic increasing/decreasing* when the $\leq$ or $\geq$ in the above definitions is replaced with $<$ or $>$ (respectively).
 ````
+
+**Note.** It is standard practice to suppress the term "monotonic" and just describe a function as increasing or decreasing.
+
 
 Here are some simple examples; it is easy to see that $f:\mathbb{R}\to\mathbb{R}$ given by $f(x) = x$ is strictly increasing, and that  $f:(0,\infty) \to\mathbb{R}$ given by $f(x) = \frac{1}{x}$ is strictly decreasing. (So is $f:(-\infty, 0) \to\mathbb{R}$ given by $f(x) = \frac{1}{x}$,
 but not $f(x) = \frac{1}{x}$ on all of $\mathbb{R}\setminus\{0\}$).
@@ -440,12 +458,14 @@ Our key theorem considers the invertibility of monotone functions that are conti
 If $f: [a,b] \rightarrow \mathbb{R}$ is continuous and strictly increasing (respectively, strictly decreasing), then $f$ is invertible and $f^{-1}$ is strictly increasing on $[f(a), f(b)]$ (respectively, strictly decreasing on $[f(b), f(a)]$)  and continuous on $[f(a), f(b)]$ (respectively, on $[f(b), f(a)]$).
 ````
 
-*Proof.* We'll just consider the case where $f$ is strictly increasing. The argument for $f$ strictly decreasing is very similar.
+**Proof.** We'll just consider the case where $f$ is strictly increasing. The argument for $f$ strictly decreasing is very similar.
 
-By Corollary [interval](#interval), the range of $f$  is of the form $[m, M]$,
+By {prf:ref}`interval`, the range of $f$  is of the form $[m, M]$,
 so $f:[a, b] \rightarrow [m, M]$ is surjective. Note that as $f$ is increasing, $m = f(a)$ and $M = f(b)$. If $x, y \in [a, b]$ with $x < y$ then $f(x) < f(y)$, so if $x \neq y$ then $f(x) \neq f(y)$. Hence $f$ is injective.
-%^[We have used the contrapositive here.]So $f$ is bijective, and hence invertible by Proposition [8](#prop:inv).
+[^contra2] So $f$ is bijective, and hence invertible by {prf:ref}`prop:inv`.
 So we have $f^{-1}:[f(a), f(b)]\to [a,b]$.
+
+[^contra2]:We have used the contrapositive here.
 
 To show that $f^{-1}$ is strictly increasing, let $f(a) \leq \alpha < \beta \leq f(b)$. Then since $f$ is surjective and increasing, there exist $a \leq x < y \leq b$ with $\alpha = f(x)$ and $\beta = f(y)$. Hence
 
@@ -461,16 +481,18 @@ $$
 
 and if $y \in (y_{1}, y_{2})$ we have $|f^{-1}(y) - f^{-1}(y_{0})| < \varepsilon$. Then let $\delta = \min\{y_{2} - y_{0}, y_{0} - y_{1}\}$, and check that the $\varepsilon-\delta$ criterion is satisfied.
 
-Finally, we leave continuity of  $f^{-1}$ at $f(a)$ and at $f(b)$ as an exercise. $\square$
+Finally, we leave continuity of  $f^{-1}$ at $f(a)$ and at $f(b)$ as an exercise. <span style="float:right;">$\square$</span>
 
 
 ````{prf:example} $n$th roots
-Fix $n\in\mathbb{N}$ and let $f:[0,\infty)\to[0,\infty)$ be given by $f(x) = x^n$. Then you can prove in Problem~\iflatexml 30 \else [q:73](#q:73) \fi that $f$ is strictly monotonic increasing on every $[a, b] \subseteq [0, \infty)$. We already know that $f$ is continuous.
+:label: nthroot
+Fix $n\in\mathbb{N}$ and let $f:[0,\infty)\to[0,\infty)$ be given by $f(x) = x^n$. Then you can prove in Problem 30 that $f$ is strictly monotonic increasing on every $[a, b] \subseteq [0, \infty)$. We already know that $f$ is continuous.
 
-Consider the restriction $f:[a,b]\to [a^n, b^n]$. By Theorem~[thm:IFT](#thm:IFT), to see that we have an inverse $f^{-1}: [a^n, b^n]\to [a,b]$ which is continuous and strictly monotonic increasing. Since we can do this for all intervals $[a,b]$, this allows us to obtain the function $[0, \infty)\to [0,\infty)$ that we write as $f(x)= x^{\frac{1}{n}}$.
+Consider the restriction $f:[a,b]\to [a^n, b^n]$. By {prf:ref}`thm:IFT`, to see that we have an inverse $f^{-1}: [a^n, b^n]\to [a,b]$ which is continuous and strictly monotonic increasing. Since we can do this for all intervals $[a,b]$, this allows us to obtain the function $[0, \infty)\to [0,\infty)$ that we write as $f(x)= x^{\frac{1}{n}}$.
 
-So in particular, Theorem~[thm:IFT](#thm:IFT) has given us a unified method for proving the existence of positive $n$th roots of any positive real number.
+So in particular, {prf:ref}`thm:IFT` has given us a unified method for proving the existence of positive $n$th roots of any positive real number.
 ````
 
-````{prf:example} In [Chapter 5](#chap:seq&seriesoffns), we'll prove that $f:\mathbb{R}\to (0, \infty)$ given by $f(x) = e^{x}$ is monotonic increasing, as well as showing it is continuous. By a similar argument to that of Example~\ref{nthroot}, we can deduce that it has a continuous, monotonic increasing inverse $f^{-1}:(0, \infty)\to\mathbb{R}$. Of course, in this case $f^{-1}(x) =\ln(x) $ (or $\log_{e}(x)$, if you prefer) and so we are using Theorem~\ref{thm:IFT} to deduce that every positive real number has a natural logarithm.
+````{prf:example} 
+In [Chapter 5](#chap:seq&seriesoffns), we'll prove that $f:\mathbb{R}\to (0, \infty)$ given by $f(x) = e^{x}$ is monotonic increasing, as well as showing it is continuous. By a similar argument to that of {prf:ref}`nthroot`, we can deduce that it has a continuous, monotonic increasing inverse $f^{-1}:(0, \infty)\to\mathbb{R}$. Of course, in this case $f^{-1}(x) =\ln(x) $ (or $\log_{e}(x)$, if you prefer) and so we are using {prf:ref}`thm:IFT` to deduce that every positive real number has a natural logarithm.
 ````
