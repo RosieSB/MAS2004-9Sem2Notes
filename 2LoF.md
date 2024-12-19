@@ -12,6 +12,7 @@ kernelspec:
   name: python3
 ---
 
+(chap:functionlimits)=
 # Limits of functions
 
 ## Functions on the real line
