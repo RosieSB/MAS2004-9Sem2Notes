@@ -8,7 +8,7 @@ In this chapter we will go over the rigorous definition of the integral, defined
 Let $[a,b]\subseteq\mathbb{R}$ be a closed bounded interval. A *partition* of $[a,b]$ refers to any finite subset $P={x_0,x_1,\ldots,x_n}$ of $[a,b]$ that contains the endpoints $a$ and $b$. It is convenient to assume that
 
 $$
-a=x_0<x_1<x_2<\ldots<x_n=b. 
+a=x_0<x_1<x_2<\ldots<x_n=b.
 $$
 
 Let $f:[a,b]\to\mathbb{R}$ be a **bounded** function. For each partition $P$, we associate two ways of approximating the area under the graph of $f$ by rectangles. One of these ways will always be an overestimate, the other an underestimate.
