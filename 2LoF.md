@@ -152,25 +152,119 @@ Equivalently, $a$ is a limit point of $X$ if any open interval containing $a$ ha
 (iii) More generally, given $a<b$, then $[a,b]$ is the set of all limit points for any of the intervals $(a,b)$, $(a,b]$, $[a,b)$ and $[a,b]$.
 ````
 
-````{prf:definition} Functional limit
+````{prf:definition} Functional limit --- $(\varepsilon-\delta)$ criterion
 :label: functionlimit
 Let $f:X\to\mathbb{R}$ be a function, let $a\in\mathbb{R}$ be a limit point of $X$, and let $l\in\mathbb{R}$.
 
-We say that $f$ *converges* to $l$ as $x\rightarrow a$, and write
+We say that $f$ *converges* to $l$ as $x\rightarrow a$,  and write
 
 $$
 \lim_{x \rightarrow a}f(x) =l,
 $$
 
-if, for every sequence $(x_n)$ in $X\setminus\{a\}$ that converges to $a$, we have $\displaystyle\lim_{n\rightarrow\infty}f(x_n)=l$.
+if, for all $\varepsilon>0$ there exists $\delta>0$ such that for all $x\in X$, 
+
+$$
+0<|x-a|<\delta \; \text{ implies } \; $|f(x)-l|<\varepsilon.
+$$
 ````
 
 **Notes.**
 1. We require that $a$ be a limit point of $X$ so that it to make sense to consider what happens to the values of the function as we approach $a$.
-2. We must have convergence of $(f(x_n))$ to $l$ for *every* such sequence $(x_{n})$.
-3. The real number $a$ may or may not be in the domain $X$.
+
+2. The real number $a$ may or may not be in the domain $X$.
 
 
+
+````{prf:example}
+Let $f:(0,1)\to\mathbb{R}$ and suppose that 
+
+$$
+f(x) = 5x+2.
+$$
+
+Common sense tells us that $\lim_{x\rightarrow 1}f(x)=7$. Let's try to prove this rigorously using {prf:ref}`functionlimit`.
+
+Let $\varepsilon>0$. We seek $\delta>0$ such that $0<|x-1|<\delta$ implies $|f(x)-7|<\varepsilon$. On the other hand,
+
+$$
+|f(x)-7| = |5x+2-7| = |5x-5| = 5|x-1|
+$$
+
+This tells us that if we choose $\delta:=\frac{\varepsilon}{5}$, then 
+
+$$
+0<|x-1|<\delta \Rightarrow |f(x)-7|<5\delta=\varepsilon.
+$$
+
+This proves that  {prf:ref}`functionlimit` holds, and so $\lim_{x\rightarrow 1}f(x)=7$.
+````
+
+{prf:ref}`functionlimit` is usually referred to as the "$(\varepsilon-\delta)$ definition" of the functional limit, and does well to capture the idea of a limit is that as $x$ gets closer and closer to $a$, so $f(x)$ should get closer and closer to $l$. 
+
+There is a second, equivalent definition for the limit of a function, in terms of limits of sequences of points in its domain. This sequential definition of limits is sometimes more useful in proofs, since we can use theorems already proven for convergence of sequences (see for example {prf:ref}`AOL2`, coming up).
+
+````{prf:theorem} Sequential criterion for functional limits
+:label: ed
+ Let  $f:X \rightarrow \mathbb{R}$, let $a\in\mathbb{R}$ be a limit point of $X$, and let $l\in\mathbb{R}$. The following are equivalent:
+
+(i) $\lim_{x\rightarrow a} f(x) = l$.
+
+(ii) (Sequential criterion) For every sequence $(x_n)$ in $X\setminus\{a\}$ with $\lim_{n\rightarrow\infty}x_n=a$, we have that $\lim_{n\rightarrow\infty}f(x_n) = l$.
+````
+
+**Proof of {prf:ref}`ed`.** (i)\Rightarrow(ii): Suppose $\lim_{x\rightarrow a} f(x) = l$, and suppose $\varepsilon > 0$. So there exists $\delta > 0$ such that for all $x \in X$,
+
+$$
+0<|x - a| < \delta \Rightarrow |f(x) - l| < \varepsilon.
+$$
+
+Let $(x_{n})$ be an arbitrary sequence in $X\setminus\{a\}$ with limit $a$. Then since $x_n\rightarrow a$, there exists $N\in\mathbb{N}$, such that  $0<|x_{n} - a| < \delta$ for all $n\geq N$. But then, for all $n \geq N$, we have $|f(x_{n}) - l| < \varepsilon$, and so $\lim_{x\rightarrow a} f(x) = l$, as was required. We have established that $(i)\Rightarrow(ii)$.
+
+$(ii)\Rightarrow(i)$: Now we must establish the converse, namely that if $(x_n)$ is a sequence in $X\setminus\{a\}$ that converges to $a$, then the real sequence $(f(x_n))$ converges to $l$, as $n\rightarrow\infty$. We seek a proof by contradiction. Suppose that that $f(x)$ does not converge to $l$ as $x\rightarrow a$. Then the $(\varepsilon-\delta)$ criterion fails: there exists an $\varepsilon>0$ such that for all $\delta > 0$, there exists $x \in X$ with $0 < |x - a| < \delta$, but $|f(x) - l| \geq \varepsilon$.
+
+Now for this $\varepsilon>0$, choose successively $\delta = 1, \frac{1}{2}, \frac{1}{3}, \ldots$ and construct a sequence $(x_{n})$ as follows:
+
+$$
+x_{1} \in X \text{ satisfies } 0<|x_{1} - a| < 1 \text{ and }|f(x_{1}) - l| \geq \varepsilon. \\
+x_{2} \in X\text{ satisfies } 0<|x_{2} - a| < \frac{1}{2}\text{ and }|f(x_{2}) - l| \geq \varepsilon.
+\vdots
+x_{n} \in X\text{ satisfies }0<|x_{n} - a| < \frac{1}{n}\text{ and }|f(x_{n}) - l| \geq \varepsilon.
+$$
+
+Then $(x_n)$ is a sequence in $X\setminus\{a\}$ and by the sandwich rule, we have $\lim_{n\rightarrow\infty} x_{n} = a$. Also, by the above construction the sequence $(f(x_{n}))$ does not converge to $l$.
+
+So we have shown that if the $(\varepsilon-\delta)$ criterion fails, then so does the sequential criterion for functional limits. This completes the proof of {prf:ref}`ed`. <span style="float:right;">$\square$</span>
+
+In MAS107, you proved many theorems concerning convergence of real sequences. {prf:ref}`ed` gives us a way to capitalise on this hard work and quickly arrive at results about limits of functions.
+
+
+````{prf:theorem} Algebra of limits
+:label: AOL2
+Suppose that $f:A \rightarrow \mathbb{R}$, $g :B \rightarrow \mathbb{R}$, and $a \in \mathbb{R}$ is such that $\lim_{x\rightarrow a} f(x) = l$ and $\lim_{x\rightarrow a} g(x) = m$, then
+{prf:ref}`functionlimit`
+(i) $\displaystyle\lim_{x\rightarrow a} (f + g)(x) = l + m$,
+
+(ii) $\displaystyle\lim_{x\rightarrow a} (fg)(x) = lm$,
+
+(iii) $\displaystyle\lim_{x\rightarrow a} (\alpha f)(x) = \alpha l$, for all $\alpha \in \mathbb{R}$,
+
+(iv) $\displaystyle\lim_{x\rightarrow a} \left(\displaystyle\frac{f}{g}\right)(x) = \displaystyle\frac{l}{m}$, if $m \neq 0$.
+````
+
+**Proof.** By  {prf:ref}`ed`, these all follow from the algebra of limits for sequences. For example, for (i), if $(x_{n})$ is an arbitrary sequence in $A\cap B$ with $x_n\neq a$ for all $n\in\mathbb{N}$ such that $(x_n)$ that converges to $a$, then
+
+$$
+\begin{align*} 
+\lim_{n\rightarrow\infty} (f + g)(x_{n}) &= \lim_{n\rightarrow\infty} (f(x_{n}) + g(x_{n})) \\
+&= \lim_{n\rightarrow\infty} f(x_{n}) + \lim_{n\rightarrow\infty} g(x_{n})\\
+&= l + m, 
+\end{align*}
+$$
+as required.
+Here the first line uses the definition of a sum of functions and the second line uses algebra of limits (for real sequences). <span style="float:right;">$\square$</span>
+
+The sequential condition for limits of functions is sometimes easier to use when proving that a function does not converge to a finite limit. This is because we need only find one sequence in which the sequential condition fails.
 
 ````{prf:example}
 Consider $f:\mathbb{R} \setminus \{-5, 3, 5\}\to \mathbb{R}$, given by
@@ -248,78 +342,6 @@ $f(5)=\frac{1}{20}$. On the other hand, at $a=-5$ and at $a=3$, there is no valu
 that would extend $f$ to a continuous function there.  We will return to all these issues of continuity in [Chapter 3](chap:cty).
 ````
 
-````{prf:theorem} Algebra of limits
-:label: AOL2
-Suppose that $f:A \rightarrow \mathbb{R}$, $g :B \rightarrow \mathbb{R}$, and $a \in \mathbb{R}$ is such that $\lim_{x\rightarrow a} f(x) = l$ and $\lim_{x\rightarrow a} g(x) = m$, then
-
-(i) $\displaystyle\lim_{x\rightarrow a} (f + g)(x) = l + m$,
-
-(ii) $\displaystyle\lim_{x\rightarrow a} (fg)(x) = lm$,
-
-(iii) $\displaystyle\lim_{x\rightarrow a} (\alpha f)(x) = \alpha l$, for all $\alpha \in \mathbb{R}$,
-
-(iv) $\displaystyle\lim_{x\rightarrow a} \left(\displaystyle\frac{f}{g}\right)(x) = \displaystyle\frac{l}{m}$, if $m \neq 0$.
-````
-
-**Proof.** These all follow from the algebra of limits for sequences. For example, for (i), if $(x_{n})$ is an arbitrary sequence in $A\cap B$ with $x_n\neq a$ for all $n\in\mathbb{N}$ such that $(x_n)$ that converges to $a$, then
-
-$$
-\begin{align*} 
-\lim_{n\rightarrow\infty} (f + g)(x_{n}) &= \lim_{n\rightarrow\infty} (f(x_{n}) + g(x_{n})) \\
-&= \lim_{n\rightarrow\infty} f(x_{n}) + \lim_{n\rightarrow\infty} g(x_{n})\\
-&= l + m, 
-\end{align*}
-$$
-as required.
-Here the first line uses the definition of a sum of functions and the second line uses algebra of limits (for real sequences). <span style="float:right;">$\square$</span>
-
-
-From a geometric perspective, the idea of a limit is that as $x$ gets closer and closer to $a$, so $f(x)$ should get closer and closer to $l$. More insight to this is given by the following theorem, which establishes the important $(\varepsilon-\delta)$ criterion for existence of limits.
-
-````{prf:theorem} $(\varepsilon-\delta)$ criterion
-:label: ed
- Let  $f:X \rightarrow \mathbb{R}$, let $a\in\mathbb{R}$ be a limit point of $X$, and let $l\in\mathbb{R}$. The following are equivalent:
-
-(i) $\lim_{x\rightarrow a} f(x) = l$.
-
-(ii) Given any $\varepsilon>0$ there exists $\delta > 0$ such that whenever $x \in X$ with $0 < |x - a| < \delta$, then $|f(x) - l| < \varepsilon$.
-````
-
-````{prf:remark}
-The $(\varepsilon-\delta)$ criterion is also frequently expressed in terms of quantifiers:
-
-$\forall\varepsilon>0$, $\exists\delta>0$ s.t.~$\forall x\in X$, $0<|x-a|<\delta \; \Rightarrow \;|f(x)-l|<\varepsilon$.
-
-Take some time to compare these two statements and check they are saying the same thing.
-````
-
-**Proof of {prf:ref}`ed`.** First assume that the $(\varepsilon-\delta)$ criterion holds and suppose $\varepsilon > 0$. So there exists $\delta > 0$ such that for all $x \in X$,
-
-$$
-0<|x - a| < \delta \Rightarrow |f(x) - l| < \varepsilon.
-$$
-
-Let $(x_{n})$ be an arbitrary sequence in $X\setminus\{a\}$ with limit $a$. Then since $x_n\rightarrow a$, there exists $N\in\mathbb{N}$, such that  $0<|x_{n} - a| < \delta$ for all $n\geq N$. But then, for all $n \geq N$, we have $|f(x_{n}) - l| < \varepsilon$, and so $\lim_{x\rightarrow a} f(x) = l$, as was required. We have established that $(i)\Rightarrow(ii)$.
-
-Now we must establish the converse, namely if $f$ has limit $l$ at $a$, then the $(\varepsilon-\delta)$ criterion follows. In fact, we seek a proof by contrapositive[^contrapositive] , so we will assume that the $(\varepsilon-\delta)$ criterion fails, and then show that $f$ cannot have  limit $l$ at $a$.
-
-[^contrapositive]:That is,  we use the fact that if $P$ and $Q$ are propositions, then $P \Rightarrow Q$ if and only if $\neg Q \Rightarrow \neg P$.
-
-If the $(\varepsilon-\delta)$ criterion fails, then there exists $\varepsilon>0$ such that for all $\delta > 0$, there exists $x \in X$ with $0 < |x - a| < \delta$, but $|f(x) - l| \geq \varepsilon$.
-
-Now for this $\varepsilon>0$, choose successively $\delta = 1, \frac{1}{2}, \frac{1}{3}, \ldots$ and construct a sequence $(x_{n})$ as follows:
-
-$$
-x_{1} \in X \text{ satisfies } 0<|x_{1} - a| < 1 \text{ and }|f(x_{1}) - l| \geq \varepsilon. \\
-x_{2} \in X\text{ satisfies } 0<|x_{2} - a| < \frac{1}{2}\text{ and }|f(x_{2}) - l| \geq \varepsilon.
-\vdots
-x_{n} \in X\text{ satisfies }0<|x_{n} - a| < \frac{1}{n}\text{ and }|f(x_{n}) - l| \geq \varepsilon.
-$$
-
-Then $(x_n)$ is a sequence in $X\setminus\{a\}$ and by the sandwich rule, we have $\lim_{n\rightarrow\infty} x_{n} = a$. Also, by the above construction the sequence $(f(x_{n}))$ does not converge to $l$.
-
-So we have shown that if the $(\varepsilon-\delta)$ criterion fails, then the function $f$ does not have limit $l$ at $a$. It follows that $(ii)\Rightarrow(i)$. <span style="float:right;">$\square$</span>
-
 
 ````{prf:theorem} Sandwich rule for functions
 Suppose that $f:X\to\mathbb{R}$,  $g:Y\to\mathbb{R}$ and $h :Z\to \mathbb{R}$ and suppose that there exists an interval $(a, b) \subseteq X\cap Y\cap Z$ such that for all $x \in (a, b)$
@@ -365,13 +387,26 @@ and we have established that $\displaystyle\lim_{x \rightarrow c}g(x)$ exists an
 
 In the same setting as {prf:ref}`functionlimit`, we say that a function $f:X \rightarrow \mathbb{R}$ *diverges* at $x=a$ if $\lim_{x\rightarrow a} f(x)$ does not exist. 
 
-There are some interesting types of behaviour involved here. For example, we say that the function $f$ *diverges to infinity* at $x = a$ and we write 
+There are some interesting types of behaviour involved here. 
+
+````{prf:definition} Divergence to $\pm\infty$
+:label: div+-infty
+Let $f:X\to\mathbb{R}$ be a function and $a$ a limit point of $X$. 
+
+We say $f$ *diverges to infinity* at $x = a$ and we write 
 
 $$
 \lim_{x\rightarrow a} f(x) = \infty
 $$
 
-if for every sequence $(x_{n})$, with $x_{n} \in X$, $x_n\neq a$, which satisfies $\lim_{n\rightarrow\infty} x_{n} = a$, we have $\lim_{n\rightarrow\infty} f(x_{n}) = \infty$, i.e. the sequence of real numbers $(f(x_{n}))$ diverges to infinity. 
+if for any $K>0$ there is $\delta>0$ such that for all $x\in X$,
+
+$$
+0<|x-a|<\delta \Rightarrow f(x)>K. 
+$$
+
+**Equivalent, sequential conditions:** $\lim_{x\rightarrow a} f(x) = \infty$ if for every sequence $(x_{n})$, with $x_{n} \in X$, $x_n\neq a$, which satisfies $\lim_{n\rightarrow\infty} x_{n} = a$, we have $\lim_{n\rightarrow\infty} f(x_{n}) = \infty$, i.e. the sequence of real numbers $(f(x_{n}))$ diverges to infinity. 
+````
 
 The notion of *divergence to minus infinity* is defined similarly, and in that case we write $\lim_{x\rightarrow a} f(x) = -\infty$. For an example of divergence to infinity, consider e.g. $\lim_{x \rightarrow 0}\frac{1}{x^2}$. The details are left to you.
 

@@ -14,9 +14,30 @@ We say that $f$ is *continuous at the point* $a$ if $\lim_{x \rightarrow a}f(x)$
 We say that $f$ is *continuous on a set* $S \subseteq X$ if it is continuous at every point of $S$.
 ````
 
+````{prf:example}
+Let $f:[-1,3]\to\mathbb{R}$, $f(x)=3+4x-x^2$. Let's show this function is continuous at $x=2$. This means proving that $f(x)\rightarrow f(2)$ as $x\rightarrow 2$.
+
+Let $\varepsilon>0$. We seek $\delta>0$ such that $|f(x)-f(2)|<\varepsilon$ whenever $0<|x-2|<\delta$. Now, for all $x\in[-1,3]$,
+
+$$
+|f(x)-f(2)| = |3+4x-x^2 - (3+4\cdot 2-2^2)| = |4x-x^2-4| = |x^2-4x+4| = (x-2)^2.
+$$
+
+Therefore, $0<|x-2|<\sqrt{\varepsilon}$, we have $|(x-2)^2<$
+
+$$
+|f(x)-f(2)| = (x-2)^2 < \varepsilon.
+$$
+
+Thus $\lim_{x\rightarrow 2}f(x)=f(2)$, completing the proof that $f$ is continuous at $2$.
+````
+
+Just as we had a sequential criterion for limits of functions, there is an equivalent, sequential definition for continuity of functions. We summarise the various equivalent definitions below.
+
 ````{prf:theorem}
 :label: cont1
-Let $f:X\to\mathbb{R}$ where $X$ is a subset of $\mathbb{R}$ and let $a\in X$  be such that there is some sequence $(x_n)$ in $X\setminus\{a\}$ with $\lim_{n \rightarrow \infty}x_{n} = a$.
+Let $f:X\to\mathbb{R}$ where $X$ is a subset of $\mathbb{R}$ and let $a\in X$ be a limit point of $X$.
+
 Then the following statements are equivalent.
 
 (i) $f$ is continuous at $a$.
@@ -26,16 +47,15 @@ Then the following statements are equivalent.
 (iii) Given any $\varepsilon > 0$, there exists $\delta > 0$ such that whenever $x \in X$ with $|x - a| < \delta$, we have $|f(x) - f(a)| < \varepsilon$.
 ````
 
-**Proof.** By {prf:ref}`defcont`, (i) is equivalent to:  $\lim_{x \rightarrow a}f(x)$ exists and equals $f(a)$.
+**Proof.** Tthe proof that (ii) and (iii) are equivalent is almost exactly the same as the proof of {prf:ref}`ed`. 
+
+We prove that (i) and (iii) are equivalent. By {prf:ref}`defcont`, (i) is equivalent to:  $\lim_{x \rightarrow a}f(x)$ exists and equals $f(a)$.
 
 By {prf:ref}`functionlimit`, this is equivalent to
 
-(ii)': Given any sequence $(x_{n})$ with $x_{n} \in X$ for all $n\in\mathbb{N}$,
-and $x_n\neq a$ for all $n\in\mathbb{N}$, such that $\lim_{n \rightarrow \infty}x_{n} = a$, we have $\lim_{n\rightarrow\infty} f(x_{n}) = f(a)$.
+(iii)': For all $\varepsilon>0$ there exists $\delta>0$ such that for all $x\in X$, $0<|x-a|<\delta$ implies $|f(x)-f(a)|<\epsilon$. 
 
-Let's check that (ii) and (ii)' are equivalent. The only difference is whether you allow terms of the sequence to be $a$ or not. Obviously, (ii) implies (ii)'. On the other hand, to see that (ii)' implies (ii), assume (ii)' holds and consider a sequence $(y_n)$ in $X$ converging to $a$. If there are infinitely many  terms of the sequence $(y_n)$ not equal to $a$,  consider the subsequence $(x_n)$ of these, which must also converge to $a$ (see Proposition 3.12 in your MAS107 notes). Then $\lim_{n\rightarrow\infty} f(x_n)=f(a)$ by (ii)' and clearly $\lim_{n\rightarrow\infty} f(y_n)=\lim_{n\rightarrow\infty} f(x_n)$. On the other hand, if there are only finitely many terms not equal to $a$, then after some stage all terms are $a$, so clearly  $\lim_{n\rightarrow\infty} f(y_n)=f(a)$.
-
-Finally, the proof that (ii) and (iii) are equivalent is almost exactly the same as the proof of {prf:ref}`ed`. <span style="float:right;">$\square$</span>
+Let's check that (iii) and (iii)' are equivalent. The only difference is whether or not we allow $x=a$. But in the case where $x=a$, we get $|f(x)-f(a)|=0<\varepsilon$, and so there is nothing more to show. <span style="float:right;">$\square$</span>
 
 ````{prf:remark}
 We can rewrite {prf:ref}`cont1`(iii) as
@@ -131,7 +151,27 @@ but since, as was shown in Problem 8, $\displaystyle\lim_{x \rightarrow 0}h(x)$ 
 
 ## Discontinuity
 
-A function $f:X \rightarrow \mathbb{R}$ is said to have a *discontinuity* at $a \in X$ if it fails to be continuous there. In this case we say that $f$ is *discontinuous* at $a$. For example, the indicator function ${\bf 1}_{[a, b]}:\mathbb{R}\to\mathbb{R}$ is discontinuous at $a$, and at $b$, but is continuous on $\mathbb{R} \setminus \{a, b\}$. To show that a function is discontinuous at $a$, it is sufficient to find a single sequence $(x_{n})$ in $X \setminus \{a\}$, such that $\lim_{n \rightarrow \infty}x_{n} = a$, but $\lim_{n \rightarrow \infty}f(x_{n}) \neq f(a)$.
+````{prf:defintion} Discontinuity
+
+A function $f:X \rightarrow \mathbb{R}$ is said to have a *discontinuity* at $a \in X$ if it fails to be continuous there. In this case we say that $f$ is *discontinuous* at $a$. 
+````
+
+````{prf:example}
+Consider the Heaviside function, ${\bf 1}_{[0,1]}$ (known as the Heaviside function). Common sense tells us that ${\bf 1}_{[0,1]}$ has discontinuities at $0$ and $1$, and is continuous everywhere else in its domain. 
+
+Let's prove discontinuity at $0$ rigorously. If ${\bf 1}_{[0,1]}$ were continuous at $0$, then {prf:theorem}`cont1` would imply that for any sequence $(x_n)$ converging to $0$, the sequence ${\bf 1}_{[0,1]}(x_n)$ should converge to ${\bf 1}_{[0,1]}(0) = 1$. 
+
+Consider the sequence $(x_n) given by $x_n=-\frac{1}{n}$, for each $n\in\mathbb{N}$. Then $x_n<0$ for all $n$, and so ${\bf 1}_{[0,1]}(x_n) = 0$ for all $n\in\mathbb{N}. In particular,
+
+$$
+\lim_{n\rightarrow\infty}\ind_[0,1] {\bf 1}(x_n) = \lim_{n\rightarrow\infty}\ind_[0,1] 0 = 0.
+$$
+
+On the other hand, $x_n\rightarrow 0$ as $n\rightarrow\infty$, and ${\bf 1}_{[0,1]}(0) = 1$. Therefore we have found a sequence $(x_n)$ with limit $0$, for which $$\lim_{n\rightarrow \infty} {\bf 1}_{[0,1]}(x_n) \neq  {\bf 1}_{[0,1]}(0)$. So ${\bf 1}_{[0,1]}$ has a discontinuity at $0$.
+
+````
+
+More generally, the indicator function ${\bf 1}_{[a, b]}:\mathbb{R}\to\mathbb{R}$ is discontinuous at $a$, and at $b$, but is continuous on $\mathbb{R} \setminus \{a, b\}$. To show that a function is discontinuous at $a$, it is sufficient to find a single sequence $(x_{n})$ in $X \setminus \{a\}$, such that $\lim_{n \rightarrow \infty}x_{n} = a$, but $\lim_{n \rightarrow \infty}f(x_{n}) \neq f(a)$.
 
 We can learn more about what happens at a discontinuity by using right and left limits.
 
