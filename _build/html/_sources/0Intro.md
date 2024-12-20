@@ -83,5 +83,5 @@ Links: [Library](https://find.shef.ac.uk/permalink/f/1lephdb/44SFD_ALMA_DS513608
 | $\text{Range}(f)$ | range of $f$ |
 | $[a,b]:=\{x\in\mathbb{R}:a\leq x\leq b\}$ | closed interval from $a$ to $b$ |
 | $(a,b):=\{x\in\mathbb{R}:a<x<b\}$ | open interval from $a$ to $b$ |
-| $\begin{array}{l} \mathbf{1}_A:\mathbb{R}\to\mathbb{R};\\ \mathbf{1}_A(x) := \left\{\begin{array}{lr} 1 & \text{ if }x\in A \\ 0 & \text{ if }x\notin A.\end{array}\right.\end{array}$ | indicator function for a set $A\subseteq{R}$ |
+| $\begin{array}{l} \mathbf{1}_A:\mathbb{R}\to\mathbb{R};\\ \mathbf{1}_A(x) := \left\{\begin{array}{lr} 1 & \text{ if }x\in A \\ 0 & \text{ if }x\notin A.\end{array}\right.\end{array}$ | indicator function for a set $A\subseteq\mathbb{R}$ |
 | $:=$ | defined to be equal to |
